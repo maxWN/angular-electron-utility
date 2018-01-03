@@ -26,6 +26,10 @@ export class AppComponent {
     this.router.navigate(['/dashboard']);   
   }
 
+  soundWidget():void {
+    this.router.navigate(['/sound-widget']);
+  }
+
 
 
 

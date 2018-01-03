@@ -8,7 +8,7 @@ function createWindow () {
     width: 600, 
     height: 600,
     backgroundColor: '#ffffff',
-    icon: 'newItem.PNG'
+    icon: 'Mahm0udwally-All-Flat-Music.ico'
   })
   win.loadURL(`file://${__dirname}/dist/index.html`)
   //// uncomment below to open the DevTools.

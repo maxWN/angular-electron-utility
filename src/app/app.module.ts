@@ -10,7 +10,7 @@ import { LandingPageComponent } from './primarySectors/landing-page/landing-page
 import { SoundWidgetComponent } from './primarySectors/sound-widget/sound-widget.component';
 
 const appRoutes: Routes = [
-  { path: "", redirectTo: "/timer", pathMatch: "full" },
+  { path: "", redirectTo: "/dashboard", pathMatch: "full" },
   { path: "dashboard", component: LandingPageComponent },
   { path: "timer", component: TimerComponent },
   { path: "sound-widget", component: SoundWidgetComponent }

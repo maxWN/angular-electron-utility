@@ -1,0 +1,39 @@
+.progress-bar {
+    width: 100%;
+    background-color: #b5aaaa;
+    border: .1rem solid #000000;
+    height: 1rem;
+}
+.progression {
+    background-color: #6cc65e;
+    height: 1rem;
+    width: 0%;    
+}
+
+.control-panel {
+    width: 100%;
+    height: 4rem;
+    border: .1rem solid #000000;
+    border-radius: 10px;
+    padding-top: .5rem;
+    padding-left: 15rem;
+    background-color: #b5aaaa;
+}
+
+.btns {
+    border-radius: 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: inline-block;    
+    padding-left: .8rem;
+    padding-top: .58rem;
+}
+.play-btn {
+    background-color: #6cc65e;
+}
+.stop-btn {
+    background-color: #d82424;
+}
+.pause-btn {
+    background-color: #2484d8;
+}

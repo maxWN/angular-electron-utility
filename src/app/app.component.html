@@ -18,13 +18,13 @@
   </li>
 </ul> -->
 <div>
-  <nav>
+  <nav class="nav-style">
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Logo</a>
+      <a href="#" class="brand-logo nav-bar-title">Swiss Army App</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a (click)="homeLink()">Home</a></li>
         <li><a (click)="timerWidget()">Timer</a></li>
-        <li><a>Widget</a></li>
+        <li><a (click)="soundWidget()">Widget</a></li>
       </ul>
     </div>
   </nav>
@@ -34,7 +34,6 @@
 
     <!-- <mat-checkbox></mat-checkbox> -->
 
-    <!-- ROUTER functionality does NOT work when used within Electron.js framework -->
     <router-outlet></router-outlet>
 
   <!-- </main> -->

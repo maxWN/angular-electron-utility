@@ -22,9 +22,9 @@
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">Logo</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
+        <li><a (click)="homeLink()">Home</a></li>
+        <li><a (click)="timerWidget()">Timer</a></li>
+        <li><a>Widget</a></li>
       </ul>
     </div>
   </nav>
@@ -33,36 +33,9 @@
   <!-- <main class="content"> -->
 
     <!-- <mat-checkbox></mat-checkbox> -->
-  <div class="col s12">  
-    <h1>Electron Timer</h1>
-  </div>    
-  <div class="progress-wrapper" *ngIf="maxVal">
-    <div class="text" *ngIf="!isFinished">
-      {{ max - current | number: '1.1-1' }}
-    </div>
-    
-    <div class="text" *ngIf="isFinished">
-        ding!
-        <audio src="assets/chime.mp3" autoplay></audio>
-    </div>
-    
-    <round-progress
-            [max]="max"
-            [current]="current"
-            [radius]="100"
-            [stroke]="25">
-    </round-progress>
-    
-  </div>
-  <div class="controls-wrapper">
 
-    <label>Seconds</label>
-    <input class="input" placeholder="number of seconds" type="text" 
-          [(ngModel)]="max"
-          (keydown)="reset()">
-        
-    <button *ngIf="currentVal <= 0" (click)="start()">Start</button>
-    <button *ngIf="!isFinished" (click)="finish()">Finish</button>
-  </div>
+    <!-- ROUTER functionality does NOT work when used within Electron.js framework -->
+    <router-outlet></router-outlet>
+
   <!-- </main> -->
 </div>

@@ -7,9 +7,10 @@ import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { TimerComponent } from './primarySectors/timer/timer.component';
 import { LandingPageComponent } from './primarySectors/landing-page/landing-page.component';
+import { SoundWidgetComponent } from './primarySectors/sound-widget/sound-widget.component';
 
 const appRoutes: Routes = [
-  { path: "", redirectTo: "/dashboard", pathMatch: "full" },
+  { path: "", redirectTo: "/timer", pathMatch: "full" },
   { path: "dashboard", component: LandingPageComponent },
   { path: "timer", component: TimerComponent }
 ];
@@ -18,7 +19,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     TimerComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    SoundWidgetComponent
   ],
   imports: [
     BrowserModule,

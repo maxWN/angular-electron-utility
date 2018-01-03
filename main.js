@@ -1,4 +1,6 @@
 const { app, BrowserWindow } = require('electron')
+var path = require('path')
+
 let win;
 function createWindow () {
   // Create the browser window.
@@ -6,7 +8,7 @@ function createWindow () {
     width: 600, 
     height: 600,
     backgroundColor: '#ffffff',
-    icon: `file://${__dirname}/dist/newTask.png`
+    icon: 'file://${__dirname}/dist/assets/sample-1.jpg'
   })
   win.loadURL(`file://${__dirname}/dist/index.html`)
   //// uncomment below to open the DevTools.
@@ -16,6 +18,10 @@ function createWindow () {
     win = null
   })
 }
+//    icon: `file://${__dirname}/src/assets/newItem.PNG`
+//    icon: path.join(__dirname+'assets/sample-1.jpg')
+//    doesn't find icon file
+
 // Create window on electron intialization
 app.on('ready', createWindow)
 // Quit when all windows are closed.

@@ -12,7 +12,8 @@ import { SoundWidgetComponent } from './primarySectors/sound-widget/sound-widget
 const appRoutes: Routes = [
   { path: "", redirectTo: "/timer", pathMatch: "full" },
   { path: "dashboard", component: LandingPageComponent },
-  { path: "timer", component: TimerComponent }
+  { path: "timer", component: TimerComponent },
+  { path: "sound-widget", component: SoundWidgetComponent }
 ];
 
 @NgModule({

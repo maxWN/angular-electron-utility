@@ -8,7 +8,7 @@ function createWindow () {
     width: 600, 
     height: 600,
     backgroundColor: '#ffffff',
-    icon: 'file://${__dirname}/dist/assets/sample-1.jpg'
+    icon: 'newItem.PNG'
   })
   win.loadURL(`file://${__dirname}/dist/index.html`)
   //// uncomment below to open the DevTools.

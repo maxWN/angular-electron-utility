@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Howl } from 'howler';
+import { Playlist } from '../../dataModels/playlist';
 
 @Component({
   selector: 'desk-sound-widget',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sound-widget.component.css']
 })
 export class SoundWidgetComponent implements OnInit {
+
+  public AudioFiles: Playlist;
 
   constructor() { }
 

@@ -37,3 +37,5 @@ app.on('activate', function () {
     createWindow()
   }
 })
+
+ELECTRON_ENABLE_LOGGING=1

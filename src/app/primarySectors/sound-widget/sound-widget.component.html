@@ -1,15 +1,21 @@
 <div class="row">
 
     <div class="col s12">        
-      <h1>{{songTitle}}</h1>
-      <div class="timer" *ngIf="isSongPlaying">{{currentPos}}</div>
+      <h1 *ngIf="AudioFiles.title">{{AudioFiles.title}}</h1>
+      <div class="timer" *ngIf="isSongPlaying">{{ currentPos }}</div>
       <div class="progress-bar">
-        <div class="progression" [ngStyle]="{'width': progressBar }"></div>        
+        <div class="progression" [ngStyle]="{'width': progressBar }">{{currentPos}}%</div>        
       </div>
       <div class="control-panel">
+
+        <div class="left-panel"></div>
+        <div class="center-panel">
         <div class="btns stop-btn" (click)="stopSong()"><i class="fa fa-stop-circle-o"></i></div>
         <div class="btns play-btn pad-left" (click)="playSong()"><i class="fa fa-play-circle-o"></i></div>
         <div class="btns pause-btn pad-left" (click)="pauseSong()"><i class="fa fa-pause-circle-o"></i></div>
+        </div>
+        <div class="right-panel"></div>
+        
       </div>
 
     </div>      

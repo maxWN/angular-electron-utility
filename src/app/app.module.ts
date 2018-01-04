@@ -8,6 +8,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { TimerComponent } from './primarySectors/timer/timer.component';
 import { LandingPageComponent } from './primarySectors/landing-page/landing-page.component';
 import { SoundWidgetComponent } from './primarySectors/sound-widget/sound-widget.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const appRoutes: Routes = [
   { path: "", redirectTo: "/dashboard", pathMatch: "full" },
@@ -25,9 +27,11 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),    
     FormsModule,
-    RoundProgressModule
+    RoundProgressModule,
+    NoopAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

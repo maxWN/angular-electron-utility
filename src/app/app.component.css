@@ -1,6 +1,11 @@
 .nav-bar-title {
     margin-left: 1rem;
+    margin-right: 1rem;
 }
 .nav-style {
     background-color: #d82424;
+}
+.swiss-flag {
+    color: #ffffff;
+    display:inline-block;
 }

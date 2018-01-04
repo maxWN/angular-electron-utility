@@ -14,6 +14,6 @@ This project was generated using the following software:
  * Windows 7
 
 :wrench:
-:hamer:
+:hammer:
 
 ...more details to come...

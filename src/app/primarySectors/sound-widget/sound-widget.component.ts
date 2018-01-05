@@ -9,6 +9,7 @@ import { Observable } from 'rxjs/Observable';
   templateUrl: './sound-widget.component.html',
   styleUrls: ['./sound-widget.component.css']
 })
+
 export class SoundWidgetComponent implements OnInit {
 
   public AudioFiles: Playlist = <Playlist>{};
@@ -22,7 +23,8 @@ export class SoundWidgetComponent implements OnInit {
     this.ngOnInit();
   }
 
-  ngOnInit() {
+  ngOnInit():void {
+
     this.AudioFiles.song = new Howl({
       src:["assets/sounds/Maid with the Flaxen Hair.mp3"],
       volume:.25,
@@ -30,21 +32,10 @@ export class SoundWidgetComponent implements OnInit {
     });
     this.AudioFiles.title = "Maid with the Flaxen Hair";
 
-    // this.AudioFiles.song.once("play", () => {
-    //   while(this.AudioFiles.song.playing()) {
-    //     // setTimeout(()=>{
-    //     this.currentPos = this.AudioFiles.song.seek() || 0;
-    //     console.log("current time"+Math.round(this.currentPos));
-    //     this.progressBar = String((Math.round(this.currentPos)/this.totalTime)*100
-    //     )+'%';
-    //     console.log("results: "+this.progressBar);        
-    //     // }, 1000);
-    //   }
-    // });
-
   }
 
   public playSong():void {
+
     this.AudioFiles.song.play();
 
     this.totalTime = this.AudioFiles.song.duration();
@@ -54,7 +45,7 @@ export class SoundWidgetComponent implements OnInit {
       
     interval
       .takeWhile(_ => this.AudioFiles.song.playing() )
-      .do(()=>{this.timeRemaining()} )
+      .do(() => { this.timeRemaining() } )
       .subscribe();
 
   }

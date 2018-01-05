@@ -1,4 +1,4 @@
-# AngularElectron Utility
+# Angular-Electron Utility
 
 ## Purpose
 

@@ -12,12 +12,15 @@ import { Observable } from 'rxjs/Observable';
 
 export class SoundWidgetComponent implements OnInit {
 
+  public SelectedTracks: Array<Playlist> = new Array<Playlist>();
   public AudioFiles: Playlist = <Playlist>{};
   //song title model
   public totalTime:number;
   public isSongPlaying:boolean=false;
   public progressBar:string;
   public currentPos:number;
+  public trackTime:string;
+  public minutes:number;
 
   constructor() {
     this.ngOnInit();
@@ -38,7 +41,7 @@ export class SoundWidgetComponent implements OnInit {
 
     this.AudioFiles.song.play();
 
-    this.totalTime = this.AudioFiles.song.duration();
+    this.totalTime = Math.round( this.AudioFiles.song.duration() );
     this.isSongPlaying = true;    
 
     const interval = Observable.interval(100);
@@ -53,6 +56,10 @@ export class SoundWidgetComponent implements OnInit {
   public stopSong():void {
     if( this.AudioFiles.song.playing([0])) {
       this.AudioFiles.song.stop();
+      this.isSongPlaying = false;
+      if(this.currentPos >= 0) {
+        this.currentPos = 0;
+      }
     }
   }
 
@@ -62,8 +69,26 @@ export class SoundWidgetComponent implements OnInit {
 
   public timeRemaining():void {
 
-    this.currentPos = Math.round(this.AudioFiles.song.seek())
-    this.progressBar = String(((this.currentPos)/this.totalTime)*100)+'%';
+    // if(this.currentPos & this.totalTime) {
+      this.currentPos = Math.round(this.AudioFiles.song.seek());
+      this.FormatTime();
+      this.progressBar = String(Math.round(((this.currentPos)/this.totalTime)*100))+'%';
+    // }
+
+  }
+
+  // howler.js functions duration() and seek()
+  // do not return rate of completion in  total amount of seconds
+  public FormatTime():void {
+
+    if(this.currentPos < 60) {
+      this.trackTime = ""+this.currentPos;
+    }
+    else {
+      let min:number = (this.currentPos-this.currentPos%60)/60;
+      let sec:number = this.currentPos%60;
+      this.trackTime = min+":"+sec;
+    }
 
   }
 

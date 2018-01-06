@@ -1,10 +1,10 @@
 <div class="row">
 
     <div class="col s12">        
-      <h1 *ngIf="AudioFiles.title">{{AudioFiles.title}}</h1>
-      <div class="timer" *ngIf="isSongPlaying">{{ currentPos }}</div>
+      <h1 *ngIf="AudioFiles.title"> {{ AudioFiles.title }} </h1>
+      <h1 class="timer" *ngIf="isSongPlaying">{{ trackTime }}</h1>
       <div class="progress-bar">
-        <div class="progression" [ngStyle]="{'width': progressBar }">{{currentPos}}%</div>        
+        <div class="progression" [ngStyle]="{'width': progressBar }" *ngIf=" currentPos > 0 "> {{ progressBar }} </div>        
       </div>
       <div class="control-panel">
 

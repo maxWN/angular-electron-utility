@@ -72,7 +72,7 @@ export class SoundWidgetComponent implements OnInit {
     // if(this.currentPos & this.totalTime) {
       this.currentPos = Math.round(this.AudioFiles.song.seek());
       this.FormatTime();
-      this.progressBar = String(Math.round(((this.currentPos)/this.totalTime)*100))+'%';
+      this.progressBar = String(((this.currentPos)/this.totalTime)*100)+'%';
     // }
 
   }
@@ -82,12 +82,12 @@ export class SoundWidgetComponent implements OnInit {
   public FormatTime():void {
 
     if(this.currentPos < 60) {
-      this.trackTime = ""+this.currentPos;
+      this.trackTime = "0:"+(this.currentPos < 10 ? "0"+this.currentPos : this.currentPos);
     }
     else {
       let min:number = (this.currentPos-this.currentPos%60)/60;
       let sec:number = this.currentPos%60;
-      this.trackTime = min+":"+sec;
+      this.trackTime = min+":"+ (sec < 10 ? "0"+sec : sec);
     }
 
   }

@@ -2,7 +2,7 @@
 
 ## Summary
 
-This is a cross platform app that provides a wide array of functionality all in one app! It provides the following functionality:
+This is a cross platform desktop app that provides a wide array of functionality all in one app! It provides the following functionality:
 
  * Video Player
  * Audio Player

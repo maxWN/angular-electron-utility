@@ -10,6 +10,8 @@ import { LandingPageComponent } from './primarySectors/landing-page/landing-page
 import { SoundWidgetComponent } from './primarySectors/sound-widget/sound-widget.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SoundAnimationComponent } from './shared/sound-animation/sound-animation.component';
+import { OptionMenuComponent } from './shared/option-menu/option-menu.component';
 
 const appRoutes: Routes = [
   { path: "", redirectTo: "/dashboard", pathMatch: "full" },
@@ -23,7 +25,9 @@ const appRoutes: Routes = [
     AppComponent,
     TimerComponent,
     LandingPageComponent,
-    SoundWidgetComponent
+    SoundWidgetComponent,
+    SoundAnimationComponent,
+    OptionMenuComponent
   ],
   imports: [
     BrowserModule,

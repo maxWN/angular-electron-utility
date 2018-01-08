@@ -25,16 +25,34 @@
 
 .side-panels {
     width:60%;
-    display:inline-block;
+    display: inline-flex;
     height: 100%;
 }
 .center-panel {
+    border-left: #000000 solid .1rem;
     width:60%;
-    display:inline-block;
+    display: inline-flex;
+    height: 100%;
+    border-right: #000000 solid .1rem;
+}
+
+.menu-buffer {
+    width: 40%;
+    height: 100%;
+}
+.menu-option {
+    width: 60%;
     height: 100%;
 }
 
-
+.center-panel-buffer {
+    width: 30%;
+    height: 100%;
+}
+.button-grouping {
+    width: 70%;
+    height: 100%;
+}
 .btns {
     border-radius: 1.5rem;
     width: 2.5rem;

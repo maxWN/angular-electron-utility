@@ -8,16 +8,27 @@
       </div>
       <div class="control-panel">
 
-        <div class="side-panels"></div>
+        <div class="side-panels">
+          <div class="menu-buffer"></div>
+          <div class="menu-option">
+            <div class="btns stop-btn"><i class="fa fa fa-bars" (click)="pauseSong()"></i></div>
+          </div>    
+        </div>
         <div class="center-panel">
-          <div class="btns stop-btn" (click)="stopSong()"><i class="fa fa-stop-circle-o"></i></div>
-          <div class="btns play-btn pad-left" (click)="playSong()"><i class="fa fa-play-circle-o"></i></div>
-          <div class="btns pause-btn pad-left" (click)="pauseSong()"><i class="fa fa-pause-circle-o"></i></div>
+          <div class="center-panel-buffer"></div>
+          <div class="button-grouping">
+            <div class="btns stop-btn" (click)="stopSong()"><i class="fa fa-stop-circle-o"></i></div>
+            <div class="btns play-btn pad-left" (click)="playSong()"><i class="fa fa-play-circle-o"></i></div>
+            <div class="btns pause-btn pad-left" (click)="pauseSong()"><i class="fa fa-pause-circle-o"></i></div>
+          </div>
         </div>
         <div class="side-panels"></div>
         
       </div>
 
-    </div>      
+    </div>     
+    <div class="col s12"> 
+      <desk-option-menu></desk-option-menu>   
+    </div> 
 
 </div>

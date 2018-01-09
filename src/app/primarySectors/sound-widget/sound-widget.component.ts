@@ -72,7 +72,8 @@ export class SoundWidgetComponent implements OnInit {
     // if(this.currentPos & this.totalTime) {
       this.currentPos = Math.round(this.AudioFiles.song.seek());
       this.FormatTime();
-      this.progressBar = String(((this.currentPos)/this.totalTime)*100)+'%';
+      this.progressBar = (((this.currentPos)/this.totalTime)*100).toFixed(2)+'%';
+      // this.progressBar = String(((this.currentPos)/this.totalTime)*100)+'%';
     // }
 
   }

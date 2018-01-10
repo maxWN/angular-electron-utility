@@ -21,7 +21,7 @@ This project was generated using the following software:
 
 ## Purpose
 
-The overall purpose of this project is to create a small, dynamic, multi-purpose, cross-platform desktop app. This app merely demonstrates knowledge of electron.js,angular.js, and node.js while providing a wide array of useful functionality.
+The overall purpose of this project is to create a small, dynamic, multi-purpose, cross-platform desktop app. This app merely demonstrates knowledge of electron.js, angular.js, and node.js while providing a wide array of useful functionality.
 
 :wrench:
 :nut_and_bolt:

@@ -1,3 +1,8 @@
 .menu-icons {
     color: #d82424
 }
+
+.search-function {
+    display: none;
+    background-color: #c7c7c7;
+}

@@ -8,11 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OptionMenuComponent implements OnInit {
 
-
+  isSearchDisplayed:boolean=false;
 
   constructor() { }
 
-  ngOnInit() {
+  public ngOnInit():void {
+  }
+
+  public displaySearch():void {
+    this.isSearchDisplayed=!this.isSearchDisplayed;
   }
 
 }

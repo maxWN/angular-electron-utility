@@ -9,3 +9,21 @@
     color: #fafafa;
     display:inline-block;
 }
+.dropdown-content {
+    /*display: block; /* do not change - need for testing purposes*/
+    /* position: relative; */
+    margin-left:95%; /* do not change - need for testing purposes*/
+}
+
+.makeReal {
+    display:block;
+}
+
+/* .ul.dropdown-content:hover {
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -ms-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+    box-shadow: 0 8px 8px rgba(10, 10, 10, 0.1);
+} */

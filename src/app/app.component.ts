@@ -6,6 +6,7 @@ import 'rxjs/add/operator/takeWhile';
 import 'rxjs/add/operator/do';
 import { Router } from '@angular/router';
 import { Route } from '@angular/router/src/config';
+// import { clearInterval } from 'timers';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,10 @@ import { Route } from '@angular/router/src/config';
 })
 
 export class AppComponent {
+
+  ifClicked:boolean=false;
+  showDropdown:number=0.1;
+  interval:any;
 
   constructor(private router: Router) {
   }
@@ -26,11 +31,26 @@ export class AppComponent {
     this.router.navigate(['/dashboard']);   
   }
 
-  soundWidget():void {
-    this.router.navigate(['/sound-widget']);
+  openDropdown():void {
+    this.ifClicked=true;
+    this.interval = setInterval(this.vaporize(), 1000);
   }
 
+  //increase drop-down menu opacity
+  vaporize():void {
 
+    while(this.showDropdown < 1) {
+      this.showDropdown++
+
+      if(this.showDropdown == .9) {
+         clearInterval(this.interval);
+      }
+    }    
+  }
+
+  soundWidget():void {
+    this.router.navigate(['/sound-widget']);
+  }  
 
 
 

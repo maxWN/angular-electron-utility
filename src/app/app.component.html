@@ -1,13 +1,20 @@
 
 <div>
+  <!-- Dropdown Structure -->
+<ul class="dropdown-content" [ngClass]="{'makeReal': ifClicked}" [ngStyle]="{'opacity': showDropdown }">
+    <li><a (click)="soundWidget()">Music Player</a></li>
+    <li><a href="#!">Video Player</a></li>
+    <li class="divider"></li>
+    <li><a href="#!">Text Editor</a></li>
+  </ul>
   <nav class="nav-style">
     <div class="nav-wrapper">
       <div class="swiss-flag nav-bar-title"><i class="fa fa-plus-square-o fa-3x"></i></div><a (click)="homeLink()"
        class="brand-logo">Swiss Army App</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a (click)="homeLink()">Home</a></li>
-        <li><a (click)="timerWidget()">Timer</a></li>
-        <li><a (click)="soundWidget()">Widgets</a></li>
+        <li class=""><a (click)="homeLink()">Home</a></li>
+        <li class=""><a (click)="timerWidget()">Timer</a></li>
+        <li class="drop-down-item"><a (click)="openDropdown()">Widgets</a></li>
       </ul>
     </div>
   </nav>
@@ -18,5 +25,4 @@
 
     <router-outlet></router-outlet>
 
-  <!-- </main> -->
 </div>

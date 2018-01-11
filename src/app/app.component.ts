@@ -17,7 +17,8 @@ import { Route } from '@angular/router/src/config';
 export class AppComponent {
 
   ifClicked:boolean=false;
-  showDropdown:number=0.1;
+  showDropdown:number=0;
+  opaqueProperty:string;
   interval:any;
 
   constructor(private router: Router) {
@@ -33,15 +34,15 @@ export class AppComponent {
 
   openDropdown():void {
     this.ifClicked=true;
-    this.interval = setInterval(this.vaporize(), 1000);
+    this.interval = setInterval(this.vaporize(), 8000);
   }
 
   //increase drop-down menu opacity
   vaporize():void {
 
     while(this.showDropdown < 1) {
-      this.showDropdown++
-
+      this.showDropdown=this.showDropdown+.1;
+      this.opaqueProperty=String(this.showDropdown);
       if(this.showDropdown == .9) {
          clearInterval(this.interval);
       }

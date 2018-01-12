@@ -2,7 +2,17 @@
   <ul class="collection with-header">
       <li class="collection-header"><h4>My Music</h4></li>
       <li class="collection-item"><div>Search Music<a (click)="displaySearch()" class="secondary-content"><i class="menu-icons fa fa-search"></i></a></div></li>
-      <li class="collection-item" [ngClass]="{'search-function': (isSearchDisplayed==false), 'reveal-search': (isSearchDisplayed==true)}"><input type="file" name="img" multiple></li>
+      <li class="collection-item" [ngClass]="{'search-function': (isSearchDisplayed==false), 'reveal-search': (isSearchDisplayed==true)}">
+          <div class="file-field input-field">
+              <div class="btn">
+                <span>Select File</span>
+                <input type="file" multiple>
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text" placeholder="Upload one or more files">
+              </div>
+            </div>
+      </li>
       <li class="collection-item"><div>Select From Songs<a href="#!" class="secondary-content"><i class=" menu-icons fa fa-indent"></i></a></div></li>
       <li class="collection-item search-function"><input type="file" name="img" multiple></li>
       <li class="collection-item"><div>Change Animation<a href="#!" class="secondary-content"><i class=" menu-icons fa fa-picture-o"></i></a></div></li>

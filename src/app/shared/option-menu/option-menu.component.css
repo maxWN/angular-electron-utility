@@ -1,5 +1,5 @@
 .menu-icons {
-    color: #d82424
+    color: #d82424;
 }
 
 .search-function {
@@ -10,4 +10,17 @@
 .reveal-search {
     display: block;
     background-color: #c7c7c7;    
+}
+
+.input:not([type]), input[type=date]:not(.browser-default), input[type=datetime-local]:not(.browser-default), 
+input[type=datetime]:not(.browser-default), input[type=email]:not(.browser-default), input[type=number]:not(.browser-default),
+input[type=password]:not(.browser-default), input[type=search]:not(.browser-default), input[type=tel]:not(.browser-default), 
+input[type=text]:not(.browser-default), input[type=time]:not(.browser-default), input[type=url]:not(.browser-default), 
+textarea.materialize-textarea {
+    background-color: #000000;
+    padding-left:1rem;
+}
+
+.btn, .btn-large {
+    background-color: #d82424;
 }

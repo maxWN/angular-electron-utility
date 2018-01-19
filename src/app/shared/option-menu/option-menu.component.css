@@ -19,6 +19,7 @@ input[type=text]:not(.browser-default), input[type=time]:not(.browser-default), 
 textarea.materialize-textarea {
     background-color: #000000;
     padding-left:1rem;
+    color: #ffffff;
 }
 
 .btn, .btn-large {

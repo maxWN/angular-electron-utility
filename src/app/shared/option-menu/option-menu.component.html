@@ -6,10 +6,10 @@
           <div class="file-field input-field">
               <div class="btn">
                 <span>Select File</span>
-                <input type="file" multiple>
+                <input type="file" (change)="onHandleUpload($event)">
               </div>
               <div class="file-path-wrapper">
-                <input class="file-path validate" type="text" placeholder="Upload one or more files">
+                <input class="file-path validate" type="text" [value]="songTitle">
               </div>
             </div>
       </li>

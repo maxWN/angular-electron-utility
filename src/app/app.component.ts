@@ -37,7 +37,7 @@ export class AppComponent {
   }
 
   openDropdown():void {
-    this.ifClicked=true;
+    this.ifClicked=!this.ifClicked;
     this.interval = setInterval(this.vaporize(), 8000);
   }
 

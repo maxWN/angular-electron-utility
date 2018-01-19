@@ -28,6 +28,10 @@ export class AppComponent {
     this.router.navigate(['/timer']);
   }
 
+  textEditorWidget(): void {
+    this.router.navigate(['/text-editor-widget']);
+  }
+
   homeLink():void {
     this.router.navigate(['/dashboard']);   
   }

@@ -1,12 +1,12 @@
 
 <div>
   <!-- Dropdown Structure -->
-<ul class="dropdown-content" [ngClass]="{'makeReal': ifClicked }" [ngStyle]="{'opacity': opaqueProperty }">
+<ul class="dropdown-content" [ngClass]="{'make-real': ifClicked }" [ngStyle]="{'opacity': opaqueProperty }">
     <li><a (click)="soundWidget()">Music Player</a></li>
     <li class="divider"></li>
     <li><a href="#!">Video Player</a></li>
     <li class="divider"></li>
-    <li><a href="#!">Text Editor</a></li>
+    <li><a (click)="textEditorWidget()">Text Editor</a></li>
   </ul>
   <nav class="nav-style">
     <div class="nav-wrapper">

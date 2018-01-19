@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+// import {EditorModule} from 'primeng/primeng';
 
 @Component({
   selector: 'desk-text-editor-widget',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TextEditorWidgetComponent implements OnInit {
 
+  public text:string;
+
   constructor() { }
 
   ngOnInit() {
+
   }
+
+
 
 }

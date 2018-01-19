@@ -14,12 +14,15 @@ import { SoundAnimationComponent } from './shared/sound-animation/sound-animatio
 import { OptionMenuComponent } from './shared/option-menu/option-menu.component';
 import { VideoWidgetComponent } from './primarySectors/video-widget/video-widget.component';
 import { TextEditorWidgetComponent } from './primarySectors/text-editor-widget/text-editor-widget.component';
+import { QuillModule } from 'ngx-quill'
+import {NgxElectronModule} from 'ngx-electron';
 
 const appRoutes: Routes = [
   { path: "", redirectTo: "/dashboard", pathMatch: "full" },
   { path: "dashboard", component: LandingPageComponent },
   { path: "timer", component: TimerComponent },
-  { path: "sound-widget", component: SoundWidgetComponent }
+  { path: "sound-widget", component: SoundWidgetComponent },
+  { path: "text-editor-widget", component: TextEditorWidgetComponent }
 ];
 
 @NgModule({
@@ -36,10 +39,12 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    QuillModule,
     RouterModule.forRoot(appRoutes),    
     FormsModule,
     RoundProgressModule,
     NoopAnimationsModule,
+    NgxElectronModule
   ],
   providers: [],
   bootstrap: [AppComponent]

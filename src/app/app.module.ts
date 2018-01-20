@@ -14,7 +14,7 @@ import { SoundAnimationComponent } from './shared/components/sound-animation/sou
 import { OptionMenuComponent } from './shared/components/option-menu/option-menu.component';
 import { VideoWidgetComponent } from './primarySectors/video-widget/video-widget.component';
 import { TextEditorWidgetComponent } from './primarySectors/text-editor-widget/text-editor-widget.component';
-// import { QuillModule } from 'ngx-quill'
+import { QuillModule } from 'ngx-quill'
 import { NgxElectronModule } from 'ngx-electron';
 
 const appRoutes: Routes = [
@@ -39,7 +39,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    // QuillModule,
+    QuillModule,
     RouterModule.forRoot(appRoutes),    
     FormsModule,
     // RoundProgressModule,

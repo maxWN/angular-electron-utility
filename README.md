@@ -27,4 +27,3 @@ The overall purpose of this project is to create a small, dynamic, multi-purpose
 :nut_and_bolt:
 
 ...more details to come...
-"# angular-electron-utility" 

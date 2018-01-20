@@ -1,7 +1,14 @@
-<div class="row">
+<div class="row upper-buffer">
     <div class="col s12">
-
-        <quill-editor></quill-editor>
-        
+        <div class="additional-controls">
+            <div class="button-grouping">
+                <div class="btns stop-btn" (click)="getURL()"><i class="fa fa-stop-circle-o"></i></div>
+                <div class="btns play-btn pad-left"><i class="fa fa-play-circle-o"></i></div>
+                <div class="btns pause-btn pad-left"><i class="fa fa-pause-circle-o"></i></div>
+              </div>
+        </div>
+        <div class="quill-container">
+            <quill-editor [(ngModel)]="text"></quill-editor>
+        </div>
     </div>
 </div>

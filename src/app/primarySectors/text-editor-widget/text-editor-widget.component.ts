@@ -16,6 +16,10 @@ export class TextEditorWidgetComponent implements OnInit {
 
   }
 
+  getURL():void {
+    alert("located at: "+window.location.href + "\n"+this.text);
+  }
+
 
 
 }

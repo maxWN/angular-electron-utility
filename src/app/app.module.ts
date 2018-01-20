@@ -10,8 +10,8 @@ import { LandingPageComponent } from './primarySectors/landing-page/landing-page
 import { SoundWidgetComponent } from './primarySectors/sound-widget/sound-widget.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SoundAnimationComponent } from './shared/sound-animation/sound-animation.component';
-import { OptionMenuComponent } from './shared/option-menu/option-menu.component';
+import { SoundAnimationComponent } from './shared/components/sound-animation/sound-animation.component';
+import { OptionMenuComponent } from './shared/components/option-menu/option-menu.component';
 import { VideoWidgetComponent } from './primarySectors/video-widget/video-widget.component';
 import { TextEditorWidgetComponent } from './primarySectors/text-editor-widget/text-editor-widget.component';
 // import { QuillModule } from 'ngx-quill'

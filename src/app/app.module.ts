@@ -16,6 +16,7 @@ import { VideoWidgetComponent } from './primarySectors/video-widget/video-widget
 import { TextEditorWidgetComponent } from './primarySectors/text-editor-widget/text-editor-widget.component';
 import { QuillModule } from 'ngx-quill'
 import { NgxElectronModule } from 'ngx-electron';
+import { FooterComponent } from './primarySectors/footer/footer.component';
 
 const appRoutes: Routes = [
   { path: "", redirectTo: "/dashboard", pathMatch: "full" },
@@ -34,7 +35,8 @@ const appRoutes: Routes = [
     SoundAnimationComponent,
     OptionMenuComponent,
     VideoWidgetComponent,
-    TextEditorWidgetComponent
+    TextEditorWidgetComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,23 @@
+
+.footer-primary {
+    background-color: #d82424;
+}
+
+.footer-secondary {
+    background-color: #8e0000;
+}
+
+.git-link {
+    background-color: #fafafa;
+    color: #000000;
+    border-radius: 15px;
+    width: 8rem;
+    padding-left: 1rem;
+    padding-top: .25rem;
+}
+
+.git-link a:link, .git-link a:hover, .git-link a:visited, .git-link a:active {
+    font-size: 1.5rem;
+    color: #000000;
+    margin-left: 1rem;
+}

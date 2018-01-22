@@ -17,6 +17,7 @@ import { TextEditorWidgetComponent } from './primarySectors/text-editor-widget/t
 import { QuillModule } from 'ngx-quill'
 import { NgxElectronModule } from 'ngx-electron';
 import { FooterComponent } from './primarySectors/footer/footer.component';
+import { FileReaderService } from '../app/shared/services/file-reader/file-reader.service';
 
 const appRoutes: Routes = [
   { path: "", redirectTo: "/dashboard", pathMatch: "full" },
@@ -48,7 +49,7 @@ const appRoutes: Routes = [
     NoopAnimationsModule,
     NgxElectronModule
   ],
-  providers: [],
+  providers: [FileReaderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

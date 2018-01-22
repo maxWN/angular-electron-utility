@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { Howl } from 'howler';
 import { Playlist } from '../../dataModels/playlist';
 import { Observable } from 'rxjs/Observable';
@@ -12,6 +12,8 @@ import { Observable } from 'rxjs/Observable';
 
 export class SoundWidgetComponent implements OnInit {
 
+  //region class variables 
+
   public SelectedTracks: Array<Playlist> = new Array<Playlist>();
   public AudioFiles: Playlist = <Playlist>{};
   //song title model
@@ -22,11 +24,14 @@ export class SoundWidgetComponent implements OnInit {
   public trackTime:string;
   public minutes:number;
 
+  //endregion class variables
+
   constructor() {
-    this.ngOnInit();
   }
 
-  ngOnInit():void {
+  //region public functions
+
+  public ngOnInit():void {
 
     this.AudioFiles.song = new Howl({
       src:["assets/sounds/Maid with the Flaxen Hair.mp3"],
@@ -71,7 +76,7 @@ export class SoundWidgetComponent implements OnInit {
 
     // if(this.currentPos & this.totalTime) {
       this.currentPos = Math.round(this.AudioFiles.song.seek());
-      this.FormatTime();
+      this.formatTime();
       this.progressBar = (((this.currentPos)/this.totalTime)*100).toFixed(2)+'%';
       // this.progressBar = String(((this.currentPos)/this.totalTime)*100)+'%';
     // }
@@ -80,7 +85,7 @@ export class SoundWidgetComponent implements OnInit {
 
   // howler.js functions duration() and seek()
   // do not return rate of completion in  total amount of seconds
-  public FormatTime():void {
+  public formatTime():void {
 
     if(this.currentPos < 60) {
       this.trackTime = "0:"+(this.currentPos < 10 ? "0"+this.currentPos : this.currentPos);
@@ -92,5 +97,7 @@ export class SoundWidgetComponent implements OnInit {
     }
 
   }
+
+  //endregion public functions
 
 }

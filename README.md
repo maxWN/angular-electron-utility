@@ -17,7 +17,6 @@ This project was generated using the following software:
  * Electron.js version 1.7.10
  * Node.js version 6.10.2
  * Materialize-css version 0.100.2
- * Windows 7
 
 ## Purpose
 

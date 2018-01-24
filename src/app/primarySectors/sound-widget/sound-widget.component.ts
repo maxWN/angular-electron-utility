@@ -2,6 +2,7 @@ import { Component, OnInit, OnChanges, Input } from '@angular/core';
 import { Howl } from 'howler';
 import { Playlist } from '../../dataModels/playlist';
 import { Observable } from 'rxjs/Observable';
+import { EventEmitter } from 'events';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./sound-widget.component.css']
 })
 
-export class SoundWidgetComponent implements OnInit, OnChanges {
+export class SoundWidgetComponent implements OnInit {
 
   //region class variables 
 
@@ -23,7 +24,7 @@ export class SoundWidgetComponent implements OnInit, OnChanges {
   public currentPos:number;
   public trackTime:string;
   public minutes:number;
-  @Input() filePath:any;
+  // @Input() filePath:any;
 
   //endregion class variables
 
@@ -99,8 +100,8 @@ export class SoundWidgetComponent implements OnInit, OnChanges {
 
   }
 
-  ngOnChanges() {
-
+  public handleSongSelection(song):void {
+    alert("Song selected: "+song);
   }
 
   //endregion public functions

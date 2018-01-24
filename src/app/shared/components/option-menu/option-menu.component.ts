@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Event } from 'electron';
 import { FileReaderService } from '../../services/file-reader/file-reader.service';
 
@@ -12,6 +12,8 @@ export class OptionMenuComponent implements OnInit {
   isSearchDisplayed:boolean=false;
   songTitle:string="Upload one or more files";
   // fileReaderSvc:FileReaderService;
+  filePath: any;
+  @Output() eventClick = new EventEmitter();
 
   constructor(private fileReaderSvc:FileReaderService) {
     // this.fileReaderSvc=fileReaderSvc;
@@ -30,7 +32,6 @@ export class OptionMenuComponent implements OnInit {
       if($event) {
         let x:File = $event.target.files[0];
         this.readURL($event);
-        alert("file name: "+x.name);
       }
     }
 
@@ -43,12 +44,14 @@ export class OptionMenuComponent implements OnInit {
 
       // if (input.files && input.files[0]) {
         let reader = new FileReader();
-        this.fileReaderSvc.readFilePath(input);
+        // this.fileReaderSvc.readFilePath(input);
 
-      //   reader.onloadend = function(e) {
-      //     //insert service call
-      //   }
+        reader.onloadend = (e) => {
+          //insert service call
+          this.filePath = e.target;
+        }
 
+        this.eventClick.emit(input.target.files[0].name);
       //   // this.songTitle=String(input.files[0]);
       //   reader.readAsDataURL(input.files[0]);
       // // }

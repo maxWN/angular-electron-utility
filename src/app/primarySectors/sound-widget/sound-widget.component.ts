@@ -3,6 +3,7 @@ import { Howl } from 'howler';
 import { Playlist } from '../../dataModels/playlist';
 import { Observable } from 'rxjs/Observable';
 import { EventEmitter } from 'events';
+import { ElectronService } from 'ngx-electron';
 
 
 @Component({
@@ -28,7 +29,7 @@ export class SoundWidgetComponent implements OnInit {
 
   //endregion class variables
 
-  constructor() {
+  constructor(private _electronService: ElectronService) {
   }
 
   //region public functions
@@ -101,7 +102,8 @@ export class SoundWidgetComponent implements OnInit {
   }
 
   public handleSongSelection(song):void {
-    alert("Song selected: "+song);
+    // alert("Song selected: "+song);
+    this._electronService.ipcRenderer.send('open-modal');
   }
 
   //endregion public functions

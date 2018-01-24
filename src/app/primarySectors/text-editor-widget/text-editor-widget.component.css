@@ -1,10 +1,11 @@
 
 .upper-buffer {
     margin-top: 10rem;
+    margin-bottom: 10rem;
 }
 
 .additional-controls {
-    height: 10rem;
+    height: 6rem;
     width: 100%; 
     background-color: #8e0000;
     color: #c7c7c7;
@@ -12,7 +13,7 @@
 }
 
 .quill-container {
-    background-color: #c7c7c7;;
+    background-color: #c7c7c7;
 }
 
 .button-grouping {

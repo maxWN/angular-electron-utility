@@ -14,7 +14,8 @@ import * as kf from '../../shared/keyframes';
 })
 export class LandingPageComponent implements OnInit {
 
-  animationState:string;
+  public animationState:string;
+  public APP_SUMMARY: string;
 
   constructor() { }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit, OnChanges, Input } from '@angular/core';
 import { Howl } from 'howler';
 import { Playlist } from '../../dataModels/playlist';
 import { Observable } from 'rxjs/Observable';
@@ -10,7 +10,7 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./sound-widget.component.css']
 })
 
-export class SoundWidgetComponent implements OnInit {
+export class SoundWidgetComponent implements OnInit, OnChanges {
 
   //region class variables 
 
@@ -23,6 +23,7 @@ export class SoundWidgetComponent implements OnInit {
   public currentPos:number;
   public trackTime:string;
   public minutes:number;
+  @Input() filePath:any;
 
   //endregion class variables
 
@@ -95,6 +96,10 @@ export class SoundWidgetComponent implements OnInit {
       let sec:number = this.currentPos%60;
       this.trackTime = min+":"+ (sec < 10 ? "0"+sec : sec);
     }
+
+  }
+
+  ngOnChanges() {
 
   }
 

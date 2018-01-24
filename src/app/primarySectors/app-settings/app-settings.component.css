@@ -1,0 +1,11 @@
+.buffer {
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+}
+
+.settings-panel {
+    background-color: #c7c7c7;
+    border: .1rem #000000 solid;
+    padding: 1rem;
+    border-radius: 10px;
+}

@@ -41,6 +41,10 @@ export class AppComponent {
     this.interval = setInterval(this.vaporize(), 8000);
   }
 
+  appSettingsLink():void {
+    this.router.navigate(['/app-settings']);
+  }
+
   //increase drop-down menu opacity
   vaporize():void {
 

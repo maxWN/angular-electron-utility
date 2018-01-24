@@ -18,13 +18,15 @@ import { QuillModule } from 'ngx-quill'
 import { NgxElectronModule } from 'ngx-electron';
 import { FooterComponent } from './primarySectors/footer/footer.component';
 import { FileReaderService } from '../app/shared/services/file-reader/file-reader.service';
+import { AppSettingsComponent } from './primarySectors/app-settings/app-settings.component';
 
 const appRoutes: Routes = [
   { path: "", redirectTo: "/dashboard", pathMatch: "full" },
   { path: "dashboard", component: LandingPageComponent },
   { path: "timer", component: TimerComponent },
   { path: "sound-widget", component: SoundWidgetComponent },
-  { path: "text-editor-widget", component: TextEditorWidgetComponent }
+  { path: "text-editor-widget", component: TextEditorWidgetComponent },
+  { path: "app-settings", component: AppSettingsComponent }
 ];
 
 @NgModule({
@@ -37,7 +39,8 @@ const appRoutes: Routes = [
     OptionMenuComponent,
     VideoWidgetComponent,
     TextEditorWidgetComponent,
-    FooterComponent
+    FooterComponent,
+    AppSettingsComponent
   ],
   imports: [
     BrowserModule,

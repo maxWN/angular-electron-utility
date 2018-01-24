@@ -1,11 +1,11 @@
-.modal-header {
+.modal-margins {
     background-color: #d82424;
-    color: #fafafa;
+    color: #000000;
     display: inline-block;
+    width: 100%;
 }
 
-.modal-footer {
-    background-color: #d82424;
-    color: #fafafa;
-    display: inline-block;
+.left-buffer {
+    margin-left: 1rem;
 }
+

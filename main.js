@@ -1,39 +1,38 @@
 const { app, BrowserWindow, ipcMain } = require('electron')
 var path = require('path')
 
-let win;
+let mainWindow;
 function createWindow () {
 
   // Create the browser window.
-  win = new BrowserWindow({
+  mainWindow = new BrowserWindow({
     width: 700, 
     height: 650,
     backgroundColor: '#ffffff',
     icon: 'Mahm0udwally-All-Flat-Music.ico'
   })
 
-  win.loadURL(`file://${__dirname}/dist/index.html`);
+  mainWindow.loadURL(`file://${__dirname}/dist/index.html`);
 
   //test modal window
-  modalWindow = new BrowserWindow({frame:false,
+  modalWindow = new BrowserWindow({
     width: 400, 
-    height: 350,
+    height: 325,
     width: 400, 
-    height: 350,
+    height: 325,
     backgroundColor: '#ffffff',
     show: false,
     icon: 'Mahm0udwally-All-Flat-Music.ico',
-    parent: win
+    parent: mainWindow
   })
-  //C:\Users\mnakel.SISFIRST\Documents\Development Files\LOCAL_PROJECTS\angular-desktop\main.js
-  //C:\Users\mnakel.SISFIRST\Documents\Development Files\LOCAL_PROJECTS\angular-desktop\src\app\shared\templates
+
   modalWindow.loadURL(`file://${__dirname}/src/app/shared/templates/generic-modal.tmp.html`)
 
   //// uncomment below to open the DevTools.
-  // win.webContents.openDevTools()
+  // mainWindow.webContents.openDevTools()
   // Event when the window is closed.
-  win.on('closed', function () {
-    win = null
+  mainWindow.on('closed', function () {
+    mainWindow = null
   })
 
 }
@@ -59,7 +58,7 @@ app.on('window-all-closed', function () {
 
 app.on('activate', function () {
   // macOS specific close process
-  if (win === null) {
+  if (mainWindow === null) {
     createWindow()
   }
 });

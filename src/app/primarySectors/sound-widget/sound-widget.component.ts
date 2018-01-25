@@ -1,9 +1,9 @@
 import { Component, OnInit, OnChanges, Input } from '@angular/core';
 import { Howl } from 'howler';
-import { Playlist } from '../../dataModels/playlist';
 import { Observable } from 'rxjs/Observable';
 import { EventEmitter } from 'events';
 import { ElectronService } from 'ngx-electron';
+import { Playlist } from '../../shared/models/playlist';
 
 
 @Component({

@@ -17,9 +17,9 @@ function createWindow () {
   //test modal window
   modalWindow = new BrowserWindow({
     width: 400, 
-    height: 325,
-    width: 400, 
-    height: 325,
+    height: 475,
+    maxWidth: 400, 
+    maxHeight: 475,
     backgroundColor: '#ffffff',
     show: false,
     icon: 'Mahm0udwally-All-Flat-Music.ico',

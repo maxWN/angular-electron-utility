@@ -87,7 +87,7 @@ export class SoundWidgetComponent implements OnInit {
   }
 
   // howler.js functions duration() and seek()
-  // do not return rate of completion in  total amount of seconds
+  // do not return rate of completion in total amount of seconds
   public formatTime():void {
 
     if(this.currentPos < 60) {

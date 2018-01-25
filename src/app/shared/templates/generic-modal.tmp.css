@@ -38,5 +38,11 @@
 
 html {
     width: 400px;
-    height: 325px;
+    height: 475px;
+    overflow: hidden;
+    /* overflow-y: scroll; */
+}
+
+.temp {
+    visibility: hidden;
 }

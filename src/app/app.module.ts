@@ -20,6 +20,7 @@ import { FooterComponent } from './primarySectors/footer/footer.component';
 import { FileReaderService } from '../app/shared/services/file-reader/file-reader.service';
 import { AppSettingsComponent } from './primarySectors/app-settings/app-settings.component';
 import { InteractiveMapComponent } from './primarySectors/interactive-map/interactive-map.component';
+import { AngularOpenlayersModule } from 'ngx-openlayers';
 
 const appRoutes: Routes = [
   { path: "", redirectTo: "/dashboard", pathMatch: "full" },
@@ -53,7 +54,9 @@ const appRoutes: Routes = [
     FormsModule,
     // RoundProgressModule,
     NoopAnimationsModule,
-    NgxElectronModule
+    NgxElectronModule,
+    AngularOpenlayersModule
+
   ],
   providers: [FileReaderService],
   bootstrap: [AppComponent]

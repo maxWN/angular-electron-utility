@@ -45,6 +45,10 @@ export class AppComponent {
     this.router.navigate(['/app-settings']);
   }
 
+  mapLink():void {
+    this.router.navigate(['/interactive-map']);
+  }
+
   //increase drop-down menu opacity
   vaporize():void {
 

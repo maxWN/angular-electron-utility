@@ -1,5 +1,6 @@
 .upper-buffer {
-    margin-top: 10rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
 }
 a.skiplink {
     position: absolute;
@@ -19,4 +20,7 @@ a.skiplink {
   }
   #map:focus {
     outline: #4A74A8 solid 0.15em;
+  }
+  .internal-map {
+    margin-left:10rem;
   }

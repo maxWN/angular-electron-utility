@@ -4,13 +4,15 @@
     <div id="map" class="map" tabindex="0"></div>
     <button id="zoom-out">Zoom out</button>
     <button id="zoom-in">Zoom in</button> -->
-    <aol-map [width]="'500px'" [height]="'300'">
-      <aol-view [zoom]="2">
+    <div class="internal-map">
+    <aol-map [width]="'720px'" [height]="'350'">
+      <aol-view [zoom]="6">
           <aol-coordinate [x]="5.795122" [y]="45.210225" [srid]="'EPSG:4326'"></aol-coordinate>
       </aol-view>
       <aol-layer-tile>
           <aol-source-osm></aol-source-osm>
       </aol-layer-tile>
     </aol-map>
+    </div>
   </div>
 </div>

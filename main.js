@@ -1,6 +1,7 @@
 const { app, BrowserWindow, ipcMain } = require('electron')
 var path = require('path')
 
+let modalTitle;
 let mainWindow;
 function createWindow () {
 
@@ -23,7 +24,8 @@ function createWindow () {
     backgroundColor: '#ffffff',
     show: false,
     icon: 'Mahm0udwally-All-Flat-Music.ico',
-    parent: mainWindow
+    parent: mainWindow,
+    title: modalTitle
   })
 
   modalWindow.loadURL(`file://${__dirname}/src/app/shared/templates/generic-modal.tmp.html`)
@@ -42,6 +44,7 @@ function createWindow () {
 
 
 ipcMain.on('open-modal', (event, arg) => {
+  modalTitle = arg;
   modalWindow.show();
 });
 

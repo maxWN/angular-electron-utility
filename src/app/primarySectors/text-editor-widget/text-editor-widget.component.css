@@ -4,36 +4,10 @@
     margin-bottom: 10rem;
 }
 
-.additional-controls {
-    height: 6rem;
-    width: 100%; 
-    background-color: #8e0000;
-    color: #c7c7c7;
-    padding: 1rem;
-}
-
 .quill-container {
     background-color: #c7c7c7;
 }
 
-.button-grouping {
-    width: 70%;
-    height: 100%;
-}
-.btns {
-    border-radius: 1.5rem;
-    width: 2.5rem;
-    height: 2.5rem;
-    display: inline-block;    
-    padding-left: .8rem;
-    padding-top: .58rem;
-}
-.play-btn {
-    background-color: #6cc65e;
-}
-.stop-btn {
-    background-color: #d82424;
-}
-.pause-btn {
-    background-color: #2484d8;
+.map-backdrop {
+    background-color: #000000;
 }

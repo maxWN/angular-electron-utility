@@ -24,3 +24,7 @@ a.skiplink {
   .internal-map {
     margin-left:10rem;
   }
+  
+.map-backdrop {
+  background-color: #000000;
+}

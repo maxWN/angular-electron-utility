@@ -36,12 +36,12 @@ export class SoundWidgetComponent implements OnInit {
 
   public ngOnInit():void {
 
-    this.AudioFiles.song = new Howl({
-      src:["assets/sounds/Maid with the Flaxen Hair.mp3"],
-      volume:.25,
-      onend:() => { alert("\"Maid with the Flaxen Hair\" has finished.") }
-    });
-    this.AudioFiles.title = "Maid with the Flaxen Hair";
+    // this.AudioFiles.song = new Howl({
+    //   src:["assets/sounds/Maid with the Flaxen Hair.mp3"],
+    //   volume:.25,
+    //   onend:() => { alert("\"Maid with the Flaxen Hair\" has finished.") }
+    // });
+    // this.AudioFiles.title = "Maid with the Flaxen Hair";
 
   }
 
@@ -102,8 +102,16 @@ export class SoundWidgetComponent implements OnInit {
   }
 
   public handleSongSelection(song):void {
-    // alert("Song selected: "+song);
-    this._electronService.ipcRenderer.send('open-modal');
+    // alert("Song selected: "+song.name); //alert("\""+song.name+"\"")
+    // this._electronService.ipcRenderer.send('open-modal');
+    this.AudioFiles.song = new Howl({
+      src:[song.path],
+      volume:.25,
+      onend:() => { this._electronService.ipcRenderer.send('open-modal', song.name); }
+    });
+    this.AudioFiles.title = song.name;
+    // alert("file path... "+this.AudioFiles.song.src);
+
   }
 
   //endregion public functions

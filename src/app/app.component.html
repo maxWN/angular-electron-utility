@@ -2,15 +2,15 @@
 <div>
   <!-- Dropdown Structure -->
 <ul class="dropdown-content" [ngClass]="{'make-real': ifClicked }" [ngStyle]="{'opacity': opaqueProperty }">
-    <li><a (click)="soundWidget()">Music Player</a></li>
+    <li><a (click)="soundWidget()">Music Player <i class="fa fa-headphones"></i></a></li>
     <li class="divider"></li>
-    <li><a (click)="timerWidget()">Video Player</a></li>
+    <li><a (click)="timerWidget()">Video Player <i class="fa fa-video-camera"></i></a></li>
     <li class="divider"></li>
-    <li><a (click)="timerWidget()">File Management</a></li>
+    <li><a (click)="timerWidget()">File Management <i class="fa fa-file-archive-o"></i></a></li>
     <li class="divider"></li>
-    <li><a (click)="textEditorWidget()">Text Editor</a></li>
+    <li><a (click)="textEditorWidget()">Text Editor <i class="fa fa-file-code-o"></i></a></li>
     <li class="divider"></li>
-    <li><a (click)="mapLink()">Interactive Map</a></li>
+    <li><a (click)="mapLink()">Interactive Map <i class="fa fa-globe"></i></a></li>
   </ul>
   <nav class="nav-style">
     <div class="nav-wrapper">

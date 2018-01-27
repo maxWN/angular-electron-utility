@@ -9,3 +9,11 @@
     padding: 1rem;
     border-radius: 10px;
 }
+
+.language-multiselect {
+    color: #000000;
+}
+
+.lower-toggle {
+    margin-bottom:.5rem;
+}

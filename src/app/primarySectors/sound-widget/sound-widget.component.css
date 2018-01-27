@@ -3,6 +3,7 @@
     background-color: #c7c7c7;
     border: .1rem solid #000000;
     height: 1.5rem;
+    margin-top: 1rem;
     margin-bottom:1.5rem;
 }
 .progression {
@@ -22,7 +23,6 @@
     background-color: #c7c7c7;
     display: inline-flex;
 }
-
 
 .side-panels {
     width:60%;
@@ -71,3 +71,7 @@
 .pause-btn {
     background-color: #2484d8;
 }
+
+/* .music-info {
+    border: #cccccc .1rem solid;
+} */

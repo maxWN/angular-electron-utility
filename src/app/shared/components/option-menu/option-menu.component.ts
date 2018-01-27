@@ -51,7 +51,7 @@ export class OptionMenuComponent implements OnInit {
           this.filePath = e.target;
         }
 
-        this.eventClick.emit(input.target.files[0].name);
+        this.eventClick.emit(input.target.files[0]);
       //   // this.songTitle=String(input.files[0]);
       //   reader.readAsDataURL(input.files[0]);
       // // }

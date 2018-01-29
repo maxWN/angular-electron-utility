@@ -16,16 +16,16 @@ export class SoundWidgetComponent implements OnInit {
 
   //region class variables 
 
-  public SelectedTracks: Array<Playlist> = new Array<Playlist>();
-  public AudioFiles: Playlist = <Playlist>{};
-  //song title model
-  public totalTime:number;
-  public isSongPlaying:boolean=false;
-  public progressBar:string;
-  public currentPos:number;
-  public trackTime:string;
-  public minutes:number;
-  // @Input() filePath:any;
+    public SelectedTracks: Array<Playlist> = new Array<Playlist>();
+    public AudioFiles: Playlist = <Playlist>{};
+    //song title model
+    public totalTime:number;
+    public isSongPlaying:boolean=false;
+    public progressBar:string;
+    public currentPos:number;
+    public trackTime:string;
+    public minutes:number;
+    // @Input() filePath:any;
 
   //endregion class variables
 
@@ -103,14 +103,27 @@ export class SoundWidgetComponent implements OnInit {
 
   public handleSongSelection(song):void {
     // alert("Song selected: "+song.name); //alert("\""+song.name+"\"")
-    // this._electronService.ipcRenderer.send('open-modal');
-    this.AudioFiles.song = new Howl({
-      src:[song.path],
-      volume:.25,
-      onend:() => { this._electronService.ipcRenderer.send('open-modal', song.name); }
-    });
-    this.AudioFiles.title = song.name;
-    // alert("file path... "+this.AudioFiles.song.src);
+
+    /*
+    ** if song is not undefined or null
+    ** add song to playlist array
+    ** if song is undefined throw exception/modal
+    */
+    if(song) {
+
+      this.AudioFiles.song = new Howl({
+        src:[song.path],
+        volume:.25,
+        onend:() => { this._electronService.ipcRenderer.send('open-modal', song.name); }
+      });
+      this.AudioFiles.title = song.name;
+      // alert("file path... "+this.AudioFiles.song.src);
+
+    }
+    else {
+      //throw exception/modal
+      this._electronService.ipcRenderer.send('open-modal');
+    }
 
   }
 

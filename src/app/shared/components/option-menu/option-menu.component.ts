@@ -9,11 +9,18 @@ import { FileReaderService } from '../../services/file-reader/file-reader.servic
 })
 export class OptionMenuComponent implements OnInit {
 
-  isSearchDisplayed:boolean=false;
-  songTitle:string="Upload one or more files";
-  // fileReaderSvc:FileReaderService;
-  filePath: any;
-  @Output() eventClick = new EventEmitter();
+  //region class variables 
+
+    public isSearchDisplayed:boolean = false;
+    public isSongSelectDisplayed:boolean = false;
+    public isAnimationChangeDisplayed:boolean = false;
+    public isFileEditDisplayed:boolean = false;
+    public songTitle:string="Upload one or more files";
+    // fileReaderSvc:FileReaderService;
+    public filePath: any;
+    @Output() eventClick = new EventEmitter();
+
+  //endregion class variables
 
   constructor(private fileReaderSvc:FileReaderService) {
     // this.fileReaderSvc=fileReaderSvc;
@@ -24,8 +31,21 @@ export class OptionMenuComponent implements OnInit {
     public ngOnInit():void {
     }
 
+    //toggle option-menu options
     public displaySearch():void {
       this.isSearchDisplayed=!this.isSearchDisplayed;
+    }
+
+    public displayAnimationChange():void {
+      this.isAnimationChangeDisplayed=!this.isAnimationChangeDisplayed;
+    }
+
+    public displaySongSelection():void {
+      this.isSongSelectDisplayed=!this.isSongSelectDisplayed;
+    }
+
+    public displayFileEditing():void {
+      this.isFileEditDisplayed=!this.isFileEditDisplayed;
     }
 
     public onHandleUpload($event): void {

@@ -1,19 +1,19 @@
 <div class="row upper-buffer">
   <div class="col s12 map-backdrop">
-    <!-- <a class="skiplink" href="#map">Go to map</a>
-    <div id="map" class="map" tabindex="0"></div>
-    <button id="zoom-out">Zoom out</button>
-    <button id="zoom-in">Zoom in</button> -->
     <div class="additional-controls">
-      <div class="button-grouping">
+      <!-- <div class="button-grouping">
         <div class="btns stop-btn"><i class="fa fa-trash"></i></div> Delete
         <div class="btns play-btn pad-left"><i class="fa fa-floppy-o"></i></div> Save
         <div class="btns pause-btn pad-left"><i class="fa fa-plus-circle"></i></div> New
-      </div>
+      </div> -->
+      <div class="range-field">
+          <label>{{zoom}}</label>
+          <input type="range" id="test5" min="0" max="10" [(ngModel)]="zoom"/>
+      </div>  
     </div>
     <div class="internal-map">
     <aol-map [width]="'720px'" [height]="'350'">
-      <aol-view [zoom]="6">
+      <aol-view [zoom]="zoom">
           <aol-coordinate [x]="5.795122" [y]="45.210225" [srid]="'EPSG:4326'"></aol-coordinate>
       </aol-view>
       <aol-layer-tile>

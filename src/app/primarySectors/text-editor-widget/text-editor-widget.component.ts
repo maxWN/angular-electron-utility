@@ -13,7 +13,7 @@ export class TextEditorWidgetComponent implements OnInit {
 
   //region public functions
 
-    public ngOnInit() {
+    public ngOnInit():void {
       //load last saved file here, unless user has turned off setting
     }
 

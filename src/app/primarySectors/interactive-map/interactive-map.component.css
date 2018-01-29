@@ -28,3 +28,11 @@ a.skiplink {
 .map-backdrop {
   background-color: #000000;
 }
+
+.map-controls {
+  height: 14rem;
+  width: 100%; 
+  background-color: #8e0000;
+  color: #c7c7c7;
+  padding: 1rem;
+}

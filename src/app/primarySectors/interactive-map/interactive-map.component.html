@@ -1,20 +1,26 @@
 <div class="row upper-buffer">
   <div class="col s12 map-backdrop">
-    <div class="additional-controls">
+    <div class="map-controls">
       <!-- <div class="button-grouping">
         <div class="btns stop-btn"><i class="fa fa-trash"></i></div> Delete
         <div class="btns play-btn pad-left"><i class="fa fa-floppy-o"></i></div> Save
         <div class="btns pause-btn pad-left"><i class="fa fa-plus-circle"></i></div> New
       </div> -->
+      <div class="compass-controls">
+          <input placeholder="Placeholder" id="longitude" type="text" class="validate" [(ngModel)]="longitude">
+          <label for="longitude">longitude</label>
+          <input placeholder="Placeholder" id="latitude" type="text" class="validate" [(ngModel)]="latitude">
+          <label for="latitude">latitude</label>
+      </div>
       <div class="range-field">
-          <label>{{zoom}}</label>
+          <label>Zoom Level: {{zoom}}</label>
           <input type="range" id="test5" min="0" max="10" [(ngModel)]="zoom"/>
       </div>  
     </div>
     <div class="internal-map">
     <aol-map [width]="'720px'" [height]="'350'">
       <aol-view [zoom]="zoom">
-          <aol-coordinate [x]="5.795122" [y]="45.210225" [srid]="'EPSG:4326'"></aol-coordinate>
+          <aol-coordinate [x]="latitude" [y]="longitude" [srid]="'EPSG:4326'"></aol-coordinate>
       </aol-view>
       <aol-layer-tile>
           <aol-source-osm></aol-source-osm>

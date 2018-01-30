@@ -102,14 +102,13 @@ export class SoundWidgetComponent implements OnInit {
 
   }
 
+  /**
+   * Handles click/onChange event sent from option-menu
+   * @public
+   * @param song {any} represents an audio file
+   */
   public handleSongSelection(song):void {
-    // alert("Song selected: "+song.name); //alert("\""+song.name+"\"")
-
-    /*
-    ** if song is not undefined or null
-    ** add song to playlist array
-    ** if song is undefined throw exception/modal
-    */
+    // if song is not undefined or null add song to playlist array
     if(song) {
 
       this.AudioFiles.song = new Howl({
@@ -122,7 +121,7 @@ export class SoundWidgetComponent implements OnInit {
 
     }
     else {
-      //throw exception/modal
+      // if song is undefined throw exception/modal
       this._electronService.ipcRenderer.send('open-modal');
     }
 

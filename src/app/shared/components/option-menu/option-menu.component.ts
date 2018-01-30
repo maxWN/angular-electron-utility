@@ -48,9 +48,14 @@ export class OptionMenuComponent implements OnInit {
       this.isFileEditDisplayed=!this.isFileEditDisplayed;
     }
 
+    /**
+     * Gets file selection from HTML5 component
+     * @public
+     * @param $event {any} represents the event triggered from file selection
+     **/
     public onHandleUpload($event): void {
       if($event) {
-        let x:File = $event.target.files[0];
+        this.songTitle=String($event.target.files[0].name);
         this.readURL($event);
       }
     }
@@ -62,7 +67,7 @@ export class OptionMenuComponent implements OnInit {
     //determine cause of error within 
     private readURL(input):void {
 
-      // if (input.files && input.files[0]) {
+      // if (input.files && input.target.files[0]) {
         let reader = new FileReader();
         // this.fileReaderSvc.readFilePath(input);
 
@@ -72,9 +77,8 @@ export class OptionMenuComponent implements OnInit {
         }
 
         this.eventClick.emit(input.target.files[0]);
-      //   // this.songTitle=String(input.files[0]);
-      //   reader.readAsDataURL(input.files[0]);
-      // // }
+      //   reader.readAsDataURL(input.target.files[0]);
+      // }
     }
 
   //endregion private functions

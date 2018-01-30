@@ -20,8 +20,8 @@ export class InteractiveMapComponent implements OnInit {
   ngOnInit() {
     //default values
     this.zoom = 1;
-    this.latitude=15.795122;
-    this.longitude=138.210225;
+    this.latitude=138.210225;
+    this.longitude= 15.795122;
   }
 
 }

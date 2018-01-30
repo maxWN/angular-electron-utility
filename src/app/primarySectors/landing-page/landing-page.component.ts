@@ -14,23 +14,42 @@ import * as kf from '../../shared/keyframes';
 })
 export class LandingPageComponent implements OnInit {
 
-  public animationState:string;
-  public APP_SUMMARY: string;
+  //region class variables 
+    public animationState:string;
+    public APP_SUMMARY: string;
+    public toolDescription: string;
+
+    public isMusicAppInfo:boolean=true;
+  //endregion class variables
 
   constructor() { }
 
-  ngOnInit() {
+  //region public functions
+
+  public ngOnInit():void {
+    this.toolDescription="The music player application allows you to "+
+    "search files on your computer, play any time of file, edit the files,"+
+    " play a background animation that syncs with the music, and have a personal "+
+    "library of all of your favorite tunes.";
   }
 
-  startAnimation(state) {
+  public startAnimation(state):void {
     // console.log(state);
     if(!this.animationState) {
       this.animationState=state;
     }
   }
 
-  resetAnimation() {
+  public resetAnimation():void  {
     this.animationState = '';
   }
+
+  public explanationProvider(index:number):void {
+    //function will take index provided by user 
+    //create corresponding switch stmnt to determine which
+    //explanation to provide
+  }
+
+  //endregion public functions
 
 }

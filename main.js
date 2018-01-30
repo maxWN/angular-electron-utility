@@ -10,7 +10,7 @@ function createWindow () {
     width: 700, 
     height: 650,
     backgroundColor: '#ffffff',
-    icon: 'Mahm0udwally-All-Flat-Music.ico'
+    icon: 'knife.png'
   })
 
   mainWindow.loadURL(`file://${__dirname}/dist/index.html`);

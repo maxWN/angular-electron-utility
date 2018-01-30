@@ -25,6 +25,7 @@ export class SoundWidgetComponent implements OnInit {
     public currentPos:number;
     public trackTime:string;
     public minutes:number;
+    public index:number;
     // @Input() filePath:any;
 
   //endregion class variables

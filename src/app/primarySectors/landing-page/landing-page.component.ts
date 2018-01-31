@@ -28,7 +28,7 @@ export class LandingPageComponent implements OnInit {
 
   public ngOnInit():void {
     this.toolDescription="The music player application allows you to "+
-    "search files on your computer, play any time of file, edit the files,"+
+    "search files on your computer, play any type of file, edit the files,"+
     " play a background animation that syncs with the music, and have a personal "+
     "library of all of your favorite tunes.";
   }

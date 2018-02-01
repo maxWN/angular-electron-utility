@@ -30,21 +30,43 @@ a.skiplink {
 }
 
 .map-controls {
-  height: 18rem;
+  height: 12rem;
   width: 100%; 
-  background-color: #d82424;
+  background-color: #fafafa;
   color: #c7c7c7;
   padding: 1rem;
+  border-bottom: #c7c7c7 solid .4rem;
 }
+
+/* .map-controls-search {
+  height: 18rem;
+  width: 50%; 
+  background-color: #cccccc;
+  color: #c7c7c7;
+  padding: 1rem;
+  border-left: #d82424 solid .4rem;
+  border-bottom: #d82424 solid .4rem;
+} */
 
 .row .col {
   padding: 0rem;
 }
 
 .row {
-  border: .4rem solid #d82424;
+  border: .4rem solid #c7c7c7;
 }
 
 .input:not([type]), input[type=date]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=email]:not(.browser-default), input[type=number]:not(.browser-default), input[type=password]:not(.browser-default), input[type=search]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=text]:not(.browser-default), input[type=time]:not(.browser-default), input[type=url]:not(.browser-default), textarea.materialize-textarea {
-width: 50%;
+  width: 100%;
+  height: 1rem;
+  border-bottom: 1px solid #000000;
+}
+
+button, input, optgroup, select, textarea {
+  color: #000000;
+}
+
+.compass-controls {
+  width: 50%;
+  height: 10rem;
 }

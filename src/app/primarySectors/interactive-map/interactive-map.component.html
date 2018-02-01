@@ -11,12 +11,15 @@
           <label for="longitude">longitude</label>
           <input placeholder="Placeholder" id="latitude" type="text" class="validate" [(ngModel)]="latitude">
           <label for="latitude">latitude</label>
-      </div>
-      <div class="range-field">
+      <!-- </div>
+      <div class="range-field"> -->
           <label>Zoom Level: {{zoom}}</label>
           <input type="range" id="test5" min="0" max="10" [(ngModel)]="zoom"/>
       </div>  
     </div>
+    <!-- <div class="map-controls-search">
+
+    </div> -->
     <div class="internal-map">
     <aol-map [width]="'720px'" [height]="'350'">
       <aol-view [zoom]="zoom">

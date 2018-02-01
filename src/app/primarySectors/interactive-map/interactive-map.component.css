@@ -32,7 +32,19 @@ a.skiplink {
 .map-controls {
   height: 18rem;
   width: 100%; 
-  background-color: #8e0000;
+  background-color: #d82424;
   color: #c7c7c7;
   padding: 1rem;
+}
+
+.row .col {
+  padding: 0rem;
+}
+
+.row {
+  border: .4rem solid #d82424;
+}
+
+.input:not([type]), input[type=date]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=email]:not(.browser-default), input[type=number]:not(.browser-default), input[type=password]:not(.browser-default), input[type=search]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=text]:not(.browser-default), input[type=time]:not(.browser-default), input[type=url]:not(.browser-default), textarea.materialize-textarea {
+width: 50%;
 }

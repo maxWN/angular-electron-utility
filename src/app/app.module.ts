@@ -29,7 +29,8 @@ const appRoutes: Routes = [
   { path: "sound-widget", component: SoundWidgetComponent },
   { path: "text-editor-widget", component: TextEditorWidgetComponent },
   { path: "app-settings", component: AppSettingsComponent },
-  { path: "interactive-map", component: InteractiveMapComponent }
+  { path: "interactive-map", component: InteractiveMapComponent },
+  { path: "video-widget", component: VideoWidgetComponent}
 ];
 
 @NgModule({

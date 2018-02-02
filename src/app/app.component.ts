@@ -65,6 +65,9 @@ export class AppComponent {
     this.router.navigate(['/sound-widget']);
   }  
 
+  videoWidget(): void {
+    this.router.navigate(['/video-widget']);
+  }
 
 
 }

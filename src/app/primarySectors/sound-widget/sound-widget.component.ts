@@ -70,6 +70,13 @@ export class SoundWidgetComponent implements OnInit {
         this.currentPos = 0;
       }
     }
+    else {
+      //if song was already playing, erase data
+      if(parseInt(this.progressBar) > 0) {
+        this.progressBar = "0";
+        this.trackTime = "0:00";
+      }
+    }
   }
 
   public pauseSong():void {
@@ -117,7 +124,7 @@ export class SoundWidgetComponent implements OnInit {
         onend:() => { this._electronService.ipcRenderer.send('open-modal', song.name); }
       });
       this.AudioFiles.title = song.name;
-      // alert("file path... "+this.AudioFiles.song.src);
+      this.SelectedTracks.push(this.AudioFiles);
 
     }
     else {

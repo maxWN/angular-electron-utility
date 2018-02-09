@@ -2,7 +2,7 @@
   <div class="col s12 map-backdrop">
     <div class="map-controls">
       <div class="compass-controls">
-          <input placeholder="Placeholder" id="longitude" type="text" class="validate" [(ngModel)]="longitude">
+          <input placeholder="Placeholder" id="" type="text" class="validate" [(ngModel)]="longitude">
           <label for="longitude">longitude</label>
           <input placeholder="Placeholder" id="latitude" type="text" class="validate" [(ngModel)]="latitude">
           <label for="latitude">latitude</label>
@@ -18,7 +18,7 @@
     <div class="internal-map">
     <aol-map [width]="'720px'" [height]="'350'">
       <aol-view [zoom]="zoom">
-          <aol-coordinate [x]="latitude" [y]="longitude" [srid]="'EPSG:4326'"></aol-coordinate>
+          <aol-coordinate [x]="longitude" [y]="latitude" [srid]="'EPSG:4326'"></aol-coordinate>
       </aol-view>
       <aol-layer-tile>
           <aol-source-osm></aol-source-osm>

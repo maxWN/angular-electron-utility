@@ -21,6 +21,7 @@ import { FileReaderService } from '../app/shared/services/file-reader/file-reade
 import { AppSettingsComponent } from './primarySectors/app-settings/app-settings.component';
 import { InteractiveMapComponent } from './primarySectors/interactive-map/interactive-map.component';
 import { AngularOpenlayersModule } from 'ngx-openlayers';
+import { FileManagerComponent } from './primarySectors/file-manager/file-manager.component';
 
 const appRoutes: Routes = [
   { path: "", redirectTo: "/dashboard", pathMatch: "full" },
@@ -45,7 +46,8 @@ const appRoutes: Routes = [
     TextEditorWidgetComponent,
     FooterComponent,
     AppSettingsComponent,
-    InteractiveMapComponent
+    InteractiveMapComponent,
+    FileManagerComponent
   ],
   imports: [
     BrowserModule,

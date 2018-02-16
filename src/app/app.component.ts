@@ -49,6 +49,10 @@ export class AppComponent {
     this.router.navigate(['/interactive-map']);
   }
 
+  fileManagerLink():void {
+    this.router.navigate(['/file-manager']);
+  }
+
   //increase drop-down menu opacity
   vaporize():void {
 

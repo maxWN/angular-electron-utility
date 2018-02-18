@@ -12,4 +12,14 @@ export class FileManagerComponent implements OnInit {
   ngOnInit() {
   }
 
+  /**
+   * @private 
+   * @param dirs {str array} - represents array of dir names
+   */
+  public loadFolderTree(): void {
+    //load directory structure 
+  }
+
+
+
 }

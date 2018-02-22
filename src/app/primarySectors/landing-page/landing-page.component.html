@@ -9,11 +9,11 @@
         </div>
         <div class="card-tabs">
           <ul class="tabs tabs-fixed-width">
-            <li class="tab"><a (click)="explanationProvider(1)">File Manager</a></li>
+            <li class="tab"><a (click)="explanationProvider(1)" [ngClass]="{'active': isFileManagerAppInfo}">File Manager</a></li>
             <li class="tab"><a (click)="explanationProvider(2)" [ngClass]="{'active': isMusicAppInfo}">Music Player</a></li>
-            <li class="tab"><a (click)="explanationProvider(3)">Video Player</a></li>
-            <li class="tab"><a (click)="explanationProvider(4)">Text Editor</a></li>
-            <li class="tab"><a (click)="explanationProvider(5)">Interactive Map</a></li>
+            <li class="tab"><a (click)="explanationProvider(3)" [ngClass]="{'active': isVideoAppInfo}">Video Player</a></li>
+            <li class="tab"><a (click)="explanationProvider(4)" [ngClass]="{'active': isTextEditorAppInfo}">Text Editor</a></li>
+            <li class="tab"><a (click)="explanationProvider(5)" [ngClass]="{'active': isMapAppInfo}">Interactive Map</a></li>
           </ul>
         </div>
         <div class="card-content grey lighten-4">

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, keyframes, animate, transition } from '@angular/animations';
 import * as kf from '../../shared/keyframes';
+import { ToolDescriptionsUS, ToolDescriptionsDE, ToolDescriptionsES } from '../../shared/models/toolDescriptions';
 
 @Component({
   selector: 'desk-landing-page',
@@ -18,8 +19,12 @@ export class LandingPageComponent implements OnInit {
     public animationState:string;
     public APP_SUMMARY: string;
     public toolDescription: string;
-
-    public isMusicAppInfo:boolean=true;
+    public englishDescription: ToolDescriptionsUS;
+    public isMusicAppInfo:boolean;
+    public isMapAppInfo:boolean;
+    public isFileManagerAppInfo:boolean;
+    public isTextEditorAppInfo:boolean;
+    public isVideoAppInfo:boolean;
   //endregion class variables
 
   constructor() { }
@@ -27,10 +32,8 @@ export class LandingPageComponent implements OnInit {
   //region public functions
 
   public ngOnInit():void {
-    this.toolDescription="The music player application allows you to "+
-    "search files on your computer, play any type of file, edit the files,"+
-    " play a background animation that syncs with the music, and have a personal "+
-    "library of all of your favorite tunes.";
+    this.englishDescription = new ToolDescriptionsUS();
+    this.toolDescription=this.englishDescription.MUSIC_PLAYER;
   }
 
   public startAnimation(state):void {
@@ -45,9 +48,54 @@ export class LandingPageComponent implements OnInit {
   }
 
   public explanationProvider(index:number):void {
-    //function will take index provided by user 
-    //create corresponding switch stmnt to determine which
-    //explanation to provide
+
+    switch(index) {
+      case 1: 
+      this.toolDescription=this.englishDescription.FILE_MANAGER;
+      this.isMusicAppInfo=false;
+      this.isMapAppInfo=false;
+      this.isFileManagerAppInfo=true;
+      this.isTextEditorAppInfo=false;
+      this.isVideoAppInfo=false;
+      break;
+      case 2: 
+      this.toolDescription=this.englishDescription.MUSIC_PLAYER;
+      this.isMusicAppInfo=true;
+      this.isMapAppInfo=false;
+      this.isFileManagerAppInfo=false;
+      this.isTextEditorAppInfo=false;
+      this.isVideoAppInfo=false;
+      break;
+      case 3: 
+      this.toolDescription=this.englishDescription.VIDEO_PLAYER;
+      this.isMusicAppInfo=false;
+      this.isMapAppInfo=false;
+      this.isFileManagerAppInfo=false;
+      this.isTextEditorAppInfo=false;
+      this.isVideoAppInfo=true;
+      break;
+      case 4: 
+      this.toolDescription=this.englishDescription.TEXT_EDITOR;
+      this.isMusicAppInfo=false;
+      this.isMapAppInfo=false;
+      this.isFileManagerAppInfo=false;
+      this.isTextEditorAppInfo=true;
+      this.isVideoAppInfo=false;
+      break;
+      case 5: 
+      this.toolDescription=this.englishDescription.INTERACTIVE_MAP;
+      this.isMusicAppInfo=false;
+      this.isMapAppInfo=true;
+      this.isFileManagerAppInfo=false;
+      this.isTextEditorAppInfo=false;
+      this.isVideoAppInfo=false;
+      break;
+      default:
+        //handle this type of error with ElectronService modal
+        alert("Error occurred: no valid value entered.");
+      
+    }
+
   }
 
   //endregion public functions

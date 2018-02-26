@@ -7,7 +7,7 @@ function createWindow () {
 
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 700, 
+    width: 750, 
     height: 650,
     backgroundColor: '#ffffff',
     icon: 'knife.png'

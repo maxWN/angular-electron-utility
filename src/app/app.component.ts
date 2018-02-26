@@ -16,45 +16,51 @@ import { Route } from '@angular/router/src/config';
 
 export class AppComponent {
 
+//region class variables 
+
   ifClicked:boolean=false;
   showDropdown:number=0;
   opaqueProperty:string;
   interval:any;
 
+//endregion class variables
+
   constructor(private router: Router) {
   }
 
-  timerWidget(): void {
+//region public functions 
+
+  public timerWidget(): void {
     this.router.navigate(['/timer']);
   }
 
-  textEditorWidget(): void {
+  public textEditorWidget(): void {
     this.router.navigate(['/text-editor-widget']);
   }
 
-  homeLink():void {
+  public homeLink():void {
     this.router.navigate(['/dashboard']);   
   }
 
-  openDropdown():void {
+  public openDropdown():void {
     this.ifClicked=!this.ifClicked;
     this.interval = setInterval(this.vaporize(), 8000);
   }
 
-  appSettingsLink():void {
+  public appSettingsLink():void {
     this.router.navigate(['/app-settings']);
   }
 
-  mapLink():void {
+  public mapLink():void {
     this.router.navigate(['/interactive-map']);
   }
 
-  fileManagerLink():void {
+  public fileManagerLink():void {
     this.router.navigate(['/file-manager']);
   }
 
   //increase drop-down menu opacity
-  vaporize():void {
+  public vaporize():void {
 
     while(this.showDropdown < 1) {
       this.showDropdown=this.showDropdown+.1;
@@ -65,13 +71,14 @@ export class AppComponent {
     }    
   }
 
-  soundWidget():void {
+  public soundWidget():void {
     this.router.navigate(['/sound-widget']);
   }  
 
-  videoWidget(): void {
+  public videoWidget(): void {
     this.router.navigate(['/video-widget']);
   }
 
+//endregion public functions
 
 }

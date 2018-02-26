@@ -80,17 +80,19 @@ export class SoundWidgetComponent implements OnInit {
   }
 
   public pauseSong():void {
+    if( this.AudioFiles.song.playing([0])) {
     this.AudioFiles.song.pause();
+    }
   }
 
   public timeRemaining():void {
 
-    // if(this.currentPos & this.totalTime) {
+    if(this.totalTime) {
       this.currentPos = Math.round(this.AudioFiles.song.seek());
       this.formatTime();
       this.progressBar = (((this.currentPos)/this.totalTime)*100).toFixed(2)+'%';
       // this.progressBar = String(((this.currentPos)/this.totalTime)*100)+'%';
-    // }
+    }
 
   }
 
@@ -132,6 +134,13 @@ export class SoundWidgetComponent implements OnInit {
       this._electronService.ipcRenderer.send('open-modal');
     }
 
+  }
+  
+  public createRecentSongSelectionLibrary():void {
+    //append distinctive songs to array
+    //send array to option-menu component
+    //make array act as a stack object
+    //limit entries to maximum of 10
   }
 
   //endregion public functions

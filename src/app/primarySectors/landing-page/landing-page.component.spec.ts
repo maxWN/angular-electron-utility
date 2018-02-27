@@ -45,4 +45,10 @@ describe('LandingPageComponent', () => {
   // it('should evaluate to FILE_MANAGER', () => {
   //   expect()
   // })
+
+  /**
+   * TODO: Find a way to create unit tests for Angular/Electron apps
+   * https://medium.com/@MatheusCAS/unit-testing-with-jamine-angular-2-electron-862b5c4bbccd
+   */
+  
 });

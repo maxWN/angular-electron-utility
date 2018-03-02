@@ -37,6 +37,9 @@ function createWindow () {
     mainWindow = null
   })
 
+  //turn off dev
+  mainWindow.setMenu(null);
+
 }
 //    icon: `file://${__dirname}/src/assets/newItem.PNG`
 //    icon: path.join(__dirname+'assets/sample-1.jpg')

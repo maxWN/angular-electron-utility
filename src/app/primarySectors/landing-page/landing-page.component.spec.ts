@@ -38,7 +38,7 @@ describe('LandingPageComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  // it('should have content Music Player'), ()=>{
+  // it('should have content Music Player'), () => {
   //   expect(component.content).toContain('Music Player');
   // }
 

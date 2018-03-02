@@ -73,7 +73,7 @@ export class SoundWidgetComponent implements OnInit {
     else {
       //if song was already playing, erase data
       if(parseInt(this.progressBar) > 0) {
-        this.progressBar = "0";
+        this.progressBar = "0%";
         this.trackTime = "0:00";
       }
     }

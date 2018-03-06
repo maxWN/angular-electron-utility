@@ -51,7 +51,7 @@
       <h6>Toggle Development Mode</h6>
       <label>
         Off
-        <input type="checkbox" >
+        <input type="checkbox" (click)="setDevMode()" [checked]="devModeSetting">
         <span class="lever"></span>
         On
       </label>

@@ -51,6 +51,18 @@ ipcMain.on('open-modal', (event, arg) => {
   modalWindow.show();
 });
 
+//open development/debug window
+ipcMain.on('open-dev-menu', (event, arg)=>{
+  mainWindow.webContents.openDevTools();
+});
+
+//TODO: 
+//when development window is closed, change 
+//checked input back to false in app settings
+ipcMain.on('close-dev-menu', (event, arg)=>{
+  mainWindow.setMenu(null);
+});
+
 // Create window on electron intialization
 app.on('ready', createWindow)
 // Quit when all windows are closed.

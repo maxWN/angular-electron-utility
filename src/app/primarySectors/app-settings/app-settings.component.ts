@@ -16,17 +16,21 @@ export class AppSettingsComponent implements OnInit {
 
   constructor(private _electronService: ElectronService) { }
 
-  public ngOnInit():void {
-  }
+  //region public functions
 
-  public setDevMode():void {
-    this.devModeSetting = ! this.devModeSetting;
-    if(this.devModeSetting) {
-      this._electronService.ipcRenderer.send('open-dev-menu');
+    public ngOnInit():void {
     }
-    else {
-      this._electronService.ipcRenderer.send('close-dev-menu');
+
+    public setDevMode():void {
+      this.devModeSetting = ! this.devModeSetting;
+      if(this.devModeSetting) {
+        this._electronService.ipcRenderer.send('open-dev-menu');
+      }
+      else {
+        this._electronService.ipcRenderer.send('close-dev-menu');
+      }
     }
-  }
+
+  //endregion public functions
 
 }

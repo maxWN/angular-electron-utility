@@ -25,3 +25,7 @@ textarea.materialize-textarea {
 .btn, .btn-large {
     background-color: #d82424;
 }
+
+.recent-playlist {
+    background-color: #cccccc;
+}

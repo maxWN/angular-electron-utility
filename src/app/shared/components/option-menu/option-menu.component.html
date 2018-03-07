@@ -11,11 +11,16 @@
               <div class="file-path-wrapper">
                 <input class="file-path validate" type="text" [value]="songTitle">
               </div>
-            </div>
+          </div>
       </li>
       <li class="collection-item"><div>Select From Songs<a (click)="displaySongSelection()" class="secondary-content"><i class=" menu-icons fa fa-indent"></i></a></div></li>
       <li class="collection-item" [ngClass]="{'search-function': (isSongSelectDisplayed==false), 'reveal-search': (isSongSelectDisplayed==true)}">
-        
+          <div class="file-field input-field">
+            Recently Played songs:
+            <div class="recent-playlist">
+              <!-- <ol><li></li></ol> Include ngFor here -->
+            </div>
+          </div>
       </li>
       <li class="collection-item"><div>Change Animation<a (click)="displayAnimationChange()" class="secondary-content"><i class=" menu-icons fa fa-picture-o"></i></a></div></li>
       <li class="collection-item" [ngClass]="{'search-function': (isAnimationChangeDisplayed==false), 'reveal-search': (isAnimationChangeDisplayed==true)}">

@@ -59,7 +59,7 @@ export class AppComponent {
     this.router.navigate(['/file-manager']);
   }
 
-  //increase drop-down menu opacity
+  //TODO: Replace TypeScript function with SCSS animation instead
   public vaporize():void {
 
     while(this.showDropdown < 1) {

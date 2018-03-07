@@ -5,7 +5,7 @@
 
 .row .col.s6.file-column {
     width: 25%;
-    background-color: #000000;
+    background-color: #7f0000;
     color: #ffffff;
     height: 20rem;
 }
@@ -15,4 +15,10 @@
     background-color: #fafafa;
     color: #000000;
     height: 20rem;
+}
+
+.column-header-controls {
+    width: 100%; 
+    background-color: #b71c1c;
+    height: 5rem;
 }

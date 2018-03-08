@@ -18,7 +18,7 @@ This project was generated using the following software:
  * Node.js version 6.10.2
  * Materialize-css version 0.100.2
 
-##Cross Platform App
+## Cross Platform App
 
 The Swiss Army App has been tested on and can be used on the following operating systems: 
 * Windows (Windows 7, Windows 10)

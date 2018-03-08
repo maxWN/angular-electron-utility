@@ -135,13 +135,6 @@ export class SoundWidgetComponent implements OnInit {
     }
 
   }
-  
-  public createRecentSongSelectionLibrary():void {
-    //append distinctive songs to array
-    //send array to option-menu component
-    //make array act as a stack object
-    //limit entries to maximum of 10
-  }
 
   //endregion public functions
 

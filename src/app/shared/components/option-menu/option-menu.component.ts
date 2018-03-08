@@ -1,6 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Event } from 'electron';
 import { FileReaderService } from '../../services/file-reader/file-reader.service';
+import { Playlist } from '../../models/playlist';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'desk-option-menu',
@@ -17,8 +19,11 @@ export class OptionMenuComponent implements OnInit {
     public isFileEditDisplayed:boolean = false;
     public songTitle:string="Upload one or more files";
     // fileReaderSvc:FileReaderService;
+    public SelectedTracks: Array<Playlist> = new Array<Playlist>();
+    public currentTrack: Playlist;
     public filePath: any;
     @Output() eventClick = new EventEmitter();
+    public hasTrackBeenSelected: boolean = false;
 
   //endregion class variables
 
@@ -56,6 +61,9 @@ export class OptionMenuComponent implements OnInit {
     public onHandleUpload($event): void {
       if($event) {
         this.songTitle=String($event.target.files[0].name);
+        this.currentTrack = <Playlist>{};
+        this.hasTrackBeenSelected = true;
+        this.currentTrack.title = this.songTitle;
         this.readURL($event);
       }
     }
@@ -75,10 +83,40 @@ export class OptionMenuComponent implements OnInit {
           //insert service call
           this.filePath = e.target;
         }
-
+        this.createRecentSongPlaylist(input.target.files[0]);
         this.eventClick.emit(input.target.files[0]);
       //   reader.readAsDataURL(input.target.files[0]);
       // }
+    }
+        
+    /**
+     * Creates recently played song playlist for users to choose from
+     * @private
+     * @param file {var} - represents event triggered from file selection
+     */
+    private createRecentSongPlaylist(file):void {
+      //append distinctive songs to array
+      //make array act as a stack object
+      //limit entries to maximum of 10
+      let isTrackInPlaylist: boolean;
+
+      if(this.currentTrack != null && this.currentTrack != undefined) {
+
+        this.currentTrack.song = file;
+
+        if(this.SelectedTracks.length == 0) {
+          this.SelectedTracks.push(this.currentTrack);
+        }
+        else if(this.SelectedTracks.length < 10) {
+
+          let foundTrack:Playlist = _.find(this.SelectedTracks, ['title', this.currentTrack.title]);
+          //if track was found, do not add to playlist
+          if(foundTrack == undefined) {
+            this.SelectedTracks.push(this.currentTrack);
+          }
+
+        }
+      }
     }
 
   //endregion private functions

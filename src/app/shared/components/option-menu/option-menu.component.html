@@ -13,12 +13,15 @@
               </div>
           </div>
       </li>
-      <li class="collection-item"><div>Select From Songs<a (click)="displaySongSelection()" class="secondary-content"><i class=" menu-icons fa fa-indent"></i></a></div></li>
-      <li class="collection-item" [ngClass]="{'search-function': (isSongSelectDisplayed==false), 'reveal-search': (isSongSelectDisplayed==true)}">
+      <li class="collection-item" *ngIf="hasTrackBeenSelected"><div>Select From Songs<a (click)="displaySongSelection()" class="secondary-content"><i class=" menu-icons fa fa-indent"></i></a></div></li>
+      <li class="collection-item" [ngClass]="{'search-function': (isSongSelectDisplayed==false),
+       'reveal-search': (isSongSelectDisplayed==true)}">
           <div class="file-field input-field">
             Recently Played songs:
             <div class="recent-playlist">
-              <!-- <ol><li></li></ol> Include ngFor here -->
+              <ol><li *ngFor="let tracks of SelectedTracks">
+                {{ tracks.title }}
+              </li></ol>
             </div>
           </div>
       </li>

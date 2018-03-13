@@ -13,10 +13,17 @@ This is a cross platform desktop app that provides a wide array of functionality
 ## Software utilized
 
 This project was generated using the following software:
- * Angular Framework 4.2.4
+ * Angular Framework version 4.2.4
  * Electron.js version 1.7.10
  * Node.js version 6.10.2
  * Materialize-css version 0.100.2
+
+## Installation Instructions
+The Swiss Army App is still undergoing development and testing, but can be installed for trial and dev purposes by doing the following steps:
+- Use git to clone this repo
+- Install the node module dependencies, by running the cmd, "npm install" within the app root directory
+- Run the cmd, "npm run electron-build" to compile the application (this will also run the application after successful compilation)
+- After compiling the build, simply run the cmd, "npm run electron", to run the program quickly.
 
 ## Cross Platform App
 

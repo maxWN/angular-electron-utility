@@ -26,6 +26,10 @@ textarea.materialize-textarea {
     background-color: #d82424;
 }
 
+.playlist-label {
+    font-weight: bold;
+}
+
 .recent-playlist {
     background-color: #000000;
     color: #ffffff;

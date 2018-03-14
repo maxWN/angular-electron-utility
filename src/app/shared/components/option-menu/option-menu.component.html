@@ -17,8 +17,10 @@
       <li class="collection-item" [ngClass]="{'search-function': (isSongSelectDisplayed==false),
        'reveal-search': (isSongSelectDisplayed==true)}">
           <div class="file-field input-field">
-            Recently Played songs:
+            <div class="playlist-label">Recently Played songs:</div>
             <div class="recent-playlist">
+              <!-- TODO: Add table inside with red borders and the following columns: -->
+              <!-- title, album, artist, year -->
               <ol><li *ngFor="let tracks of SelectedTracks">
                 {{ tracks.title }}
               </li></ol>

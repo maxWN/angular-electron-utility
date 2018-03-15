@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { getType } from '@angular/core/src/errors';
 
 @Component({
   selector: 'desk-interactive-map',
@@ -12,16 +13,63 @@ export class InteractiveMapComponent implements OnInit {
     public zoom: number;
     public longitude:number;
     public latitude:number;
+    public isGeolocationSupportEnabled: boolean;
 
   //endregion class variables 
 
   constructor() { }
 
-  ngOnInit() {
-    //default values
-    this.zoom = 3;
-    this.longitude= -0.13;
-    this.latitude= 51.51;
-  }
+  //region public functions 
 
+    public ngOnInit(): void {
+
+      //TODO: Check if Electron framework app is run in https or http
+      //Chromium Geolocation support only works for https
+      // check for Geolocation support
+      this.isGeolocationSupportEnabled = this.isGeolocationEnabled();
+      if(this.isGeolocationSupportEnabled) {
+        this.getUserLocation();
+        if(this.latitude == undefined || this.longitude == undefined) {
+          this.setDefaultValues();
+        }
+      }
+      else {
+        this.setDefaultValues();
+      }
+    }
+
+    public isGeolocationEnabled(): boolean {
+      if (navigator.geolocation) {
+        // alert('Geolocation is supported!');
+        return true;
+      }
+      else {
+        // alert('Geolocation is not supported for this Browser!');
+        return false;
+      }
+    }
+
+    public setDefaultValues(): void {
+          //default values
+          this.zoom = 3;
+          this.longitude= -0.13;
+          this.latitude= 51.51;
+    }
+
+    //endregion public functions 
+
+    //region private functions
+
+    private getUserLocation(): void {
+      // debugger
+      let startPos;
+      let geoSuccess = function(position) {
+        startPos = position;
+        this.latitude = startPos.coords.latitude;
+        this.longitude = startPos.coords.longitude;
+      };
+      navigator.geolocation.getCurrentPosition(geoSuccess);
+    }
+
+  //endregion private functions
 }

@@ -6,6 +6,7 @@ import { getType } from '@angular/core/src/errors';
   templateUrl: './interactive-map.component.html',
   styleUrls: ['./interactive-map.component.css']
 })
+
 export class InteractiveMapComponent implements OnInit {
 
   //region class variables 
@@ -56,9 +57,9 @@ export class InteractiveMapComponent implements OnInit {
           this.latitude= 51.51;
     }
 
-    //endregion public functions 
+  //endregion public functions 
 
-    //region private functions
+  //region private functions
 
     private getUserLocation(): void {
       // debugger

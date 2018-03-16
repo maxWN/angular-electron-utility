@@ -13,3 +13,13 @@
     background-color: #c7c7c7;
     border: .1rem #000000 solid;
 }
+
+.video-player-controls {
+    background-color: #c7c7c7;
+}
+
+.central-contrls {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    width: 830px;
+}

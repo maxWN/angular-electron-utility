@@ -11,15 +11,21 @@
 
 .video-player-options {
     background-color: #c7c7c7;
-    border: .1rem #000000 solid;
 }
 
 .video-player-controls {
     background-color: #c7c7c7;
+    border: .1rem #000000 solid;
 }
 
 .central-contrls {
     margin-left: 2rem;
     margin-right: 2rem;
     width: 830px;
+}
+
+/* TODO: Use Option-Menu component instead of creating entirely distinct control panel...
+   Will make app appear more cohesive and more responsive */
+div.file-field div.btn, .btn-large {
+    background-color: #d82424;
 }

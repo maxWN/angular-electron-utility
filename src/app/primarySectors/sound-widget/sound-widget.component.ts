@@ -48,6 +48,7 @@ export class SoundWidgetComponent implements OnInit {
 
   public playSong():void {
 
+    if(this.progressBar != "100%" && this.isSongPlaying != true) {
     this.AudioFiles.song.play();
 
     this.totalTime = Math.round( this.AudioFiles.song.duration() );
@@ -59,7 +60,7 @@ export class SoundWidgetComponent implements OnInit {
       .takeWhile(_ => this.AudioFiles.song.playing() )
       .do(() => { this.timeRemaining() } )
       .subscribe();
-
+    }
   }
 
   public stopSong():void {

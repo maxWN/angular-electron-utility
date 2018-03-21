@@ -24,6 +24,7 @@ textarea.materialize-textarea {
 
 .btn, .btn-large {
     background-color: #d82424;
+    /* transition: .2s cubic-bezier(0.18, 0.89, 0.32, 1.28) */
 }
 
 .playlist-label {

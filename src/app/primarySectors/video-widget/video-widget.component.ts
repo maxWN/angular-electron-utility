@@ -7,6 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VideoWidgetComponent implements OnInit {
 
+  //region local variables
+
+  public isVideoPlayer:number=2;
+
+  //endregion local variables
+
+
   constructor() { }
 
   ngOnInit() {

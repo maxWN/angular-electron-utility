@@ -21,6 +21,7 @@ export class SoundWidgetComponent implements OnInit {
     //song title model
     public totalTime:number;
     public isSongPlaying:boolean=false;
+    public isMusicPlayer:number=1;
     public progressBar:string;
     public currentPos:number;
     public trackTime:string;

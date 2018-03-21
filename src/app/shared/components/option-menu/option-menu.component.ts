@@ -1,7 +1,8 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Event } from 'electron';
 import { FileReaderService } from '../../services/file-reader/file-reader.service';
 import { Playlist } from '../../models/playlist';
+import { MenuTypes } from '../../models/menuTypes';
 import * as _ from 'lodash';
 
 @Component({
@@ -22,7 +23,9 @@ export class OptionMenuComponent implements OnInit {
     public SelectedTracks: Array<Playlist> = new Array<Playlist>();
     public currentTrack: Playlist;
     public filePath: any;
+    public menuTitle:string;
     @Output() eventClick = new EventEmitter();
+    @Input() menuType:number;
     public hasTrackBeenSelected: boolean = false;
 
   //endregion class variables
@@ -34,6 +37,17 @@ export class OptionMenuComponent implements OnInit {
   //region public functions
 
     public ngOnInit():void {
+      this.determineMenuSettings();
+    }
+
+    public determineMenuSettings():void {
+      if(this.menuType==MenuTypes.Music) {
+        this.menuTitle="My Music";
+      }
+      else if(this.menuType==MenuTypes.Video) {
+        this.menuTitle="My Videos";
+      }
+
     }
 
     //toggle option-menu options

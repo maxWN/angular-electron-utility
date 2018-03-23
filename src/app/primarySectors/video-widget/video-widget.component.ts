@@ -10,13 +10,18 @@ export class VideoWidgetComponent implements OnInit {
   //region local variables
 
   public isVideoPlayer:number=2;
+  public hasFileLoaded:boolean=false;
 
   //endregion local variables
 
-
   constructor() { }
 
-  ngOnInit() {
+  public ngOnInit(): void {
+  }
+
+  //temporary UI testing function
+  public enableVideo():void {
+    this.hasFileLoaded = !this.hasFileLoaded;
   }
 
 }

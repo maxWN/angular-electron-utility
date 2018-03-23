@@ -1,16 +1,17 @@
 
 <div class="row upper-buffer">
-  <div class="col s12" >
+  <div class="col s12 video-player-position" *ngIf="hasFileLoaded">
 
-    <video width="1060" height="450" controls class="video-player">
+    <video width="1020" height="450" controls class="video-player">
       <source src="assets/test_vid.mp4" type="video/mp4">
       <!-- <source src="movie.ogg" type="video/ogg"> -->
-    Your browser does not support the video tag.
+      Your browser does not support the video tag.
     </video> 
 
   </div>
-  <div class="col s12 video-player-controls">
-    <desk-option-menu [menuType]="isVideoPlayer"></desk-option-menu>
+  <div class="row">
+  <div class="col s12 ">
+    <desk-option-menu [menuType]="isVideoPlayer" (click)="enableVideo()"></desk-option-menu>
       <!-- <div class="central-contrls">
         <div class="file-field input-field">
           <div class="btn">
@@ -24,5 +25,6 @@
           </div>
         </div>
       </div> -->
+  </div>
   </div>
 </div>

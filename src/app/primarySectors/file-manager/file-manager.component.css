@@ -22,4 +22,9 @@
     width: 100%; 
     background-color: #b71c1c;
     height: 5rem;
+    padding-left:1rem;
+}
+
+.main-title {
+    display: inline-block;
 }

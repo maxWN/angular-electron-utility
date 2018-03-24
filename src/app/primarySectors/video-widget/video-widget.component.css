@@ -11,6 +11,7 @@
 .video-player {
     background-color: #c7c7c7;
     border: .1rem #000000 solid;
+    margin-left: 1.75rem;
 }
 
 .video-player-options {

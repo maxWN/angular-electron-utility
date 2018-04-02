@@ -18,7 +18,7 @@ export class SoundWidgetComponent implements OnInit {
 
     public SelectedTracks: Array<Playlist> = new Array<Playlist>();
     public AudioFiles: Playlist = <Playlist>{};
-    //song title model
+    public songTitle: string;
     public totalTime:number;
     public isSongPlaying:boolean=false;
     public isMusicPlayer:number=1;
@@ -48,8 +48,10 @@ export class SoundWidgetComponent implements OnInit {
   }
 
   public playSong():void {
-
-    if(this.progressBar != "100%" && this.isSongPlaying != true) {
+    //TODO: Create a simple boolean variable that isn't dependent on
+    //any of the Howl.js functions, and can only be set by the playSong() 
+    //function. This will replace the preventative condition below...
+    if(this.isSongPlaying != undefined && this.isSongPlaying != true) {
     this.AudioFiles.song.play();
 
     this.totalTime = Math.round( this.AudioFiles.song.duration() );
@@ -84,6 +86,8 @@ export class SoundWidgetComponent implements OnInit {
   public pauseSong():void {
     if( this.AudioFiles.song.playing([0])) {
     this.AudioFiles.song.pause();
+    //this is a temporary fix; new runtime errors occur
+    this.isSongPlaying=!this.isSongPlaying;
     }
   }
 
@@ -125,9 +129,10 @@ export class SoundWidgetComponent implements OnInit {
       this.AudioFiles.song = new Howl({
         src:[song.path],
         volume:.25,
-        onend:() => { this._electronService.ipcRenderer.send('open-modal', song.name); }
+        onend:() => { this.onSongEnd() }
       });
       this.AudioFiles.title = song.name;
+      // this.songTitle = this.AudioFiles.title;
       this.SelectedTracks.push(this.AudioFiles);
 
     }
@@ -136,6 +141,20 @@ export class SoundWidgetComponent implements OnInit {
       this._electronService.ipcRenderer.send('open-modal');
     }
 
+  }
+
+  /**
+   * Handles end of a song; helps to prevent more than one song being played at once. 
+   * This occurs because after a Howl music file is finished playing it is 'destroyed', 
+   * and none of it's attributes can be accessed afterwards
+   * @public 
+   */
+  public onSongEnd(): void {
+    this.isSongPlaying = false;
+    //TODO need to use local string (songTitle) instead of AudioFiles.title, 
+    //as the can cause runtime errors due to object being destroyed before reaching 
+    //electronService modal call
+    this._electronService.ipcRenderer.send('open-modal', this.AudioFiles.title);
   }
 
   //endregion public functions

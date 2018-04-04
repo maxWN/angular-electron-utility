@@ -3,11 +3,17 @@
     margin-bottom: 10rem;
 }
 
+.title-panel {
+    border-bottom: solid .1rem #fafafa;
+    padding: .5rem;
+}
+
 .row .col.s6.file-column {
     width: 25%;
     background-color: #7f0000;
     color: #ffffff;
     height: 20rem;
+    padding: 0rem;
 }
 
 .row .col.s6.configuration-column {
@@ -16,11 +22,13 @@
     color: #000000;
     height: 20rem;
     padding: 0rem;
+    border-left: solid .1rem #fafafa;
 }
 
 .column-header-controls {
     width: 100%; 
-    background-color: #b71c1c;
+    background-color: #7f0000;
+    /* background-color: #b71c1c; */
     height: 5rem;
     padding-left:1rem;
 }

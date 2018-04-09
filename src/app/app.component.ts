@@ -7,6 +7,8 @@ import 'rxjs/add/operator/do';
 import { Router } from '@angular/router';
 import { Route } from '@angular/router/src/config';
 // import { clearInterval } from 'timers';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//TODO: Add animation to routing
 
 @Component({
   selector: 'app-root',

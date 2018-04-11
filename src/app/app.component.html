@@ -1,7 +1,8 @@
 
 <div>
   <!-- Dropdown Structure -->
-<ul class="dropdown-content" [ngClass]="{'make-real': ifClicked }" [ngStyle]="{'opacity': opaqueProperty }">
+<!-- <ul class="dropdown-content" [ngClass]="{'make-real': ifClicked }" [ngStyle]="{'opacity': opaqueProperty }"> -->
+  <ul class="dropdown-content" [ngStyle]="{'opacity': opaqueProperty }">  
     <li><a (click)="soundWidget()">Music Player <i class="fa fa-headphones"></i></a></li>
     <li class="divider"></li>
     <li><a (click)="videoWidget()">Video Player <i class="fa fa-video-camera"></i></a></li>
@@ -19,7 +20,7 @@
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li class=""><a (click)="homeLink()">Home</a></li>
         <li class=""><a (click)="appSettingsLink()">Settings</a></li>
-        <li class="drop-down-item"><a (click)="openDropdown()">Widgets</a></li>
+        <li class="drop-down-item"><a>Widgets</a></li>
       </ul>
     </div>
   </nav>

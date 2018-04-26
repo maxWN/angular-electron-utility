@@ -3,7 +3,7 @@ import { Howl } from 'howler';
 import { Observable } from 'rxjs/Observable';
 import { EventEmitter } from 'events';
 import { ElectronService } from 'ngx-electron';
-import { Playlist } from '../../shared/models/playlist';
+import { Playlist } from '../shared/models/playlist';
 
 
 @Component({

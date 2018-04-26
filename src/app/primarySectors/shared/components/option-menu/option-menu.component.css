@@ -1,0 +1,37 @@
+.menu-icons {
+    color: #d82424;
+}
+
+.search-function {
+    display: none;
+    background-color: #c7c7c7;
+}
+
+.reveal-search {
+    display: block;
+    background-color: #c7c7c7;    
+}
+
+.input:not([type]), input[type=date]:not(.browser-default), input[type=datetime-local]:not(.browser-default), 
+input[type=datetime]:not(.browser-default), input[type=email]:not(.browser-default), input[type=number]:not(.browser-default),
+input[type=password]:not(.browser-default), input[type=search]:not(.browser-default), input[type=tel]:not(.browser-default), 
+input[type=text]:not(.browser-default), input[type=time]:not(.browser-default), input[type=url]:not(.browser-default), 
+textarea.materialize-textarea {
+    background-color: #000000;
+    padding-left:1rem;
+    color: #ffffff;
+}
+
+.btn, .btn-large {
+    background-color: #d82424;
+    /* transition: .2s cubic-bezier(0.18, 0.89, 0.32, 1.28) */
+}
+
+.playlist-label {
+    font-weight: bold;
+}
+
+.recent-playlist {
+    background-color: #000000;
+    color: #ffffff;
+}

@@ -24,9 +24,9 @@ export class InteractiveMapComponent implements OnInit {
 
     public ngOnInit(): void {
 
-      //TODO: Check if Electron framework app is run in https or http
-      //Chromium Geolocation support only works for https
-      // check for Geolocation support
+      //TODO: Utilize information found within this link:
+      //https://github.com/electron/electron/issues/9420
+      //to acquire Google Geolocation API Key
       this.isGeolocationSupportEnabled = this.isGeolocationEnabled();
       if(this.isGeolocationSupportEnabled) {
         this.getUserLocation();

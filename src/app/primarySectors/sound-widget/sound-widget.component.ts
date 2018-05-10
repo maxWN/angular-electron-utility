@@ -51,7 +51,6 @@ export class SoundWidgetComponent implements OnInit {
     //TODO: Create a simple boolean variable that isn't dependent on
     //any of the Howl.js functions, and can only be set by the playSong() 
     //function. This will replace the preventative condition below...
-    if(this.isSongPlaying != undefined && this.isSongPlaying != true) {
     this.AudioFiles.song.play();
 
     this.totalTime = Math.round( this.AudioFiles.song.duration() );
@@ -63,7 +62,6 @@ export class SoundWidgetComponent implements OnInit {
       .takeWhile(_ => this.AudioFiles.song.playing() )
       .do(() => { this.timeRemaining() } )
       .subscribe();
-    }
   }
 
   public stopSong():void {

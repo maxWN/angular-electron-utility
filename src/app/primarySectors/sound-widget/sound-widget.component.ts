@@ -82,11 +82,11 @@ export class SoundWidgetComponent implements OnInit {
   }
 
   public pauseSong():void {
-    if( this.AudioFiles.song.playing([0])) {
+    // if( this.AudioFiles.song.playing([0])) {
     this.AudioFiles.song.pause();
     //this is a temporary fix; new runtime errors occur
     this.isSongPlaying=!this.isSongPlaying;
-    }
+    // }
   }
 
   public timeRemaining():void {

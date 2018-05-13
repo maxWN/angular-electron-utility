@@ -12,10 +12,12 @@ function createWindow () {
     backgroundColor: '#ffffff',
     icon: 'knife.png'
   })
-
+  // turn off dev menu
+  mainWindow.setMenu(null);
+  // load index.html as main window
   mainWindow.loadURL(`file://${__dirname}/dist/index.html`);
 
-  //test modal window
+  // test modal window
   modalWindow = new BrowserWindow({
     width: 400, 
     height: 475,
@@ -27,39 +29,46 @@ function createWindow () {
     parent: mainWindow,
     title: modalTitle
   })
-
-  modalWindow.loadURL(`file://${__dirname}/src/app/shared/templates/generic-modal.tmp.html`)
+  modalWindow.setMenu(null);
+  modalWindow.loadURL(`file://${__dirname}/src/app/primarySectors/shared/templates/generic-modal.tmp.html`)
 
   //// uncomment below to open the DevTools.
   // mainWindow.webContents.openDevTools()
   // Event when the window is closed.
-  mainWindow.on('closed', function () {
-    mainWindow = null
+  mainWindow.on('closed', function (event) {
+    mainWindow = null;
   })
-
-  //turn off dev
-  mainWindow.setMenu(null);
 
 }
 //    icon: `file://${__dirname}/src/assets/newItem.PNG`
 //    icon: path.join(__dirname+'assets/sample-1.jpg')
 //    doesn't find icon file
 
-
 ipcMain.on('open-modal', (event, arg) => {
   modalTitle = arg;
   modalWindow.show();
 });
 
-//open development/debug window
+// replace electron modal with pure HTML/CSS/JS modal
+// cannot 'close' modal window after first usage, because 
+// framework destroys the only instance of the popup  
+ipcMain.on('closed', (event) => {
+  // console.log(event);
+  // event.preventDefault();
+  // event.returnValue = false;
+  // modalWindow.hide();
+  modalWindow = null;
+});
+
+// open development/debug window
 ipcMain.on('open-dev-menu', (event, arg)=>{
   mainWindow.webContents.openDevTools();
 });
 
-//TODO: 
-//when development window is closed, change 
-//checked input back to false in app settings
-ipcMain.on('close-dev-menu', (event, arg)=>{
+// TODO: 
+// when development window is closed, change 
+// checked input back to false in app settings
+ipcMain.on('close-dev-menu', (event, arg) => {
   mainWindow.setMenu(null);
 });
 

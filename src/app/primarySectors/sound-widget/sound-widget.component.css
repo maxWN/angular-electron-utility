@@ -65,6 +65,9 @@
 .play-btn {
     background-color: #6cc65e;
 }
+.play-btn-paused {
+    background-color: #9bd393;
+}
 .stop-btn {
     background-color: #d82424;
 }

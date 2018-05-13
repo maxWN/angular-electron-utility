@@ -21,6 +21,7 @@ export class SoundWidgetComponent implements OnInit {
     public songTitle: string;
     public totalTime:number;
     public isSongPlaying:boolean=false;
+    public wasSongPaused:boolean=false;
     public isMusicPlayer:number=1;
     public progressBar:string;
     public currentPos:number;
@@ -52,6 +53,7 @@ export class SoundWidgetComponent implements OnInit {
     //any of the Howl.js functions, and can only be set by the playSong() 
     //function. This will replace the preventative condition below...
     this.AudioFiles.song.play();
+    this.wasSongPaused = false;
 
     this.totalTime = Math.round( this.AudioFiles.song.duration() );
     this.isSongPlaying = true;    
@@ -85,6 +87,7 @@ export class SoundWidgetComponent implements OnInit {
     // if( this.AudioFiles.song.playing([0])) {
     this.AudioFiles.song.pause();
     //this is a temporary fix; new runtime errors occur
+    this.wasSongPaused = true;
     this.isSongPlaying=!this.isSongPlaying;
     // }
   }

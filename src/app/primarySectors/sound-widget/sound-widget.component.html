@@ -18,7 +18,8 @@
           <div class="center-panel-buffer"></div>
           <div class="button-grouping">
             <div class="btns stop-btn" (click)="stopSong()"><i class="fa fa-stop-circle-o"></i></div>
-            <div class="btns play-btn pad-left" (click)="playSong()"><i class="fa fa-play-circle-o"></i></div>
+            <div class="btns play-btn pad-left" (click)="playSong()" *ngIf="isSongPlaying === false || wasSongPaused === true"><i class="fa fa-play-circle-o"></i></div>
+            <div class="btns play-btn-paused pad-left" *ngIf="isSongPlaying && wasSongPaused === false"><i class="fa fa-play-circle-o"></i></div>
             <div class="btns pause-btn pad-left" (click)="pauseSong()"><i class="fa fa-pause-circle-o"></i></div>
           </div>
         </div>

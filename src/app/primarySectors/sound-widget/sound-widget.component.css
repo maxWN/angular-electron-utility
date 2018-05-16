@@ -1,3 +1,8 @@
+.buffer {
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+}
+
 .progress-bar {
     width: 100%;
     background-color: #c7c7c7;

@@ -18,6 +18,7 @@ export class SoundWidgetComponent implements OnInit {
 
     public SelectedTracks: Array<Playlist> = new Array<Playlist>();
     public AudioFiles: Playlist = <Playlist>{};
+    public footerMargin: string = "10rem";
     public songTitle: string;
     public totalTime:number;
     public isSongPlaying:boolean=false;

@@ -32,6 +32,9 @@
     display:block;
 }
 
+.widget-container {
+    height: 900px;
+}
 
 /* .ul.dropdown-content:active {
     -webkit-transition: opacity 1s ease-in-out;

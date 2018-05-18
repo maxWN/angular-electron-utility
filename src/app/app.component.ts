@@ -8,7 +8,6 @@ import { Router } from '@angular/router';
 import { Route } from '@angular/router/src/config';
 // import { clearInterval } from 'timers';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-//TODO: Add animation to routing
 import {
   trigger,
   state,
@@ -29,8 +28,8 @@ import {
       state('active',   style({
         opacity: 0
       })),
-      transition('inactive => active', animate('100ms ease-in')),
-      transition('active => inactive', animate('100ms ease-out'))
+      transition('inactive => active', animate('1000ms ease-in')),
+      transition('active => inactive', animate('1000ms ease-out'))
     ])
   ]
 })
@@ -39,10 +38,10 @@ export class AppComponent {
 
 //region class variables 
 
-public ifClicked:boolean=false;
-public showDropdown:number=0;
-public opaqueProperty:string;
-public interval:any;
+  public ifClicked:boolean=false;
+  public showDropdown:number=0;
+  public opaqueProperty:string;
+  public interval:any;
   public isModalDisplayed:boolean = false;
   public modalDisplay:string;
 

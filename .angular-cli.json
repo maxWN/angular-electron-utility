@@ -26,6 +26,7 @@
       ],
       "scripts": [
         "../node_modules/materialize-css/dist/js/materialize.min.js",
+        "../node_modules/file-saver/FileSaver.js",
         "../node_modules/quill/dist/quill.js"
       ],
       "environmentSource": "environments/environment.ts",

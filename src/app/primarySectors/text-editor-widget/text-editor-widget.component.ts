@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { saveAs } from 'file-saver';
 
 @Component({
   selector: 'desk-text-editor-widget',
@@ -11,23 +12,34 @@ export class TextEditorWidgetComponent implements OnInit {
 
   constructor() { }
 
-  //region public functions
+  // region public functions
 
     public ngOnInit():void {
-      //load last saved file here, unless user has turned off setting
+      // load last saved file here, unless user has turned off setting
     }
 
-    //for testing purposes only
+    // for testing purposes only
     public getURL():void {
       alert("located at: "+window.location.href + "\n"+this.text);
     }
 
-    //Remove text completely if unsaved, if saved, prompt user 
+    // Remove text completely if unsaved, if saved, prompt user 
     public deleteText():void {
       this.text = '';
     }
 
-  //endregion public functions
+    // Use the following example:
+    // https://stackoverflow.com/questions/40782331/use-filesaver-js-with-angular2
+    // Save text file 
+    public saveFile(): void {
+      if (this.text && this.text.length > 0) {
+        let blob = new Blob([this.text], {type: "text/plain;charset=utf-8"});
+        // let x_filename = data.headers.get('x-filename');
+        saveAs(blob);
+      }
+    }
+
+  // endregion public functions
 
 
 }

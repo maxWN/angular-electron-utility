@@ -10,8 +10,8 @@ import { LandingPageComponent } from './primarySectors/landing-page/landing-page
 import { SoundWidgetComponent } from './primarySectors/sound-widget/sound-widget.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SoundAnimationComponent } from './primarySectors/shared/components/sound-animation/sound-animation.component';
-import { OptionMenuComponent } from './primarySectors/shared/components/option-menu/option-menu.component';
+// import { SoundAnimationComponent } from './primarySectors/shared/components/sound-animation/sound-animation.component';
+// import { OptionMenuComponent } from './primarySectors/shared/components/option-menu/option-menu.component';
 import { VideoWidgetComponent } from './primarySectors/video-widget/video-widget.component';
 import { TextEditorWidgetComponent } from './primarySectors/text-editor-widget/text-editor-widget.component';
 import { QuillModule } from 'ngx-quill'
@@ -23,6 +23,7 @@ import { InteractiveMapComponent } from './primarySectors/interactive-map/intera
 import { AngularOpenlayersModule } from 'ngx-openlayers';
 import { FileManagerComponent } from './primarySectors/file-manager/file-manager.component';
 import { AppRoutingModule } from './app-routing.module';
+import { SharedModule } from './primarySectors/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -30,8 +31,8 @@ import { AppRoutingModule } from './app-routing.module';
     TimerComponent,
     LandingPageComponent,
     SoundWidgetComponent,
-    SoundAnimationComponent,
-    OptionMenuComponent,
+    // SoundAnimationComponent,
+    // OptionMenuComponent,
     VideoWidgetComponent,
     TextEditorWidgetComponent,
     FooterComponent,
@@ -43,13 +44,13 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     BrowserAnimationsModule,
     QuillModule,
-    AppRoutingModule,    
+    AppRoutingModule,
     FormsModule,
     // RoundProgressModule,
     NoopAnimationsModule,
     NgxElectronModule,
-    AngularOpenlayersModule
-
+    AngularOpenlayersModule,
+    SharedModule
   ],
   providers: [FileReaderService],
   bootstrap: [AppComponent]

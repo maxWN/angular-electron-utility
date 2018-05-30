@@ -16,7 +16,7 @@ import { ToolDescriptionsUS, ToolDescriptionsDE, ToolDescriptionsES } from '../s
 
 export class LandingPageComponent implements OnInit {
 
-  //region class variables 
+  // region class variables
     public animationState:string;
     public APP_SUMMARY: string;
     public toolDescription: string;
@@ -26,79 +26,79 @@ export class LandingPageComponent implements OnInit {
     public isFileManagerAppInfo:boolean;
     public isTextEditorAppInfo:boolean;
     public isVideoAppInfo:boolean;
-  //endregion class variables
+  // endregion class variables
 
   constructor() { }
 
-  //region public functions
+  // region public functions
 
-  public ngOnInit():void {
+  public ngOnInit(): void {
     this.englishDescription = new ToolDescriptionsUS();
-    this.isMusicAppInfo=true;
-    this.toolDescription=this.englishDescription.MUSIC_PLAYER;
+    this.isMusicAppInfo = true;
+    this.toolDescription = this.englishDescription.MUSIC_PLAYER;
   }
 
-  public startAnimation(state):void {
+  public startAnimation(state): void {
     // console.log(state);
     if(!this.animationState) {
-      this.animationState=state;
+      this.animationState = state;
     }
   }
 
-  public resetAnimation():void  {
+  public resetAnimation(): void  {
     this.animationState = '';
   }
 
-  public explanationProvider(index:number):void {
+  public explanationProvider(index:number): void {
 
-    switch(index) {
-      case 1: 
-        this.toolDescription=this.englishDescription.FILE_MANAGER;
-        this.isMusicAppInfo=false;
-        this.isMapAppInfo=false;
-        this.isFileManagerAppInfo=true;
-        this.isTextEditorAppInfo=false;
-        this.isVideoAppInfo=false;
+    switch (index) {
+      case 1:
+        this.toolDescription = this.englishDescription.FILE_MANAGER;
+        this.isMusicAppInfo = false;
+        this.isMapAppInfo = false;
+        this.isFileManagerAppInfo = true;
+        this.isTextEditorAppInfo = false;
+        this.isVideoAppInfo = false;
         break;
-      case 2: 
-        this.toolDescription=this.englishDescription.MUSIC_PLAYER;
-        this.isMusicAppInfo=true;
-        this.isMapAppInfo=false;
-        this.isFileManagerAppInfo=false;
-        this.isTextEditorAppInfo=false;
-        this.isVideoAppInfo=false;
+      case 2:
+        this.toolDescription = this.englishDescription.MUSIC_PLAYER;
+        this.isMusicAppInfo = true;
+        this.isMapAppInfo = false;
+        this.isFileManagerAppInfo = false;
+        this.isTextEditorAppInfo =false;
+        this.isVideoAppInfo = false;
         break;
-      case 3: 
+      case 3:
         this.toolDescription=this.englishDescription.VIDEO_PLAYER;
-        this.isMusicAppInfo=false;
-        this.isMapAppInfo=false;
-        this.isFileManagerAppInfo=false;
-        this.isTextEditorAppInfo=false;
-        this.isVideoAppInfo=true;
+        this.isMusicAppInfo = false;
+        this.isMapAppInfo = false;
+        this.isFileManagerAppInfo = false;
+        this.isTextEditorAppInfo = false;
+        this.isVideoAppInfo = true;
         break;
-      case 4: 
-        this.toolDescription=this.englishDescription.TEXT_EDITOR;
-        this.isMusicAppInfo=false;
-        this.isMapAppInfo=false;
-        this.isFileManagerAppInfo=false;
-        this.isTextEditorAppInfo=true;
-        this.isVideoAppInfo=false;
+      case 4:
+        this.toolDescription = this.englishDescription.TEXT_EDITOR;
+        this.isMusicAppInfo = false;
+        this.isMapAppInfo = false;
+        this.isFileManagerAppInfo = false;
+        this.isTextEditorAppInfo = true;
+        this.isVideoAppInfo = false;
         break;
-      case 5: 
-        this.toolDescription=this.englishDescription.INTERACTIVE_MAP;
-        this.isMusicAppInfo=false;
-        this.isMapAppInfo=true;
-        this.isFileManagerAppInfo=false;
-        this.isTextEditorAppInfo=false;
-        this.isVideoAppInfo=false;
+      case 5:
+        this.toolDescription = this.englishDescription.INTERACTIVE_MAP;
+        this.isMusicAppInfo = false;
+        this.isMapAppInfo = true;
+        this.isFileManagerAppInfo = false;
+        this.isTextEditorAppInfo = false;
+        this.isVideoAppInfo = false;
         break;
       default:
-        //handle this type of error with ElectronService modal
-        alert("Error occurred: no valid value entered.");      
+        // handle this type of error with ElectronService modal
+        alert("Error occurred: no valid value entered.");   
     }
 
   }
 
-  //endregion public functions
+  // endregion public functions
 
 }

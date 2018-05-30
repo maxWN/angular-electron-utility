@@ -51,13 +51,13 @@ export class SoundWidgetComponent implements OnInit {
 
   public playSong():void {
     //TODO: Create a simple boolean variable that isn't dependent on
-    //any of the Howl.js functions, and can only be set by the playSong() 
+    //any of the Howl.js functions, and can only be set by the playSong()
     //function. This will replace the preventative condition below...
     this.AudioFiles.song.play();
     this.wasSongPaused = false;
 
     this.totalTime = Math.round( this.AudioFiles.song.duration() );
-    this.isSongPlaying = true;    
+    this.isSongPlaying = true;
 
     const interval = Observable.interval(100);
       
@@ -67,7 +67,7 @@ export class SoundWidgetComponent implements OnInit {
       .subscribe();
   }
 
-  public stopSong():void {
+  public stopSong(): void {
     if( this.AudioFiles.song.playing([0])) {
       this.AudioFiles.song.stop();
       this.isSongPlaying = false;
@@ -84,21 +84,21 @@ export class SoundWidgetComponent implements OnInit {
     }
   }
 
-  public pauseSong():void {
+  public pauseSong(): void {
     // if( this.AudioFiles.song.playing([0])) {
     this.AudioFiles.song.pause();
-    //this is a temporary fix; new runtime errors occur
+    // this is a temporary fix; new runtime errors occur
     this.wasSongPaused = true;
-    this.isSongPlaying=!this.isSongPlaying;
+    this.isSongPlaying =! this.isSongPlaying;
     // }
   }
 
-  public timeRemaining():void {
+  public timeRemaining(): void {
 
     if(this.totalTime) {
       this.currentPos = Math.round(this.AudioFiles.song.seek());
       this.formatTime();
-      this.progressBar = (((this.currentPos)/this.totalTime)*100).toFixed(2)+'%';
+      this.progressBar = (((this.currentPos) / this.totalTime) * 100).toFixed(2) + '%';
       // this.progressBar = String(((this.currentPos)/this.totalTime)*100)+'%';
     }
 
@@ -106,15 +106,15 @@ export class SoundWidgetComponent implements OnInit {
 
   // howler.js functions duration() and seek()
   // do not return rate of completion in total amount of seconds
-  public formatTime():void {
+  public formatTime(): void {
 
     if(this.currentPos < 60) {
-      this.trackTime = "0:"+(this.currentPos < 10 ? "0"+this.currentPos : this.currentPos);
+      this.trackTime = '0:' + (this.currentPos < 10 ? '0' + this.currentPos : this.currentPos);
     }
     else {
-      let min:number = (this.currentPos-this.currentPos%60)/60;
-      let sec:number = this.currentPos%60;
-      this.trackTime = min+":"+ (sec < 10 ? "0"+sec : sec);
+      let min:number = (this.currentPos - this.currentPos % 60) / 60;
+      let sec:number = this.currentPos % 60;
+      this.trackTime = min + ':' + (sec < 10 ? '0' + sec : sec);
     }
 
   }
@@ -124,13 +124,13 @@ export class SoundWidgetComponent implements OnInit {
    * @public
    * @param song {any} represents an audio file
    */
-  public handleSongSelection(song):void {
+  public handleSongSelection(song): void {
     // if song is not undefined or null add song to playlist array
     if(song) {
 
       this.AudioFiles.song = new Howl({
         src:[song.path],
-        volume:.25,
+        volume: .25,
         onend:() => { this.onSongEnd() }
       });
       this.AudioFiles.title = song.name;
@@ -153,8 +153,8 @@ export class SoundWidgetComponent implements OnInit {
    */
   public onSongEnd(): void {
     this.isSongPlaying = false;
-    //TODO need to use local string (songTitle) instead of AudioFiles.title, 
-    //as the can cause runtime errors due to object being destroyed before reaching 
+    //TODO need to use local string (songTitle) instead of AudioFiles.title,
+    //as the can cause runtime errors due to object being destroyed before reaching
     //electronService modal call
     this._electronService.ipcRenderer.send('open-modal', this.AudioFiles.title);
   }

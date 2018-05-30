@@ -12,7 +12,7 @@ import * as _ from 'lodash';
 })
 export class OptionMenuComponent implements OnInit {
 
-  //region class variables 
+  // region class variables 
 
     public isSearchDisplayed:boolean = false;
     public isSongSelectDisplayed:boolean = false;
@@ -28,13 +28,13 @@ export class OptionMenuComponent implements OnInit {
     @Input() menuType:number;
     public hasTrackBeenSelected: boolean = false;
 
-  //endregion class variables
+  // endregion class variables
 
   constructor(private fileReaderSvc:FileReaderService) {
     // this.fileReaderSvc=fileReaderSvc;
    }
 
-  //region public functions
+  // region public functions
 
     public ngOnInit():void {
       this.determineMenuSettings();
@@ -50,7 +50,7 @@ export class OptionMenuComponent implements OnInit {
 
     }
 
-    //toggle option-menu options
+    // toggle option-menu options
     public displaySearch():void {
       this.isSearchDisplayed=!this.isSearchDisplayed;
     }
@@ -84,9 +84,9 @@ export class OptionMenuComponent implements OnInit {
 
   //endregion public functions
 
-  //region private functions
+  // region private functions
 
-    //determine cause of error within 
+    // determine cause of error within 
     private readURL(input):void {
 
       // if (input.files && input.target.files[0]) {
@@ -107,25 +107,28 @@ export class OptionMenuComponent implements OnInit {
      * Creates recently played song playlist for users to choose from
      * @private
      * @param file {var} - represents event triggered from file selection
-     */
+     **/
     private createRecentSongPlaylist(file):void {
-      //append distinctive songs to array
-      //make array act as a stack object
-      //limit entries to maximum of 10
+      // append distinctive songs to array
+      // make array act as a stack object
+      // limit entries to maximum of 10
       let isTrackInPlaylist: boolean;
 
-      if(this.currentTrack != null && this.currentTrack != undefined) {
+      if (this.currentTrack != null && this.currentTrack != undefined) {
 
         this.currentTrack.song = file;
 
-        if(this.SelectedTracks.length == 0) {
-          this.SelectedTracks.push(this.currentTrack);
+        if (this.SelectedTracks.length == 0) {
+          // TODO: Whenever a database is created, use the 
+          // Object.assign({}, var, {cmd}) notation instead of the push function
+          // this avoids using a risky mutable variable...
+          this.SelectedTracks.push(this. currentTrack);
         }
-        else if(this.SelectedTracks.length < 10) {
+        else if (this.SelectedTracks.length < 10) {
 
           let foundTrack:Playlist = _.find(this.SelectedTracks, ['title', this.currentTrack.title]);
           //if track was found, do not add to playlist
-          if(foundTrack == undefined) {
+          if (foundTrack == undefined) {
             this.SelectedTracks.push(this.currentTrack);
           }
 
@@ -133,6 +136,6 @@ export class OptionMenuComponent implements OnInit {
       }
     }
 
-  //endregion private functions
+  // endregion private functions
 
 }

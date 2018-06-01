@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed, inject, tick, fakeAsync } from '@angular/core/testing';
-import { ToolDescriptionsUS, ToolDescriptionsDE, ToolDescriptionsES } from '../../shared/models/toolDescriptions';
+import { ToolDescriptionsUS, ToolDescriptionsDE, ToolDescriptionsES } from '../shared/models/toolDescriptions';
 import { LandingPageComponent } from './landing-page.component';
 import { DebugElement } from '@angular/core';
 import { of } from 'rxjs/observable/of';
@@ -7,12 +7,12 @@ import { of } from 'rxjs/observable/of';
 describe('LandingPageComponent', () => {
   let component: LandingPageComponent;
   let fixture: ComponentFixture<LandingPageComponent>;
-  //represents HTML debug element
+  // represents HTML debug element
   let de: DebugElement;
-  //description models
-  let langDescr:ToolDescriptionsUS=new ToolDescriptionsUS();
+  // description models
+  let langDescr:ToolDescriptionsUS = new ToolDescriptionsUS();
 
-  //detects if component is created successfully
+  // detects if component is created successfully
   fixture.detectChanges();
 
   // service = de.injector.get();
@@ -23,7 +23,7 @@ describe('LandingPageComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ LandingPageComponent ]
     })
-    //compiles template and css
+    // compiles template and css
     .compileComponents();
   }));
 
@@ -34,7 +34,7 @@ describe('LandingPageComponent', () => {
   });
 
   it('should create', () => {
-    //toBeTruthy() tests whether or not something evaluates to true or false
+    // toBeTruthy() tests whether or not something evaluates to true or false
     expect(component).toBeTruthy();
   });
 

@@ -17,15 +17,15 @@ import { ToolDescriptionsUS, ToolDescriptionsDE, ToolDescriptionsES } from '../s
 export class LandingPageComponent implements OnInit {
 
   // region class variables
-    public animationState:string;
+    public animationState: string;
     public APP_SUMMARY: string;
     public toolDescription: string;
     public englishDescription: ToolDescriptionsUS;
-    public isMusicAppInfo:boolean;
-    public isMapAppInfo:boolean;
-    public isFileManagerAppInfo:boolean;
-    public isTextEditorAppInfo:boolean;
-    public isVideoAppInfo:boolean;
+    public isMusicAppInfo: boolean;
+    public isMapAppInfo: boolean;
+    public isFileManagerAppInfo: boolean;
+    public isTextEditorAppInfo: boolean;
+    public isVideoAppInfo: boolean;
   // endregion class variables
 
   constructor() { }
@@ -40,7 +40,7 @@ export class LandingPageComponent implements OnInit {
 
   public startAnimation(state): void {
     // console.log(state);
-    if(!this.animationState) {
+    if (!this.animationState) {
       this.animationState = state;
     }
   }
@@ -49,7 +49,7 @@ export class LandingPageComponent implements OnInit {
     this.animationState = '';
   }
 
-  public explanationProvider(index:number): void {
+  public explanationProvider(index: number): void {
 
     switch (index) {
       case 1:

@@ -87,7 +87,7 @@ export class AppComponent {
     while (this.showDropdown < 1) {
       this.showDropdown = this.showDropdown + .1;
       this.opaqueProperty = String(this.showDropdown);
-      if(this.showDropdown === .9) {
+      if (this.showDropdown === .9) {
          clearInterval(this.interval);
       }
     }

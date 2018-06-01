@@ -5,7 +5,6 @@ import { EventEmitter } from 'events';
 import { ElectronService } from 'ngx-electron';
 import { Playlist } from '../shared/models/playlist';
 
-
 @Component({
   selector: 'desk-sound-widget',
   templateUrl: './sound-widget.component.html',
@@ -14,29 +13,29 @@ import { Playlist } from '../shared/models/playlist';
 
 export class SoundWidgetComponent implements OnInit {
 
-  //region class variables 
+  // region class variables 
 
     public SelectedTracks: Array<Playlist> = new Array<Playlist>();
     public AudioFiles: Playlist = <Playlist>{};
     public footerMargin: string = "10rem";
     public songTitle: string;
-    public totalTime:number;
-    public isSongPlaying:boolean=false;
-    public wasSongPaused:boolean=false;
-    public isMusicPlayer:number=1;
-    public progressBar:string;
-    public currentPos:number;
-    public trackTime:string;
-    public minutes:number;
-    public index:number;
+    public totalTime: number;
+    public isSongPlaying: boolean = false;
+    public wasSongPaused: boolean = false;
+    public isMusicPlayer: number = 1;
+    public progressBar: string;
+    public currentPos: number;
+    public trackTime: string;
+    public minutes: number;
+    public index: number;
     // @Input() filePath:any;
 
-  //endregion class variables
+  // endregion class variables
 
   constructor(private _electronService: ElectronService) {
   }
 
-  //region public functions
+  // region public functions
 
   public ngOnInit():void {
 
@@ -50,9 +49,9 @@ export class SoundWidgetComponent implements OnInit {
   }
 
   public playSong():void {
-    //TODO: Create a simple boolean variable that isn't dependent on
-    //any of the Howl.js functions, and can only be set by the playSong()
-    //function. This will replace the preventative condition below...
+    // TODO: Create a simple boolean variable that isn't dependent on
+    // any of the Howl.js functions, and can only be set by the playSong()
+    // function. This will replace the preventative condition below...
     this.AudioFiles.song.play();
     this.wasSongPaused = false;
 
@@ -68,7 +67,7 @@ export class SoundWidgetComponent implements OnInit {
   }
 
   public stopSong(): void {
-    if( this.AudioFiles.song.playing([0])) {
+    if ( this.AudioFiles.song.playing([0])) {
       this.AudioFiles.song.stop();
       this.isSongPlaying = false;
       if(this.currentPos >= 0) {
@@ -76,8 +75,8 @@ export class SoundWidgetComponent implements OnInit {
       }
     }
     else {
-      //if song was already playing, erase data
-      if(parseInt(this.progressBar) > 0) {
+      // if song was already playing, erase data
+      if (parseInt(this.progressBar) > 0) {
         this.progressBar = "0%";
         this.trackTime = "0:00";
       }
@@ -153,12 +152,12 @@ export class SoundWidgetComponent implements OnInit {
    */
   public onSongEnd(): void {
     this.isSongPlaying = false;
-    //TODO need to use local string (songTitle) instead of AudioFiles.title,
-    //as the can cause runtime errors due to object being destroyed before reaching
-    //electronService modal call
+    // TODO need to use local string (songTitle) instead of AudioFiles.title,
+    // as the can cause runtime errors due to object being destroyed before reaching
+    // electronService modal call
     this._electronService.ipcRenderer.send('open-modal', this.AudioFiles.title);
   }
 
-  //endregion public functions
+  // endregion public functions
 
 }

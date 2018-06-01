@@ -13,7 +13,7 @@ import { Playlist } from '../shared/models/playlist';
 
 export class SoundWidgetComponent implements OnInit {
 
-  // region class variables 
+  // region class variables
 
     public SelectedTracks: Array<Playlist> = new Array<Playlist>();
     public AudioFiles: Playlist = <Playlist>{};
@@ -59,7 +59,7 @@ export class SoundWidgetComponent implements OnInit {
     this.isSongPlaying = true;
 
     const interval = Observable.interval(100);
-      
+
     interval
       .takeWhile(_ => this.AudioFiles.song.playing() )
       .do(() => { this.timeRemaining() } )
@@ -125,8 +125,12 @@ export class SoundWidgetComponent implements OnInit {
    */
   public handleSongSelection(song): void {
     // if song is not undefined or null add song to playlist array
-    if(song) {
+    if (song) {
 
+      if (this.AudioFiles.song) {
+        // if track is already playing, stop the track
+        this.stopSong();
+      }
       this.AudioFiles.song = new Howl({
         src:[song.path],
         volume: .25,
@@ -145,10 +149,10 @@ export class SoundWidgetComponent implements OnInit {
   }
 
   /**
-   * Handles end of a song; helps to prevent more than one song being played at once. 
-   * This occurs because after a Howl music file is finished playing it is 'destroyed', 
+   * Handles end of a song; helps to prevent more than one song being played at once.
+   * This occurs because after a Howl music file is finished playing it is 'destroyed',
    * and none of it's attributes can be accessed afterwards
-   * @public 
+   * @public
    */
   public onSongEnd(): void {
     this.isSongPlaying = false;

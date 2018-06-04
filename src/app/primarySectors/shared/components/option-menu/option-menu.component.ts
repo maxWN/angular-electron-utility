@@ -78,7 +78,7 @@ export class OptionMenuComponent implements OnInit {
         let fileName: string  = String($event.target.files[0].name);
         if (this.menuType == MenuTypes.Music) {
 
-          if (this.isInvalidMusicFileUpload(fileName) && this.menuType == MenuTypes.Music) {
+          if (this.isInvalidMusicFileUpload(fileName)) {
             this.songTitle = fileName;
             this.currentTrack = <Playlist>{};
             this.hasTrackBeenSelected = true;
@@ -88,8 +88,11 @@ export class OptionMenuComponent implements OnInit {
           else {
             this.songTitle = "Error: User has selected an invalid file type!";
           }
-        } else if (this.isInvalidVideoFileUpload(fileName) && this.menuType == MenuTypes.Video) {
-          // TODO: Enhance video player to handle video files...
+
+        } else if (this.menuType == MenuTypes.Video) {
+          if (this.isInvalidVideoFileUpload(fileName)) {
+            // TODO: Enhance video player to handle video files...
+          };
         }
 
       }

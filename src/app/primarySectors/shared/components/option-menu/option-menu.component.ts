@@ -4,6 +4,7 @@ import { FileReaderService } from '../../services/file-reader/file-reader.servic
 import { Playlist } from '../../models/playlist';
 import { MenuTypes } from '../../models/menuTypes';
 import * as _ from 'lodash';
+import { $ } from 'protractor';
 
 @Component({
   selector: 'desk-option-menu',
@@ -14,18 +15,18 @@ export class OptionMenuComponent implements OnInit {
 
   // region class variables 
 
-    public isSearchDisplayed:boolean = false;
-    public isSongSelectDisplayed:boolean = false;
-    public isAnimationChangeDisplayed:boolean = false;
-    public isFileEditDisplayed:boolean = false;
-    public songTitle:string="Upload one or more files";
+    public isSearchDisplayed: boolean = false;
+    public isSongSelectDisplayed: boolean = false;
+    public isAnimationChangeDisplayed: boolean = false;
+    public isFileEditDisplayed: boolean = false;
+    public songTitle: string = "Upload one or more files";
     // fileReaderSvc:FileReaderService;
     public SelectedTracks: Array<Playlist> = new Array<Playlist>();
     public currentTrack: Playlist;
     public filePath: any;
-    public menuTitle:string;
+    public menuTitle: string;
     @Output() eventClick = new EventEmitter();
-    @Input() menuType:number;
+    @Input() menuType: number;
     public hasTrackBeenSelected: boolean = false;
 
   // endregion class variables
@@ -36,35 +37,35 @@ export class OptionMenuComponent implements OnInit {
 
   // region public functions
 
-    public ngOnInit():void {
+    public ngOnInit(): void {
       this.determineMenuSettings();
     }
 
-    public determineMenuSettings():void {
-      if(this.menuType==MenuTypes.Music) {
-        this.menuTitle="My Music";
+    public determineMenuSettings(): void {
+      if(this.menuType == MenuTypes.Music) {
+        this.menuTitle = "My Music";
       }
-      else if(this.menuType==MenuTypes.Video) {
-        this.menuTitle="My Videos";
+      else if(this.menuType == MenuTypes.Video) {
+        this.menuTitle = "My Videos";
       }
 
     }
 
     // toggle option-menu options
-    public displaySearch():void {
-      this.isSearchDisplayed=!this.isSearchDisplayed;
+    public displaySearch(): void {
+      this.isSearchDisplayed = !this.isSearchDisplayed;
     }
 
-    public displayAnimationChange():void {
-      this.isAnimationChangeDisplayed=!this.isAnimationChangeDisplayed;
+    public displayAnimationChange(): void {
+      this.isAnimationChangeDisplayed = !this.isAnimationChangeDisplayed;
     }
 
-    public displaySongSelection():void {
-      this.isSongSelectDisplayed=!this.isSongSelectDisplayed;
+    public displaySongSelection(): void {
+      this.isSongSelectDisplayed = !this.isSongSelectDisplayed;
     }
 
-    public displayFileEditing():void {
-      this.isFileEditDisplayed=!this.isFileEditDisplayed;
+    public displayFileEditing(): void {
+      this.isFileEditDisplayed = !this.isFileEditDisplayed;
     }
 
     /**
@@ -73,13 +74,33 @@ export class OptionMenuComponent implements OnInit {
      * @param $event {any} represents the event triggered from file selection
      **/
     public onHandleUpload($event): void {
-      if($event) {
-        this.songTitle=String($event.target.files[0].name);
-        this.currentTrack = <Playlist>{};
-        this.hasTrackBeenSelected = true;
-        this.currentTrack.title = this.songTitle;
-        this.readURL($event);
+      if ($event) {
+        let fileName: string  = String($event.target.files[0].name);
+        if (this.preventInvalidFileUpload(fileName)) {
+          this.songTitle = fileName;
+          this.currentTrack = <Playlist>{};
+          this.hasTrackBeenSelected = true;
+          this.currentTrack.title = this.songTitle;
+          this.readURL($event);
+        }
+        else {
+          this.songTitle = "Error: User has selected an invalid file type!";
+        }
       }
+    }
+
+
+    public preventInvalidFileUpload(fileName: string): boolean {
+      // TODO: create separate function to determine if user is loading
+      // from video menu or music menu
+      if (_.endsWith(fileName, '.mp3') || _.endsWith(fileName, '.aiff') || 
+      _.endsWith(fileName, '.ogg') || _.endsWith(fileName, '.wma') || 
+      _.endsWith(fileName, '.wav') || _.endsWith(fileName, '.flac')) {
+        return true;
+      }
+      alert("Error: User has selected an invalid file type!");
+      // launch popup; inform user that invalid file has been selected
+      return false;
     }
 
   //endregion public functions

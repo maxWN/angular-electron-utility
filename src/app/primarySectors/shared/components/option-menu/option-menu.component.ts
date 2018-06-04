@@ -13,7 +13,7 @@ import { $ } from 'protractor';
 })
 export class OptionMenuComponent implements OnInit {
 
-  // region class variables 
+  // region class variables
 
     public isSearchDisplayed: boolean = false;
     public isSongSelectDisplayed: boolean = false;
@@ -76,26 +76,53 @@ export class OptionMenuComponent implements OnInit {
     public onHandleUpload($event): void {
       if ($event) {
         let fileName: string  = String($event.target.files[0].name);
-        if (this.preventInvalidFileUpload(fileName)) {
-          this.songTitle = fileName;
-          this.currentTrack = <Playlist>{};
-          this.hasTrackBeenSelected = true;
-          this.currentTrack.title = this.songTitle;
-          this.readURL($event);
+        if (this.menuType == MenuTypes.Music) {
+
+          if (this.isInvalidMusicFileUpload(fileName) && this.menuType == MenuTypes.Music) {
+            this.songTitle = fileName;
+            this.currentTrack = <Playlist>{};
+            this.hasTrackBeenSelected = true;
+            this.currentTrack.title = this.songTitle;
+            this.readURL($event);
+          }
+          else {
+            this.songTitle = "Error: User has selected an invalid file type!";
+          }
+        } else if (this.isInvalidVideoFileUpload(fileName) && this.menuType == MenuTypes.Video) {
+          // TODO: Enhance video player to handle video files...
         }
-        else {
-          this.songTitle = "Error: User has selected an invalid file type!";
-        }
+
       }
     }
 
+    /**
+     * Determines if music file uploaded is of proper type
+     * @public
+     * @param fileName {string} represents the name of a file
+     **/
+    public isInvalidMusicFileUpload(fileName: string): boolean {
 
-    public preventInvalidFileUpload(fileName: string): boolean {
-      // TODO: create separate function to determine if user is loading
-      // from video menu or music menu
-      if (_.endsWith(fileName, '.mp3') || _.endsWith(fileName, '.aiff') || 
-      _.endsWith(fileName, '.ogg') || _.endsWith(fileName, '.wma') || 
+      if (_.endsWith(fileName, '.mp3') || _.endsWith(fileName, '.aiff') ||
+      _.endsWith(fileName, '.ogg') || _.endsWith(fileName, '.wma') ||
       _.endsWith(fileName, '.wav') || _.endsWith(fileName, '.flac')) {
+        return true;
+      }
+
+      alert("Error: User has selected an invalid file type!");
+      // launch popup; inform user that invalid file has been selected
+      return false;
+    }
+
+     /**
+     * Determines if video file uploaded is of proper type
+     * @public
+     * @param fileName {string} represents the name of a file
+     **/
+    public isInvalidVideoFileUpload(fileName: string): boolean {
+
+      if (_.endsWith(fileName, '.mov') || _.endsWith(fileName, '.wmv') ||
+      _.endsWith(fileName, '.flv') || _.endsWith(fileName, '.mp4') ||
+      _.endsWith(fileName, '.avi')) {
         return true;
       }
       alert("Error: User has selected an invalid file type!");
@@ -107,7 +134,7 @@ export class OptionMenuComponent implements OnInit {
 
   // region private functions
 
-    // determine cause of error within 
+    // determine cause of error within
     private readURL(input):void {
 
       // if (input.files && input.target.files[0]) {
@@ -123,7 +150,7 @@ export class OptionMenuComponent implements OnInit {
       //   reader.readAsDataURL(input.target.files[0]);
       // }
     }
-        
+
     /**
      * Creates recently played song playlist for users to choose from
      * @private
@@ -140,7 +167,7 @@ export class OptionMenuComponent implements OnInit {
         this.currentTrack.song = file;
 
         if (this.SelectedTracks.length == 0) {
-          // TODO: Whenever a database is created, use the 
+          // TODO: Whenever a database is created, use the
           // Object.assign({}, var, {cmd}) notation instead of the push function
           // this avoids using a risky mutable variable...
           this.SelectedTracks.push(this. currentTrack);

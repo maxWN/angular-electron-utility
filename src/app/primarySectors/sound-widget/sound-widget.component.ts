@@ -28,6 +28,7 @@ export class SoundWidgetComponent implements OnInit {
     public trackTime: string;
     public minutes: number;
     public index: number;
+    public modalState: boolean = false;
     // @Input() filePath:any;
 
   // endregion class variables
@@ -159,7 +160,19 @@ export class SoundWidgetComponent implements OnInit {
     // TODO need to use local string (songTitle) instead of AudioFiles.title,
     // as the can cause runtime errors due to object being destroyed before reaching
     // electronService modal call
-    this._electronService.ipcRenderer.send('open-modal', this.AudioFiles.title);
+    // this._electronService.ipcRenderer.send('open-modal', this.AudioFiles.title);
+    this.launchModal();
+  }
+
+  public launchModal(): void {
+    if (this.modalState === false) {
+      this.modalState = true;
+      // alert(this.modalState);
+    }
+    else {
+      this.modalState = false;
+      // alert(this.modalState);
+    }
   }
 
   // endregion public functions

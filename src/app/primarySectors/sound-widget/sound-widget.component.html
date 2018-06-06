@@ -1,10 +1,10 @@
 <div class="row">
 
-    <div class="col s12">        
+    <div class="col s12">
       <h1 *ngIf="AudioFiles.title"> {{ AudioFiles.title }} </h1>
       <h1 class="timer" *ngIf="isSongPlaying">{{ trackTime }}</h1>
       <div class="progress-bar">
-        <div class="progression" [ngStyle]="{'width': progressBar }" *ngIf=" currentPos > 0 "> {{ progressBar }} </div>        
+        <div class="progression" [ngStyle]="{'width': progressBar }" *ngIf=" currentPos > 0 "> {{ progressBar }} </div>
       </div>
       <div class="control-panel">
 
@@ -12,7 +12,7 @@
           <div class="menu-buffer"></div>
           <div class="menu-option">
             <div class="btns stop-btn"><i class="fa fa fa-bars" (click)="pauseSong()"></i></div>
-          </div>    
+          </div>
         </div>
         <div class="center-panel">
           <div class="center-panel-buffer"></div>
@@ -24,12 +24,13 @@
           </div>
         </div>
         <div class="side-panels"></div>
-        
+
       </div>
 
-    </div>     
-    <div class="col s12"> 
-      <desk-option-menu (eventClick)="handleSongSelection($event)" [menuType]="isMusicPlayer"></desk-option-menu>   
-    </div> 
+    </div>
+    <div class="col s12">
+      <desk-option-menu (eventClick)="handleSongSelection($event)" [menuType]="isMusicPlayer"></desk-option-menu>
+    </div>
     <!-- <desk-footer [ngStyle]="{'margin-top: footerMargin'}"></desk-footer> -->
 </div>
+<desk-modal [activeState]="modalState"></desk-modal>

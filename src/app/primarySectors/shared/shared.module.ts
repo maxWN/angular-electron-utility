@@ -10,7 +10,7 @@ import { ModalComponent } from './components/modal/modal.component';
         SoundAnimationComponent,
         ModalComponent
     ],
-    exports: [ OptionMenuComponent, SoundAnimationComponent ],
+    exports: [ OptionMenuComponent, SoundAnimationComponent, ModalComponent ],
     imports: [ CommonModule ],
     providers: [],
     bootstrap: []

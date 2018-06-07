@@ -26,25 +26,50 @@
 
 /* Modal Content/Box */
 .modal-content {
-    background-color: #d82424;
+    background-color: #fafafa;
     margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
+    /* padding: 20px; */
     border: 1px solid #888;
     height: 475px;
     width: 400px; /* Could be more or less, depending on screen size */
 }
 
+.header {
+    background-color: #d82424;
+    height: 20%;
+}
+
+.modal-title {
+    display: inline-block;
+    color: #fafafa;
+    margin-left:1rem;
+}
+
+.content {
+    height: 80%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.footer {
+    height: 20%;
+    background-color: #d82424;
+}
+
 /* The Close Button */
 .close {
-    color: #aaa;
+    display: inline-block;
+    color: #fafafa;
     float: right;
     font-size: 28px;
     font-weight: bold;
+    margin-top: 1rem;
+    margin-right: 1rem;
 }
 
 .close:hover,
 .close:focus {
-    color: #000;
+    color: #aaa;
     text-decoration: none;
     cursor: pointer;
 }

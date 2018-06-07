@@ -2,8 +2,25 @@
 
   <!-- Modal content -->
   <div class="modal-content pop" [@popupState]="initialState">
-    <span class="close" (click)="spanOnclick()">&times;</span>
-    <h4 class="left-buffer">Swiss Army App</h4>
+    <div class="header">
+      <h4 class="modal-title">Swiss Army App</h4>
+      <div class="close" (click)="spanOnclick()">&times;</div>
+    </div>
+
+    <div class="content">
+        <ul class="collection with-header">
+            <li class="collection-header" id="test"><h4>Test Modal</h4></li>
+            <li class="collection-item">Test 1</li>
+            <li class="collection-item">Test 2</li>
+            <li class="collection-item">Test 3</li>
+            <li class="collection-item">Test 4</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+
+    </div>
+  
   </div>
 
 </div>

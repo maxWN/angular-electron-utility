@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { ModalData } from '../../models/modalData';
 
 @Component({
   selector: 'desk-modal',
@@ -47,9 +48,9 @@ export class ModalComponent implements OnInit {
     }
 
     public spanOnclick(): void {
-      setTimeout(()=> {
+      // setTimeout(() => {
       this.activeState = false;
-      }, 1000);
+      // }, 1000);
     }
 
   // endregion public functions

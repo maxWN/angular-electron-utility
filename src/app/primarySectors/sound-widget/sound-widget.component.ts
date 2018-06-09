@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { EventEmitter } from 'events';
 import { ElectronService } from 'ngx-electron';
 import { Playlist } from '../shared/models/playlist';
+import { ModalData } from '../shared/models/modalData';
 
 @Component({
   selector: 'desk-sound-widget',
@@ -29,6 +30,7 @@ export class SoundWidgetComponent implements OnInit {
     public minutes: number;
     public index: number;
     public modalState: boolean = false;
+    public musicPopupData: ModalData;
     // @Input() filePath:any;
 
   // endregion class variables
@@ -39,14 +41,6 @@ export class SoundWidgetComponent implements OnInit {
   // region public functions
 
   public ngOnInit():void {
-
-    // this.AudioFiles.song = new Howl({
-    //   src:["assets/sounds/Maid with the Flaxen Hair.mp3"],
-    //   volume:.25,
-    //   onend:() => { alert("\"Maid with the Flaxen Hair\" has finished.") }
-    // });
-    // this.AudioFiles.title = "Maid with the Flaxen Hair";
-
   }
 
   public playSong():void {
@@ -167,12 +161,24 @@ export class SoundWidgetComponent implements OnInit {
   public launchModal(): void {
     if (this.modalState === false) {
       this.modalState = true;
+      this.setPopupData();
       // alert(this.modalState);
     }
     else {
       this.modalState = false;
+      this.musicPopupData = null;
       // alert(this.modalState);
     }
+  }
+
+  public setPopupData(): void {
+    this.musicPopupData = <ModalData>{};
+    this.musicPopupData.subTitle = "Music Settings";
+    this.musicPopupData.explanations = Array<string>();
+    this.musicPopupData.explanations.push("Continue playing tracks from album/folder");
+    this.musicPopupData.explanations.push("Select new track");
+    this.musicPopupData.explanations.push("Restart track");
+    this.musicPopupData.explanations.push("Close and don't show again");
   }
 
   // endregion public functions

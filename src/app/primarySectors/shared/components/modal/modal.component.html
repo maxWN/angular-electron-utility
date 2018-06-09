@@ -8,13 +8,13 @@
     </div>
 
     <div class="content">
-        <ul class="collection with-header">
-            <li class="collection-header" id="test"><h4>Test Modal</h4></li>
-            <li class="collection-item">Test 1</li>
-            <li class="collection-item">Test 2</li>
-            <li class="collection-item">Test 3</li>
-            <li class="collection-item">Test 4</li>
+        <ul class="collection with-header" *ngIf="userData">
+            <li class="collection-header" id="test"><h4> {{ userData.subTitle }} </h4></li>
+            <li class="collection-item" *ngFor="let detail of userData.explanations"> {{ detail }} </li>
         </ul>
+        <div class="modal-error" *ngIf="!userData">
+          <h4>Error: Invalid file was selected!</h4>
+        </div>
     </div>
 
     <div class="footer">

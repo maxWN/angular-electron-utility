@@ -73,3 +73,10 @@
     text-decoration: none;
     cursor: pointer;
 }
+
+.modal-error {
+    display: inline-block;
+    border: #d82424;
+    color: #d82424;
+    padding: 1rem;
+}

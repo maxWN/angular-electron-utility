@@ -32,6 +32,8 @@ export class ModalComponent implements OnInit {
     public span = document.getElementsByClassName("close")[0];
     // Get the state of the modal
     @Input() activeState: boolean = false;
+    // Get user supplied data
+    @Input() userData?: ModalData;
     public displayVal: string = "none";
 
   // endregion class variables

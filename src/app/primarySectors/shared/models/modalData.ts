@@ -4,7 +4,7 @@ import { Playlist } from './playlist';
         subTitle: string;
         explanations: Array<string>;
         currentSongs?: Array<Playlist>;
-        metaData?: MinorDetails;
+        minorDetails?: MinorDetails;
     }
 
     export interface MinorDetails {

@@ -3,6 +3,9 @@
   <!-- Modal content -->
   <div class="modal-content pop" [@popupState]="initialState">
     <div class="header">
+      <div class="icon-container">
+        <i class="fa fa-plus-square-o fa-3x"></i>
+      </div>
       <h4 class="modal-title">Swiss Army App</h4>
       <div class="close" (click)="spanOnclick()">&times;</div>
     </div>
@@ -12,7 +15,7 @@
             <li class="collection-header" id="test"><h4> {{ userData.subTitle }} </h4></li>
             <li class="collection-item" *ngFor="let detail of userData.explanations"> {{ detail }} </li>
         </ul>
-        <div class="modal-error" *ngIf="!userData">
+        <div class="modal-error" *ngIf="!userData || userData.isError">
           <h4>Error: Invalid file was selected!</h4>
         </div>
     </div>

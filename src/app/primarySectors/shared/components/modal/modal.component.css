@@ -34,6 +34,14 @@
     width: 400px; /* Could be more or less, depending on screen size */
 }
 
+.icon-container {
+    display: inline-block;
+    margin-top: 1.5rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    color: #fafafa;
+}
+
 .header {
     background-color: #d82424;
     height: 20%;

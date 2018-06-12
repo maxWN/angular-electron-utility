@@ -5,6 +5,8 @@ import { Playlist } from './playlist';
         explanations: Array<string>;
         currentSongs?: Array<Playlist>;
         minorDetails?: MinorDetails;
+        isError?: boolean;
+        errorDescription?: string;
     }
 
     export interface MinorDetails {

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, keyframes, animate, transition } from '@angular/animations';
 import * as kf from '../shared/keyframes';
-import { ToolDescriptionsUS, ToolDescriptionsDE, ToolDescriptionsES } from '../shared/models/toolDescriptions';
+import { ToolDescriptionsUS, ToolDescriptionsDE, ToolDescriptionsES } from '../shared/';
 
 @Component({
   selector: 'desk-landing-page',

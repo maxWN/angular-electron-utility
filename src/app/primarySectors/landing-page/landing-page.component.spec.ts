@@ -10,7 +10,7 @@ describe('LandingPageComponent', () => {
   // represents HTML debug element
   let de: DebugElement;
   // description models
-  let langDescr:ToolDescriptionsUS = new ToolDescriptionsUS();
+  const langDescr:ToolDescriptionsUS = new ToolDescriptionsUS();
 
   // detects if component is created successfully
   fixture.detectChanges();
@@ -50,5 +50,5 @@ describe('LandingPageComponent', () => {
    * TODO: Find a way to create unit tests for Angular/Electron apps
    * https://medium.com/@MatheusCAS/unit-testing-with-jamine-angular-2-electron-862b5c4bbccd
    */
-  
+
 });

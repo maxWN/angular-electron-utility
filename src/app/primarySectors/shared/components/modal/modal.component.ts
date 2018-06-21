@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import { ModalData } from '../../models/modalData';
+import { ModalData } from '../../';
 
 @Component({
   selector: 'desk-modal',

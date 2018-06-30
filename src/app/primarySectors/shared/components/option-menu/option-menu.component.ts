@@ -1,8 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Event } from 'electron';
 import { FileReaderService } from '../../services/file-reader/file-reader.service';
-import { Playlist } from '../../models/playlist';
-import { MenuTypes } from '../../models/menuTypes';
+import { Playlist, MenuTypes } from '../../';
 import * as _ from 'lodash';
 import { $ } from 'protractor';
 
@@ -44,8 +43,7 @@ export class OptionMenuComponent implements OnInit {
     public determineMenuSettings(): void {
       if(this.menuType == MenuTypes.Music) {
         this.menuTitle = "My Music";
-      }
-      else if(this.menuType == MenuTypes.Video) {
+      } else if(this.menuType == MenuTypes.Video) {
         this.menuTitle = "My Videos";
       }
 
@@ -84,17 +82,17 @@ export class OptionMenuComponent implements OnInit {
             this.hasTrackBeenSelected = true;
             this.currentTrack.title = this.songTitle;
             this.readURL($event);
-          }
-          else {
+          } else {
             this.songTitle = "Error: User has selected an invalid file type!";
+            // this.eventClick.emit()
           }
 
         } else if (this.menuType == MenuTypes.Video) {
           if (this.isInvalidVideoFileUpload(fileName)) {
             // TODO: Enhance video player to handle video files...
+            // this.eventClick.emit()
           };
         }
-
       }
     }
 
@@ -174,8 +172,7 @@ export class OptionMenuComponent implements OnInit {
           // Object.assign({}, var, {cmd}) notation instead of the push function
           // this avoids using a risky mutable variable...
           this.SelectedTracks.push(this. currentTrack);
-        }
-        else if (this.SelectedTracks.length < 10) {
+        } else if (this.SelectedTracks.length < 10) {
 
           let foundTrack:Playlist = _.find(this.SelectedTracks, ['title', this.currentTrack.title]);
           //if track was found, do not add to playlist

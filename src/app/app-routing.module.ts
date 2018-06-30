@@ -18,8 +18,8 @@ const appRoutes: Routes = [
     { path: "text-editor-widget", component: TextEditorWidgetComponent },
     { path: "app-settings", component: AppSettingsComponent },
     { path: "interactive-map", component: InteractiveMapComponent },
-    { path: "video-widget", component: VideoWidgetComponent},
-    { path: "file-manager", component: FileManagerComponent}
+    { path: "video-widget", component: VideoWidgetComponent },
+    { path: "file-manager", component: FileManagerComponent }
   ];
 
 @NgModule({

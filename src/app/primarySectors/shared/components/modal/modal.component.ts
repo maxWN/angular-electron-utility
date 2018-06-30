@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { ModalData } from '../../';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'desk-modal',
@@ -35,6 +36,7 @@ export class ModalComponent implements OnInit {
     // Get user supplied data
     @Input() userData?: ModalData;
     public displayVal: string = "none";
+    @Output() eventClick: EventEmitter<any> = new EventEmitter();
 
   // endregion class variables
 
@@ -50,9 +52,10 @@ export class ModalComponent implements OnInit {
     }
 
     public spanOnclick(): void {
-      // setTimeout(() => {
+      setTimeout(() => {
       this.activeState = false;
-      // }, 1000);
+      this.eventClick.emit(this.activeState);
+      }, 1000);
     }
 
   // endregion public functions

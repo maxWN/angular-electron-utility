@@ -59,6 +59,7 @@ export class SoundWidgetComponent implements OnInit {
       .takeWhile(_ => this.AudioFiles.song.playing() )
       .do(() => { this.timeRemaining() } )
       .subscribe();
+    // this.openModal();
   }
 
   public stopSong(): void {
@@ -89,7 +90,7 @@ export class SoundWidgetComponent implements OnInit {
 
   public timeRemaining(): void {
 
-    if(this.totalTime) {
+    if (this.totalTime) {
       this.currentPos = Math.round(this.AudioFiles.song.seek());
       this.formatTime();
       this.progressBar = (((this.currentPos) / this.totalTime) * 100).toFixed(2) + '%';
@@ -102,10 +103,9 @@ export class SoundWidgetComponent implements OnInit {
   // do not return rate of completion in total amount of seconds
   public formatTime(): void {
 
-    if(this.currentPos < 60) {
+    if (this.currentPos < 60) {
       this.trackTime = '0:' + (this.currentPos < 10 ? '0' + this.currentPos : this.currentPos);
-    }
-    else {
+    } else {
       let min:number = (this.currentPos - this.currentPos % 60) / 60;
       let sec:number = this.currentPos % 60;
       this.trackTime = min + ':' + (sec < 10 ? '0' + sec : sec);
@@ -120,6 +120,7 @@ export class SoundWidgetComponent implements OnInit {
    */
   public handleSongSelection(song): void {
     // if song is not undefined or null add song to playlist array
+    alert("Our events type: "+song.type);
     if (song) {
 
       if (this.AudioFiles.song) {
@@ -135,8 +136,7 @@ export class SoundWidgetComponent implements OnInit {
       // this.songTitle = this.AudioFiles.title;
       this.SelectedTracks.push(this.AudioFiles);
 
-    }
-    else {
+    } else {
       // if song is undefined throw exception/modal
       this._electronService.ipcRenderer.send('open-modal');
     }
@@ -155,16 +155,26 @@ export class SoundWidgetComponent implements OnInit {
     // as the can cause runtime errors due to object being destroyed before reaching
     // electronService modal call
     // this._electronService.ipcRenderer.send('open-modal', this.AudioFiles.title);
-    this.launchModal();
+    this.openModal();
   }
 
-  public launchModal(): void {
+  public openModal(): void {
+    if (!this.modalState) {
+      this.musicPopupData = <ModalData>{};
+      this.musicPopupData.subTitle = "Choose next song";
+      this.setPopupData();
+      this.modalState = true;
+    } else {
+      this.modalState = false;
+    }
+  }
+
+  public closeModal($event): void {
     if (this.modalState === false) {
       this.modalState = true;
-      this.setPopupData();
+      // this.setPopupData();
       // alert(this.modalState);
-    }
-    else {
+    } else {
       this.modalState = false;
       this.musicPopupData = null;
       // alert(this.modalState);

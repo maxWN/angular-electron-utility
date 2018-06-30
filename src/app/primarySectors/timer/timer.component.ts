@@ -6,17 +6,17 @@ import { Observable } from 'rxjs/Observable';
   templateUrl: './timer.component.html',
   styleUrls: ['./timer.component.css']
 })
-export class TimerComponent {//implements OnInit {
+export class TimerComponent { // implements OnInit {
 
   // title = 'app';
-  
-  
+
+
   //   max     = 1;
   //   current = 0;
   //   /// Start the timer
   //   start() {
   //     const interval = Observable.interval(100);
-      
+
   //         interval
   //           .takeWhile(_ => !this.isFinished )
   //           .do(i => this.current += 0.1)
@@ -41,8 +41,7 @@ export class TimerComponent {//implements OnInit {
   //     return this.currentVal >= this.maxVal;
   //   }
 
-  //   constructor() { }
-    
+  //   constructor() { }    
   //     ngOnInit() {
   //     }
     

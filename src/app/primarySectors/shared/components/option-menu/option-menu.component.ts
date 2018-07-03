@@ -52,18 +52,30 @@ export class OptionMenuComponent implements OnInit {
     // toggle option-menu options
     public displaySearch(): void {
       this.isSearchDisplayed = !this.isSearchDisplayed;
+      this.isAnimationChangeDisplayed = false;
+      this.isSongSelectDisplayed = false;
+      this.isFileEditDisplayed = false;      
     }
 
     public displayAnimationChange(): void {
       this.isAnimationChangeDisplayed = !this.isAnimationChangeDisplayed;
+      this.isSearchDisplayed = false;
+      this.isSongSelectDisplayed = false;
+      this.isFileEditDisplayed = false;      
     }
 
     public displaySongSelection(): void {
       this.isSongSelectDisplayed = !this.isSongSelectDisplayed;
+      this.isAnimationChangeDisplayed = false;
+      this.isSearchDisplayed = false;
+      this.isFileEditDisplayed = false;      
     }
 
     public displayFileEditing(): void {
       this.isFileEditDisplayed = !this.isFileEditDisplayed;
+      this.isAnimationChangeDisplayed = false;
+      this.isSongSelectDisplayed = false;
+      this.isSearchDisplayed = false;      
     }
 
     /**

@@ -3,8 +3,8 @@ import { Howl } from 'howler';
 import { Observable } from 'rxjs/Observable';
 import { EventEmitter } from 'events';
 import { ElectronService } from 'ngx-electron';
-import { Playlist } from '../shared/models/playlist';
-import { ModalData } from '../shared/models/modalData';
+import { Playlist, ModalData } from '../shared/models/';
+
 
 @Component({
   selector: 'desk-sound-widget',

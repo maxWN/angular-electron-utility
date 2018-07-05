@@ -36,8 +36,8 @@
       <li class="collection-item" [ngClass]="{'search-function': (isFileEditDisplayed==false), 'reveal-search': (isFileEditDisplayed==true)}">
         
       </li>
-      <li class="collection-item"  *ngIf="this.menuType==2"><div>Viewing Options<a (click)="displayFileEditing()" class="secondary-content"><i class=" menu-icons fa fa-cog"></i></a></div></li>
-      <li class="collection-item" [ngClass]="{'search-function': (isFileEditDisplayed==false), 'reveal-search': (isFileEditDisplayed==true)}">
+      <li class="collection-item"  *ngIf="this.menuType==2"><div>Viewing Options<a (click)="displayViewingOptions()" class="secondary-content"><i class=" menu-icons fa fa-cog"></i></a></div></li>
+      <li class="collection-item" [ngClass]="{'search-function': (isViewingOptionsDisplayed==false), 'reveal-search': (isViewingOptionsDisplayed==true)}">
         
       </li>
   </ul>

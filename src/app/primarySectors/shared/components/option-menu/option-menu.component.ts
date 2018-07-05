@@ -18,6 +18,7 @@ export class OptionMenuComponent implements OnInit {
     public isSongSelectDisplayed: boolean = false;
     public isAnimationChangeDisplayed: boolean = false;
     public isFileEditDisplayed: boolean = false;
+    public isViewingOptionsDisplayed: boolean = false;
     public songTitle: string = "Upload one or more files";
     // fileReaderSvc:FileReaderService;
     public SelectedTracks: Array<Playlist> = new Array<Playlist>();
@@ -54,7 +55,8 @@ export class OptionMenuComponent implements OnInit {
       this.isSearchDisplayed = !this.isSearchDisplayed;
       this.isAnimationChangeDisplayed = false;
       this.isSongSelectDisplayed = false;
-      this.isFileEditDisplayed = false;      
+      this.isFileEditDisplayed = false;
+      this.isViewingOptionsDisplayed = false;
     }
 
     public displayAnimationChange(): void {
@@ -76,6 +78,11 @@ export class OptionMenuComponent implements OnInit {
       this.isAnimationChangeDisplayed = false;
       this.isSongSelectDisplayed = false;
       this.isSearchDisplayed = false;      
+    }
+
+    public displayViewingOptions(): void {
+      this.isViewingOptionsDisplayed = !this.isViewingOptionsDisplayed;
+      this.isSearchDisplayed = false;
     }
 
     /**

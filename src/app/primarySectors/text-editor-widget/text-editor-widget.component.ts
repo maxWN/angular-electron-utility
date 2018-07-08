@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { saveAs } from 'file-saver';
+import { ModalData, ModalType } from '../shared';
 
 @Component({
   selector: 'desk-text-editor-widget',
@@ -8,7 +9,13 @@ import { saveAs } from 'file-saver';
 })
 export class TextEditorWidgetComponent implements OnInit {
 
-  public text: string;
+  // region class variables
+
+    public modalState: boolean;
+    public text: string;
+    public warningPopupData: ModalData;
+
+  // endregion class variables
 
   constructor() { }
 
@@ -25,6 +32,7 @@ export class TextEditorWidgetComponent implements OnInit {
 
     // Remove text completely if unsaved, if saved, prompt user 
     public deleteText(): void {
+      // this.openModal();
       this.text = '';
     }
 
@@ -45,6 +53,36 @@ export class TextEditorWidgetComponent implements OnInit {
       let doc = new DOMParser().parseFromString(html, 'text/html');
       return doc.body.textContent || "";
    }
+
+   public openModal(): void {
+    if (!this.modalState) {
+      this.warningPopupData = <ModalData>{};
+      // this.warningPopupData.subTitle = "Are you sure you want to delete this file?";
+      this.setPopupData();
+      this.modalState = true;
+    } else {
+      this.modalState = false;
+    }
+  }
+
+  public closeModal($event): void {
+    if (this.modalState === false) {
+      this.modalState = true;
+      // this.setPopupData();
+    } else {
+      this.modalState = false;
+      this.warningPopupData = null;
+    }
+  }
+
+  public setPopupData(): void {
+    this.warningPopupData = <ModalData>{};
+    this.warningPopupData.subTitle = "Are you sure you want to delete this file?";
+    this.warningPopupData.explanations = Array<string>();
+    this.warningPopupData.modalType = ModalType.binary;
+    this.warningPopupData.explanations.push("Yes");
+    this.warningPopupData.explanations.push("No");
+  }
 
   // endregion public functions
 

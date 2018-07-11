@@ -57,7 +57,6 @@ export class TextEditorWidgetComponent implements OnInit {
    public openModal(): void {
     if (!this.modalState) {
       this.warningPopupData = <ModalData>{};
-      // this.warningPopupData.subTitle = "Are you sure you want to delete this file?";
       this.setPopupData();
       this.modalState = true;
     } else {
@@ -80,8 +79,8 @@ export class TextEditorWidgetComponent implements OnInit {
     this.warningPopupData.subTitle = "Are you sure you want to delete this file?";
     this.warningPopupData.explanations = Array<string>();
     this.warningPopupData.modalType = ModalType.binary;
-    this.warningPopupData.explanations.push("Yes");
-    this.warningPopupData.explanations.push("No");
+    // this.warningPopupData.explanations.push("Yes");
+    // this.warningPopupData.explanations.push("No");
   }
 
   // endregion public functions

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { OptionMenuComponent, SoundAnimationComponent, ModalComponent } from './components/';
+import { ModalSupportService } from './services/modal-support';
 
 @NgModule({
     declarations: [
@@ -10,7 +11,7 @@ import { OptionMenuComponent, SoundAnimationComponent, ModalComponent } from './
     ],
     exports: [ OptionMenuComponent, SoundAnimationComponent, ModalComponent ],
     imports: [ CommonModule ],
-    providers: [],
+    providers: [ ModalSupportService ],
     bootstrap: []
   })
   export class SharedModule { }

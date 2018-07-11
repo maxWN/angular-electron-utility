@@ -5,7 +5,6 @@ import { Playlist } from './playlist';
         explanations: Array<string>;
         currentSongs?: Array<Playlist>;
         minorDetails?: MinorDetails;
-        isError?: boolean;
         errorDescription?: string;
         modalType?: ModalType;
     }
@@ -20,5 +19,7 @@ import { Playlist } from './playlist';
         warning = 2,
         save = 3,
         binary = 4,
-        info = 5
+        info = 5,
+        music = 6,
+        video = 7
     }

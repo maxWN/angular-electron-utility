@@ -11,11 +11,15 @@
     </div>
 
     <div class="content">
-        <ul class="collection with-header" *ngIf="userData">
+        <ul class="collection with-header media-options" *ngIf="userData && userData.modalType == 6">
             <li class="collection-header" id="test"><h4> {{ userData.subTitle }} </h4></li>
             <li class="collection-item" *ngFor="let detail of userData.explanations"> {{ detail }} </li>
         </ul>
-        <div class="modal-error" *ngIf="!userData || userData.isError">
+        <!-- <div class="">
+        <button></button>
+        <button></button>
+        </div> -->
+        <div class="modal-error" *ngIf="!userData || userData.modalType == 1">
           <h4>Error: Invalid file was selected!</h4>
         </div>
     </div>

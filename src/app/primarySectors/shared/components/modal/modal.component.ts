@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import { ModalData } from '../../';
+import { ModalData, ModalSupportService } from '../../';
 import { EventEmitter } from '@angular/core';
 
 @Component({
@@ -40,7 +40,7 @@ export class ModalComponent implements OnInit {
 
   // endregion class variables
 
-  constructor() { }
+  constructor(private modalSupportService: ModalSupportService) { }
 
   // region public functions
 

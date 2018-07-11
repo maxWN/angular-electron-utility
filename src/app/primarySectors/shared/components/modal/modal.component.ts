@@ -47,6 +47,14 @@ export class ModalComponent implements OnInit {
     public ngOnInit(): void {
     }
 
+    public yesBtn(): void {
+      this.modalSupportService.userChoice = true;
+    }
+
+    public noBtn(): void {
+      this.modalSupportService.userChoice = false;
+    }
+
     public get initialState() {
       return this.activeState ? 'block' : 'none';
     }

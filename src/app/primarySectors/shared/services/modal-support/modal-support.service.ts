@@ -3,15 +3,15 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ModalSupportService {
 
-  private _value : boolean;
+  private _userChoice : boolean;
 
   constructor() { }
   
-  public get value() : boolean {
-    return this._value;
+  public get userChoice() : boolean {
+    return this.userChoice;
   }
-  public set value(v : boolean) {
-    this._value = v;
+  public set userChoice(option : boolean) {
+    this.userChoice = option;
   }
   
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { saveAs } from 'file-saver';
-import { ModalData, ModalType } from '../shared';
+import { ModalData, ModalType, ModalSupportService } from '../shared';
 
 @Component({
   selector: 'desk-text-editor-widget',
@@ -17,7 +17,7 @@ export class TextEditorWidgetComponent implements OnInit {
 
   // endregion class variables
 
-  constructor() { }
+  constructor(private modalSupportService: ModalSupportService) { }
 
   // region public functions
 
@@ -32,8 +32,10 @@ export class TextEditorWidgetComponent implements OnInit {
 
     // Remove text completely if unsaved, if saved, prompt user 
     public deleteText(): void {
-      // this.openModal();
-      this.text = '';
+      this.openModal();
+      if (this.modalSupportService.userChoice) {
+        this.text = ''+this.modalSupportService.userChoice;
+      }
     }
 
     // Use the following example:

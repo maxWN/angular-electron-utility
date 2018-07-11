@@ -15,10 +15,16 @@
             <li class="collection-header" id="test"><h4> {{ userData.subTitle }} </h4></li>
             <li class="collection-item" *ngFor="let detail of userData.explanations"> {{ detail }} </li>
         </ul>
-        <!-- <div class="">
-        <button></button>
-        <button></button>
-        </div> -->
+
+        <div class="binary-options" *ngIf="userData && userData.modalType == 4">
+          
+          <button class="btn waves-effect waves-light" type="submit" name="action" (click)="yesBtn()">Yes
+          </button>
+
+          <button class="btn waves-effect waves-light" type="submit" name="action" (click)="noBtn()">No
+          </button>
+
+        </div>
         <div class="modal-error" *ngIf="!userData || userData.modalType == 1">
           <h4>Error: Invalid file was selected!</h4>
         </div>

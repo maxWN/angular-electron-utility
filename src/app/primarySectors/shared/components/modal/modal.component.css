@@ -92,3 +92,8 @@
 .media-options {
     margin-top: 1rem;
 }
+
+.binary-options {
+    padding: 1rem;
+    border: #aaa .1rem solid;
+}

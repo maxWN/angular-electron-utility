@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Event } from 'electron';
-import { FileReaderService } from '../../services/file-reader/file-reader.service';
 import { Playlist, MenuTypes } from '../../';
 import * as _ from 'lodash';
 import { $ } from 'protractor';
@@ -31,7 +30,7 @@ export class OptionMenuComponent implements OnInit {
 
   // endregion class variables
 
-  constructor(private fileReaderSvc:FileReaderService) {
+  constructor() {
     // this.fileReaderSvc=fileReaderSvc;
    }
 

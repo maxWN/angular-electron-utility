@@ -15,7 +15,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { QuillModule } from 'ngx-quill'
 import { NgxElectronModule } from 'ngx-electron';
 import { FooterComponent } from './primarySectors/footer/footer.component';
-import { FileReaderService } from './primarySectors/shared/services/file-reader/file-reader.service';
 // import { AppSettingsComponent } from './primarySectors/app-settings/app-settings.component';
 // import { InteractiveMapComponent } from './primarySectors/interactive-map/interactive-map.component';
 // import { AngularOpenlayersModule } from 'ngx-openlayers';
@@ -48,7 +47,7 @@ import { AppRoutingModule } from './app-routing.module';
     // AngularOpenlayersModule,
     // SharedModule
   ],
-  providers: [FileReaderService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

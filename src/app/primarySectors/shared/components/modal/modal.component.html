@@ -17,12 +17,18 @@
         </ul>
 
         <div class="binary-options" *ngIf="userData && userData.modalType == 4">
-          
-          <button class="btn waves-effect waves-light" type="submit" name="action" (click)="yesBtn()">Yes
-          </button>
 
-          <button class="btn waves-effect waves-light" type="submit" name="action" (click)="noBtn()">No
-          </button>
+          <div class="binary-title">
+            <h6>{{ userData.subTitle }}</h6>
+          </div>
+
+          <div class="binary-option-panel">
+            <button class="btn waves-effect waves-light" type="submit" name="action" (click)="yesBtn()">Yes
+            </button>
+
+            <button class="btn waves-effect waves-light" type="submit" name="action" (click)="noBtn()">No
+            </button>
+          </div>
 
         </div>
         <div class="modal-error" *ngIf="!userData || userData.modalType == 1">
@@ -33,7 +39,7 @@
     <div class="footer">
 
     </div>
-  
+
   </div>
 
 </div>

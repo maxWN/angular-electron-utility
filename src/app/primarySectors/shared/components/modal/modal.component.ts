@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { ModalData, ModalSupportService } from '../../';
 import { EventEmitter } from '@angular/core';
+import { ElectronService } from 'ngx-electron';
 
 @Component({
   selector: 'desk-modal',
@@ -40,7 +41,7 @@ export class ModalComponent implements OnInit {
 
   // endregion class variables
 
-  constructor(private modalSupportService: ModalSupportService) { }
+  constructor(private _electronService: ElectronService) { }
 
   // region public functions
 
@@ -48,11 +49,11 @@ export class ModalComponent implements OnInit {
     }
 
     public yesBtn(): void {
-      this.modalSupportService.userChoice = true;
+      this._electronService.ipcRenderer.send('yesOption');
     }
 
     public noBtn(): void {
-      this.modalSupportService.userChoice = false;
+      this._electronService.ipcRenderer.send('noOption');
     }
 
     public get initialState() {

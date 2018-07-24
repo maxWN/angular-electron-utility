@@ -15,7 +15,7 @@
     background-color: #6cc65e;
     height: 1.25rem;
     width: 0%;
-    text-align: center;    
+    text-align: center;
 }
 
 .control-panel {
@@ -63,7 +63,7 @@
     border-radius: 1.5rem;
     width: 2.5rem;
     height: 2.5rem;
-    display: inline-block;    
+    display: inline-block;
     padding-left: .8rem;
     padding-top: .58rem;
 }
@@ -72,6 +72,7 @@
 }
 .play-btn-paused {
     background-color: #9bd393;
+    color: #333333;
 }
 .stop-btn {
     background-color: #d82424;

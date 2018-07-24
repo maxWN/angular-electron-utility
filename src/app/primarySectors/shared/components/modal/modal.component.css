@@ -94,6 +94,24 @@
 }
 
 .binary-options {
-    padding: 1rem;
-    border: #aaa .1rem solid;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  /* padding: 5rem; */
+  margin-top: 2.5rem;
+  border: #aaa .1rem solid;
+}
+
+.binary-title {
+  width: 100%;
+  border-bottom: #aaa .1rem solid;
+  padding-left: 2.5rem;
+  padding-top: .5rem;
+  display: inline-block;
+}
+
+.binary-option-panel {
+  width: 100%;
+  display: inline-block;
+  padding: 5rem;
+  padding-left: 2.5rem;
 }

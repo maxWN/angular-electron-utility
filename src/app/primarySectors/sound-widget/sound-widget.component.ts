@@ -3,7 +3,7 @@ import { Howl } from 'howler';
 import { Observable } from 'rxjs/Observable';
 import { EventEmitter } from 'events';
 import { ElectronService } from 'ngx-electron';
-import { Playlist, ModalData } from '../shared/models/';
+import { Playlist, ModalData, ModalType } from '../shared/models/';
 
 
 @Component({
@@ -183,6 +183,7 @@ export class SoundWidgetComponent implements OnInit {
 
   public setPopupData(): void {
     this.musicPopupData = <ModalData>{};
+    this.musicPopupData.modalType = ModalType.music;
     this.musicPopupData.subTitle = "Music Settings";
     this.musicPopupData.explanations = Array<string>();
     this.musicPopupData.explanations.push("Continue playing tracks from album/folder");

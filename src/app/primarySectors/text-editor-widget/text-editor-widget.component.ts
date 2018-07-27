@@ -30,7 +30,7 @@ export class TextEditorWidgetComponent implements OnInit {
 
     // for testing purposes only
     public getURL(): void {
-      alert("located at: " + window.location.href + "\n" + this.text);
+      alert('located at: ' + window.location.href + '\n' + this.text);
     }
 
     // Remove text completely if unsaved, if saved, prompt user
@@ -51,6 +51,10 @@ export class TextEditorWidgetComponent implements OnInit {
       }
     }
 
+    /**
+     * parses html elements into text
+     * @param html 
+     */
     public createPlainText(html): string {
       let doc = new DOMParser().parseFromString(html, 'text/html');
       return doc.body.textContent || "";
@@ -69,7 +73,6 @@ export class TextEditorWidgetComponent implements OnInit {
   public closeModal($event): void {
     if (this.modalState === false) {
       this.modalState = true;
-      // this.setPopupData();
     } else {
       this.modalState = false;
       this.warningPopupData = null;

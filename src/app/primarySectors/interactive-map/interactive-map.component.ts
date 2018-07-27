@@ -23,7 +23,10 @@ export class InteractiveMapComponent implements OnInit {
   //region public functions 
 
     public ngOnInit(): void {
+      this.initializeMap();
+    }
 
+    public initializeMap(): void {
       //TODO: Utilize information found within this link:
       //https://github.com/electron/electron/issues/9420
       //to acquire Google Geolocation API Key
@@ -51,10 +54,10 @@ export class InteractiveMapComponent implements OnInit {
     }
 
     public setDefaultValues(): void {
-          //default values
-          this.zoom = 3;
-          this.longitude= -0.13;
-          this.latitude= 51.51;
+      //default values
+      this.zoom = 3;
+      this.longitude= -0.13;
+      this.latitude= 51.51;
     }
 
   //endregion public functions 

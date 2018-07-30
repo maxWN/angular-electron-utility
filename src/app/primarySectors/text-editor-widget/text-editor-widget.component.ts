@@ -33,29 +33,38 @@ export class TextEditorWidgetComponent implements OnInit {
       alert('located at: ' + window.location.href + '\n' + this.text);
     }
 
+    public isTextFieldEmpty(): boolean {
+      if (this.text && this.text.length > 0) {
+        return false;
+      }
+      return true;
+    }
+
     // Remove text completely if unsaved, if saved, prompt user
     public deleteText(): void {
-      this.openModal();
+      if (this.isTextFieldEmpty()) {
+        this.openModal();
+      }
     }
 
     // Use the following example:
     // https://stackoverflow.com/questions/40782331/use-filesaver-js-with-angular2
     // Save text file
     public saveFile(): void {
-      if (this.text && this.text.length > 0) {
+      if (this.isTextFieldEmpty()) {
         // this.text.replace(/<(?:.|\n)*?>/gm, '');
         this.text = this.createPlainText(this.text);
-        let blob = new Blob([this.text], { type: "text/plain;charset=utf-8" });
+        let blob = new Blob([this.text], { type: 'text/plain;charset=utf-8' });
         // let x_filename = data.headers.get('x-filename');
         saveAs(blob);
       }
     }
 
-    /**
-     * parses html elements into text
-     * @param html 
-     */
-    public createPlainText(html): string {
+  /**
+   * parses html elements into text
+   * @param html 
+   **/
+   public createPlainText(html): string {
       let doc = new DOMParser().parseFromString(html, 'text/html');
       return doc.body.textContent || "";
    }
@@ -70,6 +79,10 @@ export class TextEditorWidgetComponent implements OnInit {
     }
   }
 
+  /**
+   * @public closeModal() closes the modal component
+   * @param $event represents an event transmitted from modal component 
+   **/
   public closeModal($event): void {
     if (this.modalState === false) {
       this.modalState = true;

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Event } from 'electron';
-import { Playlist, MenuTypes } from '../../';
+import { Playlist, MenuTypes } from '../../models';
 import * as _ from 'lodash';
 import { $ } from 'protractor';
 
@@ -149,11 +149,18 @@ export class OptionMenuComponent implements OnInit {
       return false;
     }
 
+    // TODO: create function to format file names to not include track listing
+    // public reformatFileNames(): void {}
+
   //endregion public functions
 
   // region private functions
 
-    // determine cause of error within
+    /**
+     * acquires event/file received from user selection
+     * @private
+     * @param input represents input received from HTML5 file element
+     **/
     private readURL(input):void {
 
       // if (input.files && input.target.files[0]) {
@@ -172,8 +179,8 @@ export class OptionMenuComponent implements OnInit {
 
     /**
      * Creates recently played song playlist for users to choose from
-     * @private
-     * @param file {var} - represents event triggered from file selection
+     * @private 
+     * @param file {var} represents event triggered from file selection
      **/
     private createRecentSongPlaylist(file):void {
       // append distinctive songs to array

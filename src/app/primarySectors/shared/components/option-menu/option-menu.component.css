@@ -31,7 +31,9 @@ textarea.materialize-textarea {
     font-weight: bold;
 }
 
-.recent-playlist {
+.table, th, td {
+    border-collapse: collapse;
     background-color: #000000;
     color: #ffffff;
+    border: .1rem solid #d82424;
 }

@@ -14,29 +14,44 @@
               </div>
           </div>
       </li>
-      <li class="collection-item" *ngIf="hasTrackBeenSelected"><div>Recently Played<a (click)="displaySongSelection()" class="secondary-content"><i class=" menu-icons fa fa-indent"></i></a></div></li>
+      <li class="collection-item" *ngIf="hasTrackBeenSelected"><div> Recently Played
+        <a (click)="displaySongSelection()" class="secondary-content"><i class=" menu-icons fa fa-indent"></i></a></div></li>
       <li class="collection-item" [ngClass]="{'search-function': (isSongSelectDisplayed==false),
        'reveal-search': (isSongSelectDisplayed==true)}">
           <div class="file-field input-field">
-            <div class="playlist-label">Recently Played songs:</div>
-            <div class="recent-playlist">
-              <!-- TODO: Add table inside with red borders and the following columns: -->
+            <div class="playlist-label"> Recently Played songs: </div>
+            <div>
+              <!-- TODO: Add table the following columns: -->
               <!-- title, album, artist, year -->
-              <ol><li *ngFor="let tracks of SelectedTracks">
-                {{ tracks.title }}
-              </li></ol>
+              <table class="recent-playlist">
+                <tr>
+                  <th> Order </th>
+                  <th> Song Title </th>
+                </tr>
+                <tr *ngFor="let tracks of SelectedTracks; let i = index" [attr.data-index]="i">
+                  <td>
+                    {{ i + 1 }}
+                  </td>
+                  <td>
+                    {{ tracks.title }}
+                  </td>
+                </tr>
+              </table>
             </div>
           </div>
       </li>
-      <li class="collection-item"  *ngIf="this.menuType==1"><div>Change Animation<a (click)="displayAnimationChange()" class="secondary-content"><i class=" menu-icons fa fa-picture-o"></i></a></div></li>
+      <li class="collection-item"  *ngIf="this.menuType == 1"><div> Change Animation
+        <a (click)="displayAnimationChange()" class="secondary-content"><i class=" menu-icons fa fa-picture-o"></i></a></div></li>
       <li class="collection-item" [ngClass]="{'search-function': (isAnimationChangeDisplayed==false), 'reveal-search': (isAnimationChangeDisplayed==true)}">
         
       </li>
-      <li class="collection-item"  *ngIf="this.menuType==1"><div>Edit Files<a (click)="displayFileEditing()" class="secondary-content"><i class=" menu-icons fa fa-cog"></i></a></div></li>
+      <li class="collection-item"  *ngIf="this.menuType == 1"><div> Edit Files
+        <a (click)="displayFileEditing()" class="secondary-content"><i class=" menu-icons fa fa-cog"></i></a></div></li>
       <li class="collection-item" [ngClass]="{'search-function': (isFileEditDisplayed==false), 'reveal-search': (isFileEditDisplayed==true)}">
         
       </li>
-      <li class="collection-item"  *ngIf="this.menuType==2"><div>Viewing Options<a (click)="displayViewingOptions()" class="secondary-content"><i class=" menu-icons fa fa-cog"></i></a></div></li>
+      <li class="collection-item"  *ngIf="this.menuType == 2"><div> Viewing Options
+        <a (click)="displayViewingOptions()" class="secondary-content"><i class=" menu-icons fa fa-cog"></i></a></div></li>
       <li class="collection-item" [ngClass]="{'search-function': (isViewingOptionsDisplayed==false), 'reveal-search': (isViewingOptionsDisplayed==true)}">
         
       </li>

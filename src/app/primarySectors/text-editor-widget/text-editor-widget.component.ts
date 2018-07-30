@@ -33,16 +33,17 @@ export class TextEditorWidgetComponent implements OnInit {
       alert('located at: ' + window.location.href + '\n' + this.text);
     }
 
-    public isTextFieldEmpty(): boolean {
+    // determines if text field has characters entered in
+    public isTextFieldActive(): boolean {
       if (this.text && this.text.length > 0) {
-        return false;
+        return true;
       }
-      return true;
+      return false;
     }
 
     // Remove text completely if unsaved, if saved, prompt user
     public deleteText(): void {
-      if (this.isTextFieldEmpty()) {
+      if (this.isTextFieldActive()) {
         this.openModal();
       }
     }
@@ -51,7 +52,7 @@ export class TextEditorWidgetComponent implements OnInit {
     // https://stackoverflow.com/questions/40782331/use-filesaver-js-with-angular2
     // Save text file
     public saveFile(): void {
-      if (this.isTextFieldEmpty()) {
+      if (this.isTextFieldActive()) {
         // this.text.replace(/<(?:.|\n)*?>/gm, '');
         this.text = this.createPlainText(this.text);
         let blob = new Blob([this.text], { type: 'text/plain;charset=utf-8' });

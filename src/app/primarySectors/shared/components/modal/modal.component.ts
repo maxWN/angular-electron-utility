@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import { ModalData, ModalSupportService } from '../../';
+import { ModalData } from '../../';
 import { EventEmitter } from '@angular/core';
 import { ElectronService } from 'ngx-electron';
 

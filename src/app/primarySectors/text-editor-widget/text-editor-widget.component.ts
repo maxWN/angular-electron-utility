@@ -20,7 +20,7 @@ export class TextEditorWidgetComponent implements OnInit {
 
   constructor(private _electronService: ElectronService, private _ngZone: NgZone) {
     this.setModalOptions();
-   }
+  }
 
   // region public functions
 

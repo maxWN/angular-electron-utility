@@ -120,7 +120,9 @@ export class SoundWidgetComponent implements OnInit {
    */
   public handleSongSelection(song): void {
     // if song is not undefined or null add song to playlist array
-    alert("Our events type: "+song.type);
+    
+    // uncomment for testing purposes 
+    // alert("Our events type: "+song.type);
     if (song) {
 
       if (this.AudioFiles.song) {

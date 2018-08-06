@@ -8,21 +8,60 @@
           <label for="latitude">latitude</label>
       <!-- </div>
       <div class="range-field"> -->
-          <label>Zoom Level: {{zoom}}</label>
-          <input type="range" id="test5" min="0" max="10" [(ngModel)]="zoom"/>
+          <!-- <label>Zoom Level: {{zoom}}</label>
+          <input type="range" id="test5" min="0" max="10" [(ngModel)]="zoom"/> -->
+          <span>Opacity:</span><button (click)="increaseOpacity()">+</button><button (click)="decreaseOpacity()">-</button><br>
+          <span>Zoom:</span><button (click)="increaseZoom()">+</button><button (click)="decreaseZoom()">-</button><br>
       </div>  
     </div>
     <!-- <div class="map-controls-search">
 
     </div> -->
     <div class="internal-map">
-    <aol-map [width]="'720px'" [height]="'350'">
+    <!-- <aol-map [width]="'720px'" [height]="'350'">
       <aol-view [zoom]="zoom">
           <aol-coordinate [x]="longitude" [y]="latitude" [srid]="'EPSG:4326'"></aol-coordinate>
       </aol-view>
       <aol-layer-tile>
           <aol-source-osm></aol-source-osm>
       </aol-layer-tile>
+    </aol-map> -->
+    <aol-map [width]="'720px'" [height]="'350px'">
+      <aol-view [zoom]="zoom">
+        <aol-coordinate [x]="longitude" [y]="latitude" [srid]="'EPSG:4326'"></aol-coordinate>
+      </aol-view>
+      <aol-layer-tile [opacity]="opacity">
+        <aol-source-osm></aol-source-osm>
+      </aol-layer-tile>
+      <aol-layer-vector [opacity]="opacity">
+        <aol-source-vector>
+          <aol-feature>
+            <aol-geometry-point>
+              <aol-coordinate [x]="longitude" [y]="latitude" [srid]="'EPSG:4326'"></aol-coordinate>
+            </aol-geometry-point>
+            <aol-style>
+              <aol-style-circle [radius]="10">
+                <aol-style-stroke [color]="'black'" [width]="width"></aol-style-stroke>
+                <aol-style-fill [color]="'green'"></aol-style-fill>
+              </aol-style-circle>
+            </aol-style>
+          </aol-feature>
+          <aol-feature>
+            <aol-geometry-point>
+              <aol-coordinate [x]="longitude" [y]="latitude" [srid]="'EPSG:4326'"></aol-coordinate>
+            </aol-geometry-point>
+            <aol-style>
+              <aol-style-icon
+                [src]="'assets/map_marker_icon.png'"
+                [anchor]="[0.5, 1]"
+                [anchorXUnits]="'fraction'" [anchorYUnits]="'fraction'"
+                [scale]="0.1"
+                [anchorOrigin]="'top-left'">
+              </aol-style-icon>
+            </aol-style>
+          </aol-feature>
+        </aol-source-vector>
+      </aol-layer-vector>
     </aol-map>
     </div>
   </div>

@@ -15,6 +15,8 @@ export class InteractiveMapComponent implements OnInit {
     public longitude:number;
     public latitude:number;
     public isGeolocationSupportEnabled: boolean;
+    public opacity = 1.0;
+    public width = 5;
 
   //endregion class variables 
 
@@ -58,6 +60,22 @@ export class InteractiveMapComponent implements OnInit {
       this.zoom = 3;
       this.longitude= -0.13;
       this.latitude= 51.51;
+    }
+
+    increaseZoom() {
+      this.zoom  = Math.min(this.zoom + 1, 18);
+    }
+  
+    decreaseZoom() {
+      this.zoom  = Math.max(this.zoom - 1, 1);
+    }
+  
+    increaseOpacity() {
+      this.opacity  = Math.min(this.opacity + 0.1, 1);
+    }
+  
+    decreaseOpacity() {
+      this.opacity  = Math.max(this.opacity - 0.1, 0);
     }
 
   //endregion public functions 

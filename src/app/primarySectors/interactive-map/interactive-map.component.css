@@ -1,8 +1,8 @@
-.upper-buffer {
-    margin-top: 5rem;
-    margin-bottom: 5rem;
-}
-a.skiplink {
+  .upper-buffer {
+      margin-top: 5rem;
+      margin-bottom: 5rem;
+  }
+  a.skiplink {
     position: absolute;
     clip: rect(1px, 1px, 1px, 1px);
     padding: 0;
@@ -25,48 +25,66 @@ a.skiplink {
     margin-left:10rem;
   }
   
-.map-backdrop {
-  background-color: #000000;
-}
+  .map-backdrop {
+    background-color: #000000;
+  }
 
-.map-controls {
-  height: 12rem;
-  width: 100%; 
-  background-color: #fafafa;
-  color: #c7c7c7;
-  padding: 1rem;
-  border-bottom: #c7c7c7 solid .4rem;
-}
+  .map-controls {
+    height: 12rem;
+    width: 100%; 
+    background-color: #fafafa;
+    color: #c7c7c7;
+    padding: 1rem;
+    border-bottom: #c7c7c7 solid .4rem;
+  }
 
-/* .map-controls-search {
-  height: 18rem;
-  width: 50%; 
-  background-color: #cccccc;
-  color: #c7c7c7;
-  padding: 1rem;
-  border-left: #d82424 solid .4rem;
-  border-bottom: #d82424 solid .4rem;
-} */
+  /* .map-controls-search {
+    height: 18rem;
+    width: 50%; 
+    background-color: #cccccc;
+    color: #c7c7c7;
+    padding: 1rem;
+    border-left: #d82424 solid .4rem;
+    border-bottom: #d82424 solid .4rem;
+  } */
 
-.row .col {
-  padding: 0rem;
-}
+  .row .col {
+    padding: 0rem;
+  }
 
-.row {
-  border: .4rem solid #c7c7c7;
-}
+  .row {
+    border: .4rem solid #c7c7c7;
+  }
 
-.input:not([type]), input[type=date]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=email]:not(.browser-default), input[type=number]:not(.browser-default), input[type=password]:not(.browser-default), input[type=search]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=text]:not(.browser-default), input[type=time]:not(.browser-default), input[type=url]:not(.browser-default), textarea.materialize-textarea {
-  width: 100%;
-  height: 1rem;
-  border-bottom: 1px solid #000000;
-}
+  .input:not([type]), input[type=date]:not(.browser-default), input[type=datetime-local]:not(.browser-default),
+  input[type=datetime]:not(.browser-default), input[type=email]:not(.browser-default), input[type=number]:not(.browser-default),
+    input[type=password]:not(.browser-default), input[type=search]:not(.browser-default), input[type=tel]:not(.browser-default), 
+    input[type=text]:not(.browser-default), input[type=time]:not(.browser-default),
+    input[type=url]:not(.browser-default), textarea.materialize-textarea {
+    width: 100%;
+    height: 1rem;
+    border-bottom: 1px solid #000000;
+  }
 
-button, input, optgroup, select, textarea {
-  color: #000000;
-}
+  button, input, optgroup, select, textarea {
+    color: #000000;
+  }
 
-.compass-controls {
-  width: 50%;
-  height: 10rem;
-}
+  .compass-controls {
+    width: 50%;
+    height: 10rem;
+    color: #000000;
+  }
+
+  .inner-compass-controls {
+    width: 50%;
+    float: left;
+  }
+
+  .btn-margin {
+    margin-left: 1rem;
+  }
+
+  .compass-label {
+    float: left;
+  }

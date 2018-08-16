@@ -5,14 +5,20 @@
           <input placeholder="Placeholder" id="" type="text" class="validate" [(ngModel)]="longitude">
           <label for="longitude">longitude</label>
           <input placeholder="Placeholder" id="latitude" type="text" class="validate" [(ngModel)]="latitude">
-          <label for="latitude">latitude</label>
-      <!-- </div>
-      <div class="range-field"> -->
+          <label class="compass-label" for="latitude">latitude</label>
+          <div class="inner-compass-controls">
+            <span>Opacity:</span><button class="btn-margin" (click)="increaseOpacity()">+</button><button (click)="decreaseOpacity()">-</button><br>
+          </div>
+          <div class="inner-compass-controls">
+            <span>Zoom:</span><button class="btn-margin" (click)="increaseZoom()">+</button><button (click)="decreaseZoom()">-</button><br>
+          </div>
+      </div>
+      <!-- <div class="range-field"> -->
           <!-- <label>Zoom Level: {{zoom}}</label>
           <input type="range" id="test5" min="0" max="10" [(ngModel)]="zoom"/> -->
-          <span>Opacity:</span><button (click)="increaseOpacity()">+</button><button (click)="decreaseOpacity()">-</button><br>
-          <span>Zoom:</span><button (click)="increaseZoom()">+</button><button (click)="decreaseZoom()">-</button><br>
-      </div>  
+          <!-- <span >Opacity:</span><button (click)="increaseOpacity()">+</button><button (click)="decreaseOpacity()">-</button><br>
+          <span>Zoom:</span><button (click)="increaseZoom()">+</button><button (click)="decreaseZoom()">-</button><br> -->
+      <!-- </div>   -->
     </div>
     <!-- <div class="map-controls-search">
 

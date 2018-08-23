@@ -3,16 +3,16 @@
   <div class="col s12 video-player-position" *ngIf="hasFileLoaded">
 
     <video width="1020" height="450" controls class="video-player">
-      <source src="assets/test_vid.mp4" type="video/mp4">
+      <source [src]="videoFile" type="video/mp4">
       <!-- <source src="movie.ogg" type="video/ogg"> -->
       Your browser does not support the video tag.
-    </video> 
+    </video>
 
   </div>
   <div class="row">
   <div class="col s12 ">
-    <desk-option-menu [menuType]="isVideoPlayer" (click)="enableVideo()"></desk-option-menu>
-      <!-- <div class="central-contrls">
+    <desk-option-menu [menuType]="isVideoPlayer" (eventClick)="handleVideoSelection($event)"></desk-option-menu>
+      <!-- <div class="central-contrls" (click)="enableVideo()">
         <div class="file-field input-field">
           <div class="btn">
             <span>Select File</span>

@@ -10,7 +10,7 @@
                 <input type="file" (change)="onHandleUpload($event)">
               </div>
               <div class="file-path-wrapper">
-                <input class="file-path validate" type="text" [value]="songTitle">
+                <input class="file-path validate" type="text" [value]="fileTitle">
               </div>
           </div>
       </li>
@@ -43,17 +43,17 @@
       <li class="collection-item"  *ngIf="this.menuType == 1"><div> Change Animation
         <a (click)="displayAnimationChange()" class="secondary-content"><i class=" menu-icons fa fa-picture-o"></i></a></div></li>
       <li class="collection-item" [ngClass]="{'search-function': (isAnimationChangeDisplayed==false), 'reveal-search': (isAnimationChangeDisplayed==true)}">
-        
+
       </li>
       <li class="collection-item"  *ngIf="this.menuType == 1"><div> Edit Files
         <a (click)="displayFileEditing()" class="secondary-content"><i class=" menu-icons fa fa-cog"></i></a></div></li>
       <li class="collection-item" [ngClass]="{'search-function': (isFileEditDisplayed==false), 'reveal-search': (isFileEditDisplayed==true)}">
-        
+
       </li>
       <li class="collection-item"  *ngIf="this.menuType == 2"><div> Viewing Options
         <a (click)="displayViewingOptions()" class="secondary-content"><i class=" menu-icons fa fa-cog"></i></a></div></li>
       <li class="collection-item" [ngClass]="{'search-function': (isViewingOptionsDisplayed==false), 'reveal-search': (isViewingOptionsDisplayed==true)}">
-        
+
       </li>
   </ul>
 </div>

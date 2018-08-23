@@ -113,15 +113,17 @@ export class SoundWidgetComponent implements OnInit {
 
   }
 
-  /**
+  /**-------------------------------------------------
+   * handleSongSelection
+   * -------------------------------------------------
    * Handles click/onChange event sent from option-menu
    * @public
    * @param song {any} represents an audio file
    */
   public handleSongSelection(song): void {
     // if song is not undefined or null add song to playlist array
-    
-    // uncomment for testing purposes 
+
+    // uncomment for testing purposes
     // alert("Our events type: "+song.type);
     if (song) {
 

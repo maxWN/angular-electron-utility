@@ -18,7 +18,7 @@ export class OptionMenuComponent implements OnInit {
     public isAnimationChangeDisplayed: boolean = false;
     public isFileEditDisplayed: boolean = false;
     public isViewingOptionsDisplayed: boolean = false;
-    public songTitle: string = "Upload one or more files";
+    public fileTitle: string = "Upload one or more files";
     // fileReaderSvc:FileReaderService;
     public SelectedTracks: Array<Playlist> = new Array<Playlist>();
     public currentTrack: Playlist;
@@ -62,21 +62,21 @@ export class OptionMenuComponent implements OnInit {
       this.isAnimationChangeDisplayed = !this.isAnimationChangeDisplayed;
       this.isSearchDisplayed = false;
       this.isSongSelectDisplayed = false;
-      this.isFileEditDisplayed = false;      
+      this.isFileEditDisplayed = false;
     }
 
     public displaySongSelection(): void {
       this.isSongSelectDisplayed = !this.isSongSelectDisplayed;
       this.isAnimationChangeDisplayed = false;
       this.isSearchDisplayed = false;
-      this.isFileEditDisplayed = false;      
+      this.isFileEditDisplayed = false;
     }
 
     public displayFileEditing(): void {
       this.isFileEditDisplayed = !this.isFileEditDisplayed;
       this.isAnimationChangeDisplayed = false;
       this.isSongSelectDisplayed = false;
-      this.isSearchDisplayed = false;      
+      this.isSearchDisplayed = false;
     }
 
     public displayViewingOptions(): void {
@@ -95,19 +95,20 @@ export class OptionMenuComponent implements OnInit {
         if (this.menuType == MenuTypes.Music) {
 
           if (this.isInvalidMusicFileUpload(fileName)) {
-            this.songTitle = fileName;
+            this.fileTitle = fileName;
             this.currentTrack = <Playlist>{};
             this.hasTrackBeenSelected = true;
-            this.currentTrack.title = this.songTitle;
+            this.currentTrack.title = this.fileTitle;
             this.readURL($event);
           } else {
-            this.songTitle = "Error: User has selected an invalid file type!";
+            this.fileTitle = "Error: User has selected an invalid file type!";
             // this.eventClick.emit()
           }
 
         } else if (this.menuType == MenuTypes.Video) {
           if (this.isInvalidVideoFileUpload(fileName)) {
-            // TODO: Enhance video player to handle video files...
+            this.fileTitle = fileName;
+            this.readURL($event)
             // this.eventClick.emit()
           };
         }
@@ -152,7 +153,7 @@ export class OptionMenuComponent implements OnInit {
     // TODO: create function to format file names to not include track listing
     // public reformatFileNames(): void {}
 
-  //endregion public functions
+  // endregion public functions
 
   // region private functions
 
@@ -179,7 +180,7 @@ export class OptionMenuComponent implements OnInit {
 
     /**
      * Creates recently played song playlist for users to choose from
-     * @private 
+     * @private
      * @param file {var} represents event triggered from file selection
      **/
     private createRecentSongPlaylist(file):void {

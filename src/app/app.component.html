@@ -6,7 +6,8 @@
     <li class="divider"></li>
     <li><a (click)="videoWidget()">Video Player <i class="fa fa-video-camera"></i></a></li>
     <li class="divider"></li>
-    <li><a (click)="fileManagerLink()">File Management <i class="fa fa-file-archive-o"></i></a></li>
+    <!-- TODO: Whenever sufficient progress has been made on the file manager, uncomment this link -->
+    <!-- <li><a (click)="fileManagerLink()">File Management <i class="fa fa-file-archive-o"></i></a></li> -->
     <li class="divider"></li>
     <li><a (click)="textEditorWidget()">Text Editor <i class="fa fa-file-code-o"></i></a></li>
     <li class="divider"></li>
@@ -26,8 +27,6 @@
 </div>
 <div class="widget-container">
   <div class="container">
-
-      <!-- <mat-checkbox></mat-checkbox> -->
 
       <router-outlet></router-outlet>
 

@@ -23,7 +23,7 @@ The Swiss Army App is still undergoing development and testing, but can be insta
 - Use git to clone this repo
 - Install the node module dependencies, by running the cmd, "npm install" within the app root directory
 - Run the cmd, "npm run electron-build" to compile the application (this will also run the application after successful compilation)
-- After compiling the build, simply run the cmd, "npm run electron", to run the program quickly.
+- After compiling the build, simply run the cmd, "npm run electron", to run the program quickly
 
 ## Cross Platform App
 

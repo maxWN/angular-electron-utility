@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ElectronService } from 'ngx-electron';
+// import { plyr } from 'plyr';
 
 @Component({
   selector: 'desk-video-widget',
@@ -22,25 +23,24 @@ export class VideoWidgetComponent implements OnInit {
   }
 
   //temporary UI testing function
-  public enableVideo():void {
+  public enableVideo(): void {
     this.hasFileLoaded = !this.hasFileLoaded;
   }
 
    /**-------------------------------------------------
    * handleVideoSelection
    * -------------------------------------------------
-   * Handles click/onChange event sent from option-menu
-   * @public
+   * @public Handles click/onChange event sent from option-menu
    * @param video {any} represents an video file
    */
   public handleVideoSelection(video): void {
     // if song is not undefined or null add song to playlist array
 
     // uncomment for testing purposes
-    alert("Our events type: " + video.type);
+    // alert("Our events type: " + video);
     if (video) {
 
-      this.videoFile = video.path;
+      this.videoFile = video;
       this.enableVideo();
       // original file reference: assets/test_vid.mp4
       // TODO: use secondary routing coupled with data resolvers to

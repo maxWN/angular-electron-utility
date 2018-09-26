@@ -3,6 +3,7 @@ import { Event } from 'electron';
 import { Playlist, MenuTypes } from '../../models';
 import * as _ from 'lodash';
 import { $ } from 'protractor';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'desk-option-menu',
@@ -30,7 +31,7 @@ export class OptionMenuComponent implements OnInit {
 
   // endregion class variables
 
-  constructor() {
+  constructor(private domSanitzer: DomSanitizer) {
     // this.fileReaderSvc=fileReaderSvc;
    }
 
@@ -172,8 +173,15 @@ export class OptionMenuComponent implements OnInit {
           //insert service call
           this.filePath = e.target;
         }
-        this.createRecentSongPlaylist(input.target.files[0]);
-        this.eventClick.emit(input.target.files[0]);
+        if (this.menuType != MenuTypes.Video) {
+          this.createRecentSongPlaylist(input.target.files[0]);
+          this.eventClick.emit(input.target.files[0]);
+        } else {
+          let videoSrc: SafeResourceUrl | String = '';
+          videoSrc = this.domSanitzer.bypassSecurityTrustResourceUrl(
+            window.URL.createObjectURL(input.target.files[0]));
+          this.eventClick.emit(videoSrc);
+        }
       //   reader.readAsDataURL(input.target.files[0]);
       // }
     }

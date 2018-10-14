@@ -33,5 +33,5 @@ The Swiss Army App has been tested on and can be used on the following operating
 
 ## Purpose
 
-The overall purpose of this project is to create a small, dynamic, multi-purpose, cross-platform desktop app. This app merely demonstrates knowledge of electron.js, angular.js, and node.js while providing a wide array of useful functionality.
+The overall purpose of this project is to create a small, dynamic, multi-purpose, cross-platform desktop app. This app merely demonstrates knowledge of the Electron framework, Angular framework, and node.js while providing a wide array of useful functionality.
 

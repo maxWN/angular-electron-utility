@@ -40,10 +40,10 @@ export class SoundWidgetComponent implements OnInit {
 
   // region public functions
 
-  public ngOnInit():void {
+  public ngOnInit(): void {
   }
 
-  public playSong():void {
+  public playSong(): void {
     // TODO: Create a simple boolean variable that isn't dependent on
     // any of the Howl.js functions, and can only be set by the playSong()
     // function. This will replace the preventative condition below...

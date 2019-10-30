@@ -15,8 +15,7 @@ export class ToolDescriptionsUS {
     public VIDEO_PLAYER: string = 'The video player widget allows you to search for video files' + 
     ' on your computer, play any type of file, edit the files, or have a personal library of all your favorite videos.';
     public INTERACTIVE_MAP: string = 'The interactive map widget allows users to search for locations all across the globe.';
-    public TEXT_EDITOR: string = 'The text editor widget allows users to modify or create text files on their computer (files ' +
-    ' will be saved as rich text format on Windows)';
+    public TEXT_EDITOR: string = 'The text editor widget allows users to modify or create text files on their computer';
   
 }
 

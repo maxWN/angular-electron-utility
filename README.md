@@ -9,6 +9,8 @@ This is a cross platform desktop app that provides a wide array of functionality
  * Text Editor
  * File Management
  * Interactive Map
+ 
+ This application is still a work in progress, and has options available that are still in a conceptual phase.
 
 ## Software utilized
 

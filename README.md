@@ -1,5 +1,10 @@
 # Swiss Army App
 
+## Project Status
+
+This project has not been actively maintained for a considerable amount of time. It is in an archived state, so please refrain from making any pull requests
+or using in any capacity beyond its original intended purpose.
+
 ## Summary
 
 This is a cross platform desktop app that provides a wide array of functionality all in one app! It provides the following functionality:
